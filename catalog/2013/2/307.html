@@ -1,0 +1,3168 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus82-int&lang=es&_sess=vl2vuk50gvptj25t7cul77ee92&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>QB - Departamento de Ingeniería Química y Biotecnología</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132" selected="selected">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307" selected="selected">QB - Departamento de Ingeniería Química y Biotecnología</option><option value="26">QI - Departamento de Química Básica</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="BT3101" onclick="this.parentNode.toggleClassName('active')">
+	BT3101 Bioquímica General
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT3101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3656">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2004/FI2A4/CM2004/CM2A4),IQ3204S/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT35A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT3101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT3101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Lab. Se Realiza en INTA</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/98/98644f4ee72e06a47fb4e154062cffb6/perfil/742cef2b95702a3d090c07515b32c9e1.jpg" class="photo foto chica" /> Barbara Andrews F.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/24/24dcbfbd2e6e3513e3d998e1e3c5eca5/perfil/b0e49ca3135e3f719ce90fa57526c399.jpg" class="photo foto chica" /> Rodríguez Vives Juan Pablo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		19	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Martes 12:00 - 13:30<br />Laboratorio: Martes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT3102" onclick="this.parentNode.toggleClassName('active')">
+	BT3102 Biología Celular
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT3102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3591">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CM2004/FI2004),FI2003S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT31B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT3102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT3102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Lab. Se Realiza en INTA</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e8/e87cb888bcf30d7cbf77ada4197e4ff0/perfil/5183c8dd161e77b2b175e86f4a87aa67.jpg" class="photo foto chica" /> Natalia Jiménez T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/79e73a8c427e036ebacad4127118d814/perfil/65e224e1dda01946a13958fa6e0a257c.jpg" class="photo foto chica" /> Omar Porras E.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Miércoles 10:15 - 11:45<br />Laboratorio: Jueves 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT3401" onclick="this.parentNode.toggleClassName('active')">
+	BT3401 Biología y Biotecnología
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT3401">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CM2004/FI2004</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT30A</dd>
+
+	<dt>Comentario</dt>
+	<dd>Obligatorio</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT3401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT3401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e1/e1747aba9b98e5953a7fe44604283142/perfil/12e178c9a9cd9cacc4bb6f42c9441b43.jpg" class="photo foto chica" /> Ronco Macchiavello Ana Maria</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>5</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT4103" onclick="this.parentNode.toggleClassName('active')">
+	BT4103 Biología Molecular I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT4103">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3572">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT3102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT41A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT4103">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT4103-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT4104" onclick="this.parentNode.toggleClassName('active')">
+	BT4104 Biología Molecular II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT4104">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3594">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT4103</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT51A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT4104">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT4104-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c8a2a1066ca3ed591815deebb9ab184e/perfil/5f84a49da5d649afce8508fcfa0dbca2.jpg" class="photo foto chica" /> Cambiazo A. Verónica</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		19	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Laboratorio: Lunes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT4551" onclick="this.parentNode.toggleClassName('active')">
+	BT4551 Energía Renovable a Partir de Biomasas
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT4551">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3720">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2004/FI2A4)/(CM2004/QI32A)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT4551">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT4551-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6f/6f92052b6c28cdefed96e2a329c5db79/perfil/f49662d0e8b76727c4e5a6664470ab80.jpg" class="photo foto chica" /> Maria Elena Lienqueo C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Martes 16:15 - 17:45, Jueves 16:15 - 17:45<br />Auxiliar: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT4901" onclick="this.parentNode.toggleClassName('active')">
+	BT4901 Práctica Profesional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT4901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3593">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT49A/IQ4901</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		10	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT5304" onclick="this.parentNode.toggleClassName('active')">
+	BT5304 Separación y Procesos Biotecnológicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT5304">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3621">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3202,IQ4305S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ7431/BT56A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT5304">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT5304-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6f/6f92052b6c28cdefed96e2a329c5db79/perfil/f49662d0e8b76727c4e5a6664470ab80.jpg" class="photo foto chica" /> Maria Elena Lienqueo C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT5403" onclick="this.parentNode.toggleClassName('active')">
+	BT5403 Trabajo Guiado en Biotecnología
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT5403">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT551</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT5403">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT5403-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+<tr id="BT5403-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT5422" onclick="this.parentNode.toggleClassName('active')">
+	BT5422 Tecnologías Microbianas
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT5422">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT4201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT53C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT5422">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT5422-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b2dbb56f778ad0a55856011b0fc89f44/perfil/8779f04daad36e994ceeb88e99c23b9c.jpg" class="photo foto chica" /> Blanca Escobar M.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT5501" onclick="this.parentNode.toggleClassName('active')">
+	BT5501 Inmunología Básica
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT5501">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4120">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT3102,BT3101</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso electivo de Formación Integral de 
+IQ y BT</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT5501">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT5501-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MB.svg" class="photo foto chica" /> María Inés Becker</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AD.svg" class="photo foto chica" /> Alfredo de Ioannes</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT5901" onclick="this.parentNode.toggleClassName('active')">
+	BT5901 Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT5901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3695">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT4901,BT4103</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT59A/IQ59A/IQ5901/BT5902/IQ5901/IQ5902</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT5901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT5901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT6502" onclick="this.parentNode.toggleClassName('active')">
+	BT6502 Taller de Emprendimiento e Innovación
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT6502">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ5802</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT7501</dd>
+
+	<dt>Comentario</dt>
+	<dd>Curso de Formación Integral</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT6502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT6502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/98/98644f4ee72e06a47fb4e154062cffb6/perfil/742cef2b95702a3d090c07515b32c9e1.jpg" class="photo foto chica" /> Barbara Andrews F.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT6901" onclick="this.parentNode.toggleClassName('active')">
+	BT6901 Práctica Profesional III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT6901">
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN4703S,BT4104,BT5901</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ6901/BT69A/IQ69A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT6901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT6901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT6908" onclick="this.parentNode.toggleClassName('active')">
+	BT6908 Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT6908">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR288,AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT69E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT6908">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT6908-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c735ba4469fb91f5ff3d3893bd74f80/perfil/47ff4b68baa83627f8e453b1dee65130.jpg" class="photo foto chica" /> Humberto Palza C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb9cd260a21109399e9d09c46ebe051b/perfil/225c71e7b096e0e538fd0656d2673936.jpg" class="photo foto chica" /> Alvaro Olivera Nappa</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT6909" onclick="this.parentNode.toggleClassName('active')">
+	BT6909 Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT6909">
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT6908/BT69E/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT69F</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT6909">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT6909-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c735ba4469fb91f5ff3d3893bd74f80/perfil/47ff4b68baa83627f8e453b1dee65130.jpg" class="photo foto chica" /> Humberto Palza C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb9cd260a21109399e9d09c46ebe051b/perfil/225c71e7b096e0e538fd0656d2673936.jpg" class="photo foto chica" /> Alvaro Olivera Nappa</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT6910" onclick="this.parentNode.toggleClassName('active')">
+	BT6910 Trabajo de Memoria de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT6910">
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT6908,AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT69H</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT6910">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT6910-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c735ba4469fb91f5ff3d3893bd74f80/perfil/47ff4b68baa83627f8e453b1dee65130.jpg" class="photo foto chica" /> Humberto Palza C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb9cd260a21109399e9d09c46ebe051b/perfil/225c71e7b096e0e538fd0656d2673936.jpg" class="photo foto chica" /> Alvaro Olivera Nappa</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Jueves 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT7401" onclick="this.parentNode.toggleClassName('active')">
+	BT7401 Trabajo Guiado en Biotecnología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT7401">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Tutorial</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT7401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT7401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT7431" onclick="this.parentNode.toggleClassName('active')">
+	BT7431 Biología Molecular e Ingeniería Genética
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT7431">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>BT4103/BT4104/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT7431">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT7431-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="BT7451" onclick="this.parentNode.toggleClassName('active')">
+	BT7451 Seminario en Biotecnología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cBT7451">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cBT7451">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="BT7451-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ3201" onclick="this.parentNode.toggleClassName('active')">
+	IQ3201 Termodinámica Aplicada
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ3201">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CM2004/FI2004),EI2001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ35A</dd>
+
+	<dt>Comentario</dt>
+	<dd>Obligatorio</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ3201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ3201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/92/926a3b40dc75fd942c5882e5ce80b022/perfil/d6d714603913bb36d353d116486d0d92.jpg" class="photo foto chica" /> Joaquin Cortes G.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ3202" onclick="this.parentNode.toggleClassName('active')">
+	IQ3202 Fenómenos de Transporte
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ3202">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3694">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2001,MA2601,MA2002,(CC1001/CC1002),(FI2004/CM2004)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ36A</dd>
+
+	<dt>Comentario</dt>
+	<dd>Obligatorio</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ3202">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ3202-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		44	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ3203" onclick="this.parentNode.toggleClassName('active')">
+	IQ3203 Fisicoquímica Aplicada
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ3203">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3201S,(FI2004/CM2004)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>QI42Z/BT46A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ3203">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ3203-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d390c8da2756b9368efae26216474bd3/perfil/77c414c3977a7d81a70edb2e418035b4.jpg" class="photo foto chica" /> Paulo Araya F.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/37/3737346f912443b2f5145e1ce0dd9246/perfil/708f0344532b7846df8fdbbc630cd44e.jpg" class="photo foto chica" /> Tomas Vargas V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/31/315df3dba1a6e9a64a90d32d63079b7c/perfil/1688c2e42e1249cc61a47c4ae722463e.jpg" class="photo foto chica" /> Eliana Valencia A.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Martes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ3401" onclick="this.parentNode.toggleClassName('active')">
+	IQ3401 Taller de Enlace para Ingeniería de Procesos I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ3401">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4016">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3301S,IQ3201S,IQ3202S</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo  para IQ y BT</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ3401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ3401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Viernes 08:30 - 10:00, 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ4101" onclick="this.parentNode.toggleClassName('active')">
+	IQ4101 Métodos Matemáticos para Procesos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ4101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3602">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3301S</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ4101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ4101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f4/f436aae5622d3de6b3d5140c47b9ccd9/perfil/39bc0af48358bf5d1543e6a5e869f2dd.jpg" class="photo foto chica" /> J. Cristian Salgado H.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ4303" onclick="this.parentNode.toggleClassName('active')">
+	IQ4303 Operaciones Unitarias y Procesos de Separación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ4303">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3655">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3201,IQ3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT5303/IQ56A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ4303">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ4303-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Equivalente con BT5303</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb9cd260a21109399e9d09c46ebe051b/perfil/225c71e7b096e0e538fd0656d2673936.jpg" class="photo foto chica" /> Alvaro Olivera Nappa</h1></li>
+		</ul>
+	</td>
+	<td>35</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ4304" onclick="this.parentNode.toggleClassName('active')">
+	IQ4304 Operaciones Sólido Fluido
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ4304">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3654">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3201,IQ3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ48A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ4304">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ4304-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c735ba4469fb91f5ff3d3893bd74f80/perfil/47ff4b68baa83627f8e453b1dee65130.jpg" class="photo foto chica" /> Humberto Palza C.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Jueves 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ4305" onclick="this.parentNode.toggleClassName('active')">
+	IQ4305 Reactores Químicos y Bioquímicos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ4305">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3686">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3201,(IQ3202/MI3010),IQ3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ55C,IQ55B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ4305">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ4305-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c2/c270c0a954ef0dc5e745cc79ff31786a/perfil/fc1d9fbd6546465dd4fc5b7575a7ece8.jpg" class="photo foto chica" /> Luis Amestica S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d390c8da2756b9368efae26216474bd3/perfil/77c414c3977a7d81a70edb2e418035b4.jpg" class="photo foto chica" /> Paulo Araya F.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		37	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Viernes 14:30 - 16:00<br />Laboratorio: Miércoles 14:30 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ4801" onclick="this.parentNode.toggleClassName('active')">
+	IQ4801 Laboratorio de la Ingeniería Química
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ4801">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3657">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3301,(IQ3202/MI3010)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ53C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ4801">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ4801-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/12/12442b461f9b876c4af481f088917c1e/perfil/30baca3b784920aa8b29f7c6cf7d1dc0.jpg" class="photo foto chica" /> Raul Quijada A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b1/b141a712ed1cd579750e9c9c892fa8bb/perfil/8747269243b77e537f1d3724edaabb2e.jpg" class="photo foto chica" /> Jorge Castillo G.</h1></li>
+		</ul>
+	</td>
+	<td>35</td>
+	<td>
+		32	</td>
+	<td>Laboratorio: Martes 14:30 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ4901" onclick="this.parentNode.toggleClassName('active')">
+	IQ4901 Práctica Profesional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ4901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3725">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ49A/BT49A/BT4901</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f4/f436aae5622d3de6b3d5140c47b9ccd9/perfil/39bc0af48358bf5d1543e6a5e869f2dd.jpg" class="photo foto chica" /> J. Cristian Salgado H.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		23	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5307" onclick="this.parentNode.toggleClassName('active')">
+	IQ5307 Dinámica y Control de Procesos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5307">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3661">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ4101,IQ4305</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ57A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5307">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5307-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f4/f436aae5622d3de6b3d5140c47b9ccd9/perfil/39bc0af48358bf5d1543e6a5e869f2dd.jpg" class="photo foto chica" /> J. Cristian Salgado H.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5402" onclick="this.parentNode.toggleClassName('active')">
+	IQ5402 Trabajo Dirigido en Ingeniería Química
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5402">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ549</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5402">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5402-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="IQ5402-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5403" onclick="this.parentNode.toggleClassName('active')">
+	IQ5403 Trabajo Guiado en Ingeniería Química
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5403">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ551</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5403">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5403-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f4/f436aae5622d3de6b3d5140c47b9ccd9/perfil/39bc0af48358bf5d1543e6a5e869f2dd.jpg" class="photo foto chica" /> J. Cristian Salgado H.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+<tr id="IQ5403-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+<tr id="IQ5403-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5432" onclick="this.parentNode.toggleClassName('active')">
+	IQ5432 Tecnología de Materiales Plásticos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5432">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ4305S/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ584</dd>
+
+	<dt>Comentario</dt>
+	<dd>()</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5432">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5432-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c735ba4469fb91f5ff3d3893bd74f80/perfil/47ff4b68baa83627f8e453b1dee65130.jpg" class="photo foto chica" /> Humberto Palza C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/12/12442b461f9b876c4af481f088917c1e/perfil/30baca3b784920aa8b29f7c6cf7d1dc0.jpg" class="photo foto chica" /> Raul Quijada A.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00, Jueves 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5472" onclick="this.parentNode.toggleClassName('active')">
+	IQ5472 Industria de Procesos Químicos y Biotecnológicos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5472">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3870">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ4801,IQ4305</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Formación Integral IQ y BT</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5472">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5472-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb9cd260a21109399e9d09c46ebe051b/perfil/225c71e7b096e0e538fd0656d2673936.jpg" class="photo foto chica" /> Alvaro Olivera Nappa</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6f/6f92052b6c28cdefed96e2a329c5db79/perfil/f49662d0e8b76727c4e5a6664470ab80.jpg" class="photo foto chica" /> Maria Elena Lienqueo C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/02/025caad4bc555490c3e9605839133392/perfil/83fa063707d2e2dd37b895d44425213b.jpg" class="photo foto chica" /> Melanie Colet L.</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5502" onclick="this.parentNode.toggleClassName('active')">
+	IQ5502 Ingeniería Integral para el Desarrollo Local Sostenible
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5502">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4021">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>((IN3701/MA3701),IQ4801S)/ME4302/(IN4301,IN4002)/(CI5102S/CI5202)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00, Jueves 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5701" onclick="this.parentNode.toggleClassName('active')">
+	IQ5701 Taller de Diseño de Procesos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5701">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3662">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ4305,IQ4303S,(IQ5306/BT5304S)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ58A/IQ58B/BT65A/BT5701</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5701">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5701-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Equivalente a BT5701</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6f/6f92052b6c28cdefed96e2a329c5db79/perfil/f49662d0e8b76727c4e5a6664470ab80.jpg" class="photo foto chica" /> Maria Elena Lienqueo C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RB.svg" class="photo foto chica" /> Ricardo Badilla O.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		29	</td>
+	<td>Cátedra: Miércoles 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Miércoles 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ5901" onclick="this.parentNode.toggleClassName('active')">
+	IQ5901 Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ5901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3726">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ4901</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ5902/IQ59A/BT59A/BT5901</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ5901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ5901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f4/f436aae5622d3de6b3d5140c47b9ccd9/perfil/39bc0af48358bf5d1543e6a5e869f2dd.jpg" class="photo foto chica" /> J. Cristian Salgado H.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		7	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ6473" onclick="this.parentNode.toggleClassName('active')">
+	IQ6473 Taller de Diseño de Equipos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ6473">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4007">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ6441</dd>
+
+	<dt>Comentario</dt>
+	<dd>Electivo de Formación Integral</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ6473">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ6473-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b966b6e7e0f68346455c4b72bfd5f95/perfil/67d06c70d54496e61596138a21ebe9aa.jpg" class="photo foto chica" /> Raúl I. Espinosa</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ6702" onclick="this.parentNode.toggleClassName('active')">
+	IQ6702 Taller de Proyectos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ6702">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3770">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN3301S,(IQ5701/BT5701),IQ4305,IQ4801,IQ4303,(IQ5306/BT5301S),(IQ4304/BT5304S)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>BT6702/IQ66C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ6702">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ6702-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6f/6f92052b6c28cdefed96e2a329c5db79/perfil/f49662d0e8b76727c4e5a6664470ab80.jpg" class="photo foto chica" /> Maria Elena Lienqueo C.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ6901" onclick="this.parentNode.toggleClassName('active')">
+	IQ6901 Práctica Profesional III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ6901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3727">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ5901</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ69A/BT6901/BT69A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ6901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ6901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f4/f436aae5622d3de6b3d5140c47b9ccd9/perfil/39bc0af48358bf5d1543e6a5e869f2dd.jpg" class="photo foto chica" /> J. Cristian Salgado H.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ6908" onclick="this.parentNode.toggleClassName('active')">
+	IQ6908 Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ6908">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR288,AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ69E</dd>
+
+	<dt>Comentario</dt>
+	<dd>Alumnos que cursen IQ y BT deben inscribir este curso con ambos códigos</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ6908">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ6908-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb9cd260a21109399e9d09c46ebe051b/perfil/225c71e7b096e0e538fd0656d2673936.jpg" class="photo foto chica" /> Alvaro Olivera Nappa</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ6909" onclick="this.parentNode.toggleClassName('active')">
+	IQ6909 Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ6909">
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ6908,AUTOR,CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ69F</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS. Alumnos que
+cursen IQ y BT deben inscribir SOLO un código BT/IQ de acuerdo a la malla
+que han cursado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ6909">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ6909-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb9cd260a21109399e9d09c46ebe051b/perfil/225c71e7b096e0e538fd0656d2673936.jpg" class="photo foto chica" /> Alvaro Olivera Nappa</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7001" onclick="this.parentNode.toggleClassName('active')">
+	IQ7001 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7001">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ797</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7002" onclick="this.parentNode.toggleClassName('active')">
+	IQ7002 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7002">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ7001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ798</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7401" onclick="this.parentNode.toggleClassName('active')">
+	IQ7401 Trabajo Guiado en Ingeniería Química
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7401">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f4/f436aae5622d3de6b3d5140c47b9ccd9/perfil/39bc0af48358bf5d1543e6a5e869f2dd.jpg" class="photo foto chica" /> J. Cristian Salgado H.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7402" onclick="this.parentNode.toggleClassName('active')">
+	IQ7402 Trabajo Guiado en Ingeniería Química
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7402">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7402">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7402-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7403" onclick="this.parentNode.toggleClassName('active')">
+	IQ7403 Seminario Avanzado de Ingeniería Química
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7403">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7403">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7403-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>6</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7411" onclick="this.parentNode.toggleClassName('active')">
+	IQ7411 Modelación de Procesos Químicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7411">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ56A/BT5303/IQ4303/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7411">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7411-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7b/7bfce76b5b1e4b2a9b131292d936bc82/perfil/de20cc715afee1da8cb269d4c247e064.jpg" class="photo foto chica" /> Albert Leandro Herrera Zeppelin</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Martes 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7421" onclick="this.parentNode.toggleClassName('active')">
+	IQ7421 Termodinámica Avanzada
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7421">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ3201/IQ35A/MI41A/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7421">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7421-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MH.svg" class="photo foto chica" /> Miguel Herrera M.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Jueves 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7434" onclick="this.parentNode.toggleClassName('active')">
+	IQ7434 Catálisis Aplicada
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7434">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ55AS/IQ55CS/IQ4305/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ755</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7434">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7434-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d390c8da2756b9368efae26216474bd3/perfil/77c414c3977a7d81a70edb2e418035b4.jpg" class="photo foto chica" /> Paulo Araya F.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/12/12442b461f9b876c4af481f088917c1e/perfil/30baca3b784920aa8b29f7c6cf7d1dc0.jpg" class="photo foto chica" /> Raul Quijada A.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Viernes 16:15 - 17:45<br />Laboratorio: Martes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7436" onclick="this.parentNode.toggleClassName('active')">
+	IQ7436 Tópicos Avanzados en Materiales Poliméricos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7436">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7436">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7436-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c735ba4469fb91f5ff3d3893bd74f80/perfil/47ff4b68baa83627f8e453b1dee65130.jpg" class="photo foto chica" /> Humberto Palza C.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ7502" onclick="this.parentNode.toggleClassName('active')">
+	IQ7502 Seminario Avanzado en Ingeniería Química
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ7502">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ7502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ7502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ8001" onclick="this.parentNode.toggleClassName('active')">
+	IQ8001 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ8001">
+
+	<dt>Créditos</dt>
+	<dd>36</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ897</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ8001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ8001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ8002" onclick="this.parentNode.toggleClassName('active')">
+	IQ8002 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ8002">
+
+	<dt>Créditos</dt>
+	<dd>36</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ8001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>IQ898</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ8002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ8002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/11/117ce5838d312b9e6faf830e90da0bb2/perfil/bb151f439624fcf81fc7e34b6d24a5cb.jpg" class="photo foto chica" /> Francisco Gracia C.</h1></li>
+		</ul>
+	</td>
+	<td>4</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="IQ898" onclick="this.parentNode.toggleClassName('active')">
+	IQ898 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cIQ898">
+
+	<dt>Créditos</dt>
+	<dd>36</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IQ897</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cIQ898">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="IQ898-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce8f8d630b8cd503a09027f6d5c6f67d/perfil/9208773e17aa835dd07e6d71f0c03d28.jpg" class="photo foto chica" /> Juan A. Asenjo</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+	<dt>Sustentabilidad</dt>
+	<dd>Los cursos llevan una marca según si están <span class="sustentable">relacionados con sustentabilidad</span> o <span class="sustentable enfocado">enfocados en sustentabilidad</span>. <a target="_blank" href="http://ingenieria.uchile.cl/oficina-de-ingenieria-para-la-sustentabilidad/que-hacemos/106441/docencia">Más información de esta iniciativa</a>.</dd>
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: 'vl2vuk50gvptj25t7cul77ee92',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+</body>
+</html>

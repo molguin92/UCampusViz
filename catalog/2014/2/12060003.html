@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus82-int&lang=es&_sess=6s830o2aqeu8i723f7q3h6mcj3&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li>Catálogo de Cursos FCFM</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142" selected="selected">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option><option value="26">QI - Departamento de Química Básica</option></select></form>
+
+<p>No encontré cursos</p>
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: '6s830o2aqeu8i723f7q3h6mcj3',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,3170 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus81-int&lang=es&_sess=6ktr8c83n7h8uftp6nbrl95b65&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>GL - Departamento de Geología</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172" selected="selected">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="12060003">AA - Área para el Aprendizaje de la Ingeniería y Ciencias A2IC</option><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16" selected="selected">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="GL3004" onclick="this.parentNode.toggleClassName('active')">
+	GL3004 Estratigrafía y Paleontología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL3004">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3581">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101,GF3001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL41E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL3004">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL3004-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/51/517ab2912800c706191a72054bdeccea/perfil/7684ab5b2856552b48ec4cb364be4cc6.jpg" class="photo foto chica" /> Alfonso Rubilar R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d9/d9fc299668fda204a2d9192a71f45246/perfil/a1398866d4d38861944fffe773c41156.jpg" class="photo foto chica" /> Luisa Pinto L.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Martes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL3101" onclick="this.parentNode.toggleClassName('active')">
+	GL3101 Geología General
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL3101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3578">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MA2002/MA2A2),(FI2001/FI2A1)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL31A</dd>
+
+	<dt>Comentario</dt>
+	<dd>Al finalizar el curso, el alumno demostrará que:
+ Comprende los procesos geológicos y como estos afectan e interactúan con la actividad humana.
+ Registra observaciones geológicas de manera sistemática.
+ Identifica materiales geológicos y los relaciona a los procesos que los generan.
+ Comprende los procesos que generan y modifican el paisaje, así como su dinámica.
+ Utiliza los métodos de razonamiento geológico.</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL3101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL3101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/cd/cdb28e003f54b6d3aad17bec35eca4a3/perfil/2b7a2990b08520fad2cdb372dd53d619.jpg" class="photo foto chica" /> Katja Deckart</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 08:30 - 11:45</td>
+</tr>
+<tr id="GL3101-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/cd/cdb28e003f54b6d3aad17bec35eca4a3/perfil/2b7a2990b08520fad2cdb372dd53d619.jpg" class="photo foto chica" /> Katja Deckart</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		30	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 16:15 - 19:30</td>
+</tr>
+<tr id="GL3101-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b1e9036edcdd5a12d72aebf5b15af9e/perfil/eb3f0815a43f33022576bd711e1b099b.jpg" class="photo foto chica" /> Valentina Flores Aqueveque</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		34	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Viernes 08:30 - 11:45</td>
+</tr>
+<tr id="GL3101-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b1e9036edcdd5a12d72aebf5b15af9e/perfil/eb3f0815a43f33022576bd711e1b099b.jpg" class="photo foto chica" /> Valentina Flores Aqueveque</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		46	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 16:15 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL3102" onclick="this.parentNode.toggleClassName('active')">
+	GL3102 Energía de Procesos Geológicos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL3102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12194">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2004/CM2004),MA2002,GL3101S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL4201</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL3102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL3102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/04/041924a2ce27b085f51871a1855fd228/perfil/78e53ddadd934a22a4dceaa77e165e95.jpg" class="photo foto chica" /> Angelo Castruccio A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/DM.svg" class="photo foto chica" /> Daniel Moncada</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Viernes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL3301" onclick="this.parentNode.toggleClassName('active')">
+	GL3301 Fundamentos de Cristalografía y Mineralogía
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL3301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3579">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL33A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL3301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL3301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1b/1bf436e78323b23766e27111db98d184/perfil/248d8897d136f3c36ba9b8d77467b4dd.jpg" class="photo foto chica" /> Francisco Munizaga V.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		20	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL3402" onclick="this.parentNode.toggleClassName('active')">
+	GL3402 Geomorfología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL3402">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3580">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL54C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL3402">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL3402-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GA.svg" class="photo foto chica" /> Germán Aguilar M.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 08:30 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4001" onclick="this.parentNode.toggleClassName('active')">
+	GL4001 Fundamentos de Petrología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4001">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3584">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL41C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d87d868f178a0f52ad749c395c19bab/perfil/513ae1af80b0367f94e4058155a2ac57.jpg" class="photo foto chica" /> Miguel Ángel Parada R.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45<br />Auxiliar: Martes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4010" onclick="this.parentNode.toggleClassName('active')">
+	GL4010 Proyecto I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4010">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=8386">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL460</dd>
+
+	<dt>Comentario</dt>
+	<dd>Electivo de Licenciatura</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4010">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4010-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f14d45ab6d339051713833a55b05774/perfil/2b0ac20b8340cdb049ebe8867f02ff69.jpg" class="photo foto chica" /> Victor Maksaev J.</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4102" onclick="this.parentNode.toggleClassName('active')">
+	GL4102 Fundamentos de Geología Estructural
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3583">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL41B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/de/de2a93995370f0d16d8590653b7209cd/perfil/d4c5b6d5edfbd785d6c6f535950a6a5e.jpg" class="photo foto chica" /> Sofia Rebolledo L.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Jueves 16:15 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4401" onclick="this.parentNode.toggleClassName('active')">
+	GL4401 Introducción a Yacimientos Minerales
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4401">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3585">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL54A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f14d45ab6d339051713833a55b05774/perfil/2b0ac20b8340cdb049ebe8867f02ff69.jpg" class="photo foto chica" /> Victor Maksaev J.</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		25	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Martes 18:00 - 21:00</td>
+</tr>
+<tr id="GL4401-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/DM.svg" class="photo foto chica" /> Daniel Moncada</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Jueves 14:30 - 17:45</td>
+</tr>
+<tr id="GL4401-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/DM.svg" class="photo foto chica" /> Daniel Moncada</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		7	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Jueves 18:00 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4402" onclick="this.parentNode.toggleClassName('active')">
+	GL4402 Geología de Campo I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4402">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3586">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4102,GL3402,GL4001,GL3004</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL44B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4402">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4402-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GD.svg" class="photo foto chica" /> Gregory P. De Pascale</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		24	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4502" onclick="this.parentNode.toggleClassName('active')">
+	GL4502 Mineralogía de Silicatos
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4502">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3588">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4503S,GL4001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL45B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5d/5d08b3df09e760fbcc3605f34d52cacb/perfil/57f4e6bcd8a88cf39aa4ffa2fcb2653e.jpg" class="photo foto chica" /> Claudia Cannatelli</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Miércoles 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Lunes 14:30 - 17:45</td>
+</tr>
+<tr id="GL4502-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5d/5d08b3df09e760fbcc3605f34d52cacb/perfil/57f4e6bcd8a88cf39aa4ffa2fcb2653e.jpg" class="photo foto chica" /> Claudia Cannatelli</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Miércoles 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4503" onclick="this.parentNode.toggleClassName('active')">
+	GL4503 Fundamentos de Geoquímica
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4503">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4023">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA3403,GL3301,(GL3102/GL4201/CC3501/FI3104)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL45C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4503">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4503-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7a5ab762439b9158408813276eb607a0/perfil/4738cdfc5d8f5561045243b94221b272.jpg" class="photo foto chica" /> Martin Reich M.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		29	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL4901" onclick="this.parentNode.toggleClassName('active')">
+	GL4901 Práctica Profesional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL4901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=8698">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN3301,GL4001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL49A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f14d45ab6d339051713833a55b05774/perfil/2b0ac20b8340cdb049ebe8867f02ff69.jpg" class="photo foto chica" /> Victor Maksaev J.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		11	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5002" onclick="this.parentNode.toggleClassName('active')">
+	GL5002 Seguridad en Montaña
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12186">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL60K</dd>
+
+	<dt>Comentario</dt>
+	<dd>Formación Integral de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JQ.svg" class="photo foto chica" /> Jorge Quinteros M.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Lunes 18:00 - 20:00<br />Auxiliar: Sábado 08:30 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5003" onclick="this.parentNode.toggleClassName('active')">
+	GL5003 Evaluación Geológica y Económica de Proyectos de Exploración de Hi
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5003">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12210">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN41A/IN3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL4008</dd>
+
+	<dt>Comentario</dt>
+	<dd>Electivo de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e3/e3c0f81228fd28318616f7908bca18b7/perfil/cb1a6a26c0e509f0b0cbb5019dcd0ef8.jpg" class="photo foto chica" /> Alejandro A. Pérez Rojas</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5007" onclick="this.parentNode.toggleClassName('active')">
+	GL5007 Geoquímica Aplicada
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5007">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL54E/GL5103</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL514</dd>
+
+	<dt>Comentario</dt>
+	<dd>Electivo de la Especialidad / Sin terreno</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5007">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5007-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74f332b685998b970c47452b1e83b667/perfil/3f02470e7c0e5acffbe73f61dd8d04cd.jpg" class="photo foto chica" /> Brian Townley Callejas</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5010" onclick="this.parentNode.toggleClassName('active')">
+	GL5010 Proyecto II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5010">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12218">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(GL54E,GL54D,GL54B)/(GL5103,GL5102)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL501</dd>
+
+	<dt>Comentario</dt>
+	<dd>Electivo de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5010">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5010-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f14d45ab6d339051713833a55b05774/perfil/2b0ac20b8340cdb049ebe8867f02ff69.jpg" class="photo foto chica" /> Victor Maksaev J.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		16	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5011" onclick="this.parentNode.toggleClassName('active')">
+	GL5011 Expresión Oral y Escrita
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5011">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=6790">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo - Formación Integral de la Especialidad.</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5011">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5011-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0e/0ea547204632a4d8cbd071f886c4dd58/perfil/a86fa13e1734dcb5f3cace0a90b288c1.jpg" class="photo foto chica" /> Osvaldo Carvajal M.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Jueves 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5013" onclick="this.parentNode.toggleClassName('active')">
+	GL5013 Procesos de Alteración en Sistemas Geotermales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5013">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4503,GL4502,GL5103</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo de Especialidad.</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5013">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5013-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9151fc1c499f3a43394b715eb9a9130/perfil/c4d502d6c17a7f9c42172b3a8542bddb.jpg" class="photo foto chica" /> Diego Morata C.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Viernes 14:30 - 16:00<br />Auxiliar: Miércoles 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5017" onclick="this.parentNode.toggleClassName('active')">
+	GL5017 Desarrollo de la conciencia para el manejo de habilidades en la conducción efectiva de equipos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5017">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=27170">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5017">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5017-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/PF.svg" class="photo foto chica" /> Paula Flores M.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Martes 14:30 - 16:00<br />Auxiliar: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5018" onclick="this.parentNode.toggleClassName('active')">
+	GL5018 Ajustar el tiempo en el Antropoceno
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5018">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=25674">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5018">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5018-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AP.svg" class="photo foto chica" /> Alejandra Pérez N.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5019" onclick="this.parentNode.toggleClassName('active')">
+	GL5019 Cultura y Comunicación de la Ciencia
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5019">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=25678">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5019">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5019-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MP.svg" class="photo foto chica" /> Michel Parra C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/48/48850cd0509f7f95873668c274e55bfa/perfil/024026a95eb7571d9bb1b6a3b1381eac.jpg" class="photo foto chica" /> Sofía Otero C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/80/80f3f8e653c67dfbef6a829d1ddabaa7/perfil/742105d938fe081a532f0f909ddcd093.jpg" class="photo foto chica" /> Sofía Vargas P.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e0/e02de7f7834a21c0346e065b812ffcf4/perfil/5ed351aa5092d37f49cc1611db697662.jpg" class="photo foto chica" /> Diego Pozo Reye</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		7	</td>
+	<td>Cátedra: Miércoles 10:15 - 11:45, Viernes 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5101" onclick="this.parentNode.toggleClassName('active')">
+	GL5101 Geología Estructural
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4024">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL55C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/41/41835aadaf78d6340a4cd6566f9c6cdb/perfil/535b506e8d958692802b6229c13c2e73.jpg" class="photo foto chica" /> Marcelo Farías T.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		35	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Martes 10:15 - 11:45<br />Auxiliar: Miércoles 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5102" onclick="this.parentNode.toggleClassName('active')">
+	GL5102 Sedimentología
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3674">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL54B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b1e9036edcdd5a12d72aebf5b15af9e/perfil/eb3f0815a43f33022576bd711e1b099b.jpg" class="photo foto chica" /> Valentina Flores Aqueveque</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Miércoles 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Lunes 18:00 - 21:00</td>
+</tr>
+<tr id="GL5102-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b1e9036edcdd5a12d72aebf5b15af9e/perfil/eb3f0815a43f33022576bd711e1b099b.jpg" class="photo foto chica" /> Valentina Flores Aqueveque</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Miércoles 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Martes 18:00 - 21:00</td>
+</tr>
+<tr id="GL5102-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b1e9036edcdd5a12d72aebf5b15af9e/perfil/eb3f0815a43f33022576bd711e1b099b.jpg" class="photo foto chica" /> Valentina Flores Aqueveque</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Miércoles 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Sábado 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5103" onclick="this.parentNode.toggleClassName('active')">
+	GL5103 Petrología Ignea y Metamórfica
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5103">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3636">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4502</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL54E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5103">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5103-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d87d868f178a0f52ad749c395c19bab/perfil/513ae1af80b0367f94e4058155a2ac57.jpg" class="photo foto chica" /> Miguel Ángel Parada R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9151fc1c499f3a43394b715eb9a9130/perfil/c4d502d6c17a7f9c42172b3a8542bddb.jpg" class="photo foto chica" /> Diego Morata C.</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Martes 14:30 - 17:45</td>
+</tr>
+<tr id="GL5103-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d87d868f178a0f52ad749c395c19bab/perfil/513ae1af80b0367f94e4058155a2ac57.jpg" class="photo foto chica" /> Miguel Ángel Parada R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9151fc1c499f3a43394b715eb9a9130/perfil/c4d502d6c17a7f9c42172b3a8542bddb.jpg" class="photo foto chica" /> Diego Morata C.</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 17:45</td>
+</tr>
+<tr id="GL5103-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d87d868f178a0f52ad749c395c19bab/perfil/513ae1af80b0367f94e4058155a2ac57.jpg" class="photo foto chica" /> Miguel Ángel Parada R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9151fc1c499f3a43394b715eb9a9130/perfil/c4d502d6c17a7f9c42172b3a8542bddb.jpg" class="photo foto chica" /> Diego Morata C.</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Sábado 10:15 - 13:30</td>
+</tr>
+<tr id="GL5103-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d87d868f178a0f52ad749c395c19bab/perfil/513ae1af80b0367f94e4058155a2ac57.jpg" class="photo foto chica" /> Miguel Ángel Parada R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9151fc1c499f3a43394b715eb9a9130/perfil/c4d502d6c17a7f9c42172b3a8542bddb.jpg" class="photo foto chica" /> Diego Morata C.</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 18:00 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5114" onclick="this.parentNode.toggleClassName('active')">
+	GL5114 Geología de Chile
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5114">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3675">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL5101S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL51B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5114">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5114-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d9/d9fc299668fda204a2d9192a71f45246/perfil/a1398866d4d38861944fffe773c41156.jpg" class="photo foto chica" /> Luisa Pinto L.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		43	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Martes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5201" onclick="this.parentNode.toggleClassName('active')">
+	GL5201 Geología Aplicada
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5201">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=9274">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN3301,GL4102,GL4402</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL55B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/de/de2a93995370f0d16d8590653b7209cd/perfil/d4c5b6d5edfbd785d6c6f535950a6a5e.jpg" class="photo foto chica" /> Sofia Rebolledo L.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Jueves 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5212" onclick="this.parentNode.toggleClassName('active')">
+	GL5212 Volcanología Física
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5212">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3681">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL5102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL611</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5212">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5212-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/04/041924a2ce27b085f51871a1855fd228/perfil/78e53ddadd934a22a4dceaa77e165e95.jpg" class="photo foto chica" /> Angelo Castruccio A.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		43	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5213" onclick="this.parentNode.toggleClassName('active')">
+	GL5213 Hidrogeología
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5213">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12054">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL5102S,GL4503</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5213">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5213-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f0/f01be0152b999aeccc34abd9e39acf5a/perfil/a6e870d8bb94b3f9f6e92d394b304f55.jpg" class="photo foto chica" /> Dolorinda Daniele</h1></li>
+		</ul>
+	</td>
+	<td>41</td>
+	<td>
+		36	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Miércoles 10:15 - 11:45<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5311" onclick="this.parentNode.toggleClassName('active')">
+	GL5311 Metalogénesis
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5311">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3676">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4401,GL5103</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5311">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5311-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74f332b685998b970c47452b1e83b667/perfil/3f02470e7c0e5acffbe73f61dd8d04cd.jpg" class="photo foto chica" /> Brian Townley Callejas</h1></li>
+		</ul>
+	</td>
+	<td>13</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Martes 08:30 - 10:00<br />Auxiliar: Miércoles 08:30 - 11:45</td>
+</tr>
+<tr id="GL5311-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74f332b685998b970c47452b1e83b667/perfil/3f02470e7c0e5acffbe73f61dd8d04cd.jpg" class="photo foto chica" /> Brian Townley Callejas</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Martes 08:30 - 10:00<br />Auxiliar: Miércoles 18:00 - 21:00</td>
+</tr>
+<tr id="GL5311-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74f332b685998b970c47452b1e83b667/perfil/3f02470e7c0e5acffbe73f61dd8d04cd.jpg" class="photo foto chica" /> Brian Townley Callejas</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Martes 08:30 - 10:00<br />Auxiliar: Jueves 18:00 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5515" onclick="this.parentNode.toggleClassName('active')">
+	GL5515 Seminario I: Tópico Avanzado de Volcanología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5515">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4402</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5515">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5515-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/32/32758e5db8e2ca2fb607028e4faa10c0/perfil/4cb71b9c56addb6191c6cd4fa63df11f.jpg" class="photo foto chica" /> Aldo Tamburrino T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/04/041924a2ce27b085f51871a1855fd228/perfil/78e53ddadd934a22a4dceaa77e165e95.jpg" class="photo foto chica" /> Angelo Castruccio A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/OR.svg" class="photo foto chica" /> Olivier Roche</h1></li>
+		</ul>
+	</td>
+	<td>60</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL5901" onclick="this.parentNode.toggleClassName('active')">
+	GL5901 Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL5901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3736">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4901,GL5103</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL59A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL5901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL5901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f14d45ab6d339051713833a55b05774/perfil/2b0ac20b8340cdb049ebe8867f02ff69.jpg" class="photo foto chica" /> Victor Maksaev J.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		13	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6001" onclick="this.parentNode.toggleClassName('active')">
+	GL6001 Remociones en Masa
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6001">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(GL3402,GL5201S)/(GL55BS,GL54C)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/34/3425ba7dd5d6044d99a9c59fb5ad635d/perfil/e5bc3827a00c3ec3945420b52b1387c1.jpg" class="photo foto chica" /> Sergio Sepúlveda V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d1/d183f3e791ac0687d093541aae08e3ba/perfil/e3ab188b2da7d9fa0eb22e13facdfaaf.jpg" class="photo foto chica" /> Marisol Lara C.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6006" onclick="this.parentNode.toggleClassName('active')">
+	GL6006 Teledetección: Fundamentos y Aplicaciones en Geología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6006">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=10958">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL5101,GL5311</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6006">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6006-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1a/1a45aea877c1a21afb95f89daca3815a/perfil/535bcb36a225ff4dbe77db0e6aa2b5cd.jpg" class="photo foto chica" /> Jose Lattus S.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Martes 10:15 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6101" onclick="this.parentNode.toggleClassName('active')">
+	GL6101 Geología de Campo II
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3759">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL5101,GL5114,GL5212</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL61E</dd>
+
+	<dt>Comentario</dt>
+	<dd>Terreno entre fechas por definir</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JC.svg" class="photo foto chica" /> Juan C. Castelli</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		30	</td>
+	<td>Cátedra: Martes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6301" onclick="this.parentNode.toggleClassName('active')">
+	GL6301 Geología Económica
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4025">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL5311,GL5213,GL5201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL61F</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c1/c100d9a2746c84583cac180fd58f9b33/perfil/4aade21960017a0eecc2434cba446927.jpg" class="photo foto chica" /> Fernando Barra P.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		20	</td>
+	<td>Cátedra: Lunes 10:15 - 13:30</td>
+</tr>
+<tr id="GL6301-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c1/c100d9a2746c84583cac180fd58f9b33/perfil/4aade21960017a0eecc2434cba446927.jpg" class="photo foto chica" /> Fernando Barra P.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		21	</td>
+	<td>Cátedra: Lunes 10:15 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6508" onclick="this.parentNode.toggleClassName('active')">
+	GL6508 Fundamentos de exploración y modelamiento geológico de yacimientos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6508">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL4401</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6508">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6508-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74f332b685998b970c47452b1e83b667/perfil/3f02470e7c0e5acffbe73f61dd8d04cd.jpg" class="photo foto chica" /> Brian Townley Callejas</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0fc865dfc10e21ee3b4b8e8fee2c0583/perfil/006dac49e2e8fecab178e067742459f5.jpg" class="photo foto chica" /> Roberto Miranda</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		22	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6908" onclick="this.parentNode.toggleClassName('active')">
+	GL6908 Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6908">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3760">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(EI4205S/EI2090/EI0006),GL4901,CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL69E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6908">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6908-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d87d868f178a0f52ad749c395c19bab/perfil/513ae1af80b0367f94e4058155a2ac57.jpg" class="photo foto chica" /> Miguel Ángel Parada R.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Jueves 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6909" onclick="this.parentNode.toggleClassName('active')">
+	GL6909 Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6909">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3761">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>EI2090,GL5901S,GL6908,CR318</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL69F</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6909">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6909-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/04/041924a2ce27b085f51871a1855fd228/perfil/78e53ddadd934a22a4dceaa77e165e95.jpg" class="photo foto chica" /> Angelo Castruccio A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		31	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL6910" onclick="this.parentNode.toggleClassName('active')">
+	GL6910 Trabajo de Memoria de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL6910">
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>EI2090,GL5901S,GL6908,CR318,AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>GL69H</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL6910">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL6910-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/04/041924a2ce27b085f51871a1855fd228/perfil/78e53ddadd934a22a4dceaa77e165e95.jpg" class="photo foto chica" /> Angelo Castruccio A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL7502" onclick="this.parentNode.toggleClassName('active')">
+	GL7502 Seminario: Herramientas Prácticas para el Análisis Geomorfológico y Sismotectónico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL7502">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=29910">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo Postgrado en Geología y Geofísica</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL7502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL7502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RA.svg" class="photo foto chica" /> Rachel Abrahami</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JA.svg" class="photo foto chica" /> Jean-Baptiste Ammirati</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL71C" onclick="this.parentNode.toggleClassName('active')">
+	GL71C Procesos Geodinámicos en Ambiente de Subducción
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL71C">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1286">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Obligatorio sólo para Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL71C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL71C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		5	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL71D" onclick="this.parentNode.toggleClassName('active')">
+	GL71D Seminario: Tópicos Avanzados en las Ciencias de la Tierra
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL71D">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo para alumnos Postgrado Geología</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL71D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL71D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL71E" onclick="this.parentNode.toggleClassName('active')">
+	GL71E Tópicos Avanzados en las Ciencias Geológicas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL71E">
+
+	<dt>Créditos</dt>
+	<dd>12</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Obligatorio DGL</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL71E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL71E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL71F" onclick="this.parentNode.toggleClassName('active')">
+	GL71F Geodinámica en Ambientes de Subducción y sus Aplicaciones
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL71F">
+
+	<dt>Créditos</dt>
+	<dd>12</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Obligatorio DGL</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL71F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL71F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL74B" onclick="this.parentNode.toggleClassName('active')">
+	GL74B Proyecto de Tesis de Magíster
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL74B">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1284">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>5</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL74B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL74B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL79C" onclick="this.parentNode.toggleClassName('active')">
+	GL79C Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL79C">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5902">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL79C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL79C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL79D" onclick="this.parentNode.toggleClassName('active')">
+	GL79D Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL79D">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5903">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>27</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL79D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL79D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL79F" onclick="this.parentNode.toggleClassName('active')">
+	GL79F Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL79F">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL79F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL79F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL91B" onclick="this.parentNode.toggleClassName('active')">
+	GL91B Proyecto de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL91B">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL91B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL91B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL91C" onclick="this.parentNode.toggleClassName('active')">
+	GL91C Avance de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL91C">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL91C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL91C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL91D" onclick="this.parentNode.toggleClassName('active')">
+	GL91D Avance de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL91D">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL91D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL91D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="GL91E" onclick="this.parentNode.toggleClassName('active')">
+	GL91E Avance de Tesis III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cGL91E">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cGL91E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="GL91E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f08de5bb6bc68c535bd7b30d83ed009/perfil/636eb87b42e0f1d7a95e52967c48c430.jpg" class="photo foto chica" /> Gabriel Vargas E.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+	<dt>Sustentabilidad</dt>
+	<dd>Los cursos llevan una marca según si están <span class="sustentable">relacionados con sustentabilidad</span> o <span class="sustentable enfocado">enfocados en sustentabilidad</span>. <a target="_blank" href="http://ingenieria.uchile.cl/oficina-de-ingenieria-para-la-sustentabilidad/que-hacemos/106441/docencia">Más información de esta iniciativa</a>.</dd>
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: '6ktr8c83n7h8uftp6nbrl95b65',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"04697e2d00","applicationID":"195320401","transactionName":"bgdTMURRCkcDBhAMWFdNZBdfHxZRFRcNEVIXElkV","queueTime":0,"applicationTime":522,"atts":"QkBQRwxLGUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

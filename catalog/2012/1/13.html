@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus81-int&lang=es&_sess=5b1b8s8atcmdkidtdnrpl86713&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li>Catálogo de Cursos FCFM</li>
+</ul>
+
+
+<div id="mensajes"><div id="merror" onclick="window.jQuery ? $('#merror').fadeOut( 'normal', function() { $(this).remove() } ) : $('merror').remove(); void(0);">
+<a class="close">x</a>
+<ul><li>No hay cursos disponibles para este semestre</li></ul>
+</div></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182" selected="selected">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="FI2002E" onclick="this.parentNode.toggleClassName('active')">
+	FI2002E Electromagnetism
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI2002E">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2001/FI2A1),(MA2001/MA2A1),(MA2601/MA2G1)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI33A/FI2A2/FI302/FI2002</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI2002E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI2002E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5a/5a59868505b5117fd1927299f1cdf821/perfil/772efe4c9f1043ecbf4e58842fe38ce4.jpg" class="photo foto chica" /> Domenico Sapone</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Miércoles 14:30 - 16:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI2003E" onclick="this.parentNode.toggleClassName('active')">
+	FI2003E Experimental Methods
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI2003E">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA2001,CM1001,EI1102,FI2001,MA2601,(EI3203/EI4204/EI4205/EI0004/EI0005/EI0006/EI1090/EI2090)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI2003</dd>
+
+	<dt>Comentario</dt>
+	<dd>Cursos se dicta en Inglés.</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI2003E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI2003E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5d/5df9cdd01690e64cf4f5a6ddc62c7316/perfil/c0020d0f2c7bbaa96f88fee93484ceec.jpg" class="photo foto chica" /> Diana Dulic</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		28	</td>
+	<td>Cátedra: Martes 14:30 - 16:00<br />Laboratorio: Lunes 10:15 - 13:30</td>
+</tr>
+<tr id="FI2003E-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5d/5df9cdd01690e64cf4f5a6ddc62c7316/perfil/c0020d0f2c7bbaa96f88fee93484ceec.jpg" class="photo foto chica" /> Diana Dulic</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Martes 14:30 - 16:00<br />Laboratorio: Jueves 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI1001" onclick="this.parentNode.toggleClassName('active')">
+	FI1001 Introducción a la Física Newtoniana
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI1001">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=36485">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI100</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI1001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI1001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d340955b1420576d909f3e35b1ac9b19/perfil/b69197e75999693b90ecb28befc057bd.jpg" class="photo foto chica" /> Paulina Lira T.</h1></li>
+		</ul>
+	</td>
+	<td>95</td>
+	<td>
+		35	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Jueves 14:30 - 17:45<br />Control: Martes 18:00 - 21:00, Lunes 18:00 - 21:00, Viernes 18:00 - 21:00, Semana: 6, 9, 12</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI1002" onclick="this.parentNode.toggleClassName('active')">
+	FI1002 Sistemas Newtonianos
+
+	<em class="opcion nowrap">8 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI1002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3453">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI1001/FI100),(CC1001/CC100/CC1000),(MA1001/MA100)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI1A2</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI1002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI1002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/95/95f5ae96700344f58d46efc58804013d/perfil/e4f27391f9be345d4b2574b780d1c1f4.jpg" class="photo foto chica" /> Rodrigo Arias F.</h1></li>
+		</ul>
+	</td>
+	<td>88</td>
+	<td>
+		95	</td>
+	<td>Cátedra: Martes 16:15 - 17:45<br />Auxiliar: Martes 18:00 - 19:30<br />Laboratorio: Jueves 14:30 - 17:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+<tr id="FI1002-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2cafcc6dc4e3c2b1e9064a780036857/perfil/98a7f3e61f1653b727d921699498300a.jpg" class="photo foto chica" /> Nicolás Huneeus L.</h1></li>
+		</ul>
+	</td>
+	<td>88</td>
+	<td>
+		94	</td>
+	<td>Cátedra: Martes 16:15 - 17:45<br />Auxiliar: Martes 18:00 - 19:30<br />Laboratorio: Miércoles 08:30 - 11:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+<tr id="FI1002-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9c/9ce5ec158ec4af04a06e68a8f79baf28/perfil/f4d781493ac9c171da44c20fda68e54f.jpg" class="photo foto chica" /> Raul Muñoz A.</h1></li>
+		</ul>
+	</td>
+	<td>88</td>
+	<td>
+		85	</td>
+	<td>Cátedra: Martes 16:15 - 17:45<br />Auxiliar: Martes 18:00 - 19:30<br />Laboratorio: Lunes 14:30 - 17:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+<tr id="FI1002-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3ded29ada8eab18c3249012dd56c565f/perfil/d0e4bff1535da09b98a87f7a76a029d5.jpg" class="photo foto chica" /> René Darío Garreaud Salazar</h1></li>
+		</ul>
+	</td>
+	<td>68</td>
+	<td>
+		87	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45<br />Auxiliar: Lunes 18:00 - 19:30<br />Laboratorio: Martes 08:30 - 11:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+<tr id="FI1002-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/03/035b3826bf413db91486ec18c54c85cf/perfil/a3651e06bef08a6106c4b67920ce89b1.jpg" class="photo foto chica" /> Roberto Rondanelli</h1></li>
+		</ul>
+	</td>
+	<td>64</td>
+	<td>
+		28	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00<br />Auxiliar: Lunes 18:00 - 19:30<br />Laboratorio: Jueves 08:30 - 11:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+<tr id="FI1002-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>88</td>
+	<td>
+		85	</td>
+	<td>Cátedra: Viernes 08:30 - 10:00<br />Auxiliar: Viernes 10:15 - 11:45<br />Laboratorio: Miércoles 14:30 - 17:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+<tr id="FI1002-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/78/7806096906c1e738c2613ccbe50933dc/perfil/120e6687121feef1f05068d1a6425862.jpg" class="photo foto chica" /> Rodrigo Vicencio P.</h1></li>
+		</ul>
+	</td>
+	<td>88</td>
+	<td>
+		86	</td>
+	<td>Cátedra: Viernes 08:30 - 10:00<br />Auxiliar: Viernes 10:15 - 11:45<br />Laboratorio: Martes 14:30 - 17:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+<tr id="FI1002-8">
+	<td>
+		<h1>Sección 8</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2b/2b3e41f3c9f9e6ef5967f013d6482200/perfil/8f8d75ad59affe7be23da23d8b0670d7.jpg" class="photo foto chica" /> Andrés Meza</h1></li>
+		</ul>
+	</td>
+	<td>88</td>
+	<td>
+		91	</td>
+	<td>Cátedra: Jueves 14:30 - 16:00<br />Auxiliar: Jueves 16:15 - 17:45<br />Laboratorio: Viernes 08:30 - 11:45<br />Control: Sábado 08:30 - 11:45, Semana: 9, 12</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI2001" onclick="this.parentNode.toggleClassName('active')">
+	FI2001 Mecánica
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI2001">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3454">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI1002/FI1A2),(MA1002/MA1A2),(MA1102/MA1B2)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI2A1/FI21A/FI215</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI2001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI2001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b0/b09071e4fa1d24dd10502c0783e71e42/perfil/49de68da4773925db3176a4f7fe53742.jpg" class="photo foto chica" /> Francisco Brieva</h1></li>
+		</ul>
+	</td>
+	<td>106</td>
+	<td>
+		47	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Lunes 14:30 - 16:00, Viernes 16:15 - 17:45<br />Control: Miércoles 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2001-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/45/454571c9f8e38f6005614a05472a8b95/perfil/a9b1e2437823842f6590348728ee0b6f.jpg" class="photo foto chica" /> Ricardo Muñoz M.</h1></li>
+		</ul>
+	</td>
+	<td>106</td>
+	<td>
+		103	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Lunes 14:30 - 16:00, Viernes 16:15 - 17:45<br />Control: Miércoles 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2001-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f7/f780dc0b155bf07939630c6881057456/perfil/1f1000d058f6bfbbaf5fef3799b6917a.jpg" class="photo foto chica" /> Claudio Romero Z.</h1></li>
+		</ul>
+	</td>
+	<td>106</td>
+	<td>
+		98	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 14:30 - 16:00, Viernes 16:15 - 17:45<br />Control: Miércoles 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2001-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9bdb9d8d790834be90c4473bbcf52969/perfil/902002bfcdddfa52c654cd81ec3d804d.jpg" class="photo foto chica" /> César I. Fuentes</h1></li>
+		</ul>
+	</td>
+	<td>106</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 14:30 - 16:00, Viernes 16:15 - 17:45<br />Control: Miércoles 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI2002" onclick="this.parentNode.toggleClassName('active')">
+	FI2002 Electromagnetismo
+
+	<em class="opcion nowrap">7 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI2002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3493">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2001/FI2A1),(MA2001/MA2A1),(MA2601/MA2G1)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI33A/FI2A2/FI302/FI2002E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI2002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI2002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/65/6572f3602160e31ad10470aa8b8e82b1/perfil/86ae0f3043f52320baa1224344c2b2bb.jpg" class="photo foto chica" /> Nelson Zamorano H.</h1></li>
+		</ul>
+	</td>
+	<td>98</td>
+	<td>
+		18	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Martes 16:00 - 18:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2002-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b0/b09071e4fa1d24dd10502c0783e71e42/perfil/49de68da4773925db3176a4f7fe53742.jpg" class="photo foto chica" /> Francisco Brieva</h1></li>
+		</ul>
+	</td>
+	<td>98</td>
+	<td>
+		86	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Martes 16:00 - 18:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2002-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7c/7c77cad9dca6e5f1137d06128d99cb94/perfil/43a353bcb1939747394553c0827ab554.jpg" class="photo foto chica" /> Luis Vargas D.</h1></li>
+		</ul>
+	</td>
+	<td>98</td>
+	<td>
+		96	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Viernes 16:00 - 18:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2002-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2defda3292d77fe806cdc8c809746952/perfil/8ce55f9daf9512e5acca47e70828a804.jpg" class="photo foto chica" /> Daniela Mancilla A.</h1></li>
+		</ul>
+	</td>
+	<td>98</td>
+	<td>
+		98	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Viernes 16:00 - 18:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2002-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f7/f780dc0b155bf07939630c6881057456/perfil/1f1000d058f6bfbbaf5fef3799b6917a.jpg" class="photo foto chica" /> Claudio Romero Z.</h1></li>
+		</ul>
+	</td>
+	<td>98</td>
+	<td>
+		80	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Viernes 16:00 - 18:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2002-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1e/1ef5c9b3cec9fec601e33b075f218ad9/perfil/14c891d89aca1342396f45e1e63b7fee.jpg" class="photo foto chica" /> Patricio Cordero Simunovic</h1></li>
+		</ul>
+	</td>
+	<td>98</td>
+	<td>
+		89	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 14:00 - 16:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+<tr id="FI2002-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bb/bbd2e94e9f263b8bf73e2d60aa480081/perfil/8836d31c65d1ee828620c4a37d93f332.jpg" class="photo foto chica" /> Boris Chornik A.</h1></li>
+		</ul>
+	</td>
+	<td>98</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Martes 16:00 - 18:00<br />Control: Jueves 18:00 - 21:00, Semana: 5, 9, 13</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI2003" onclick="this.parentNode.toggleClassName('active')">
+	FI2003 Métodos Experimentales
+
+	<em class="opcion nowrap">10 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI2003">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3494">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MA2001/MA2A1),(CM1001/CM1A1),(EI1102/EI1B2/CC10A/CC10B),(FI2001/FI2A1),(MA2601/MA2G1)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI2A3/(FI25A,FI35A)/FI2003E</dd>
+
+	<dt>Comentario</dt>
+	<dd>MINIMO 10 ALUMNOS POR SECCION.-</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI2003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI2003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AR.svg" class="photo foto chica" /> Antonella Rescaglio</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		56	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45<br />Laboratorio: Martes 10:15 - 13:30<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AR.svg" class="photo foto chica" /> Antonella Rescaglio</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		56	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45<br />Laboratorio: Martes 14:30 - 17:45<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb71311283c5ec07245d454f5c6bc87d/perfil/c3883e53046a85f5210d31631bf6a978.jpg" class="photo foto chica" /> Vicente Salinas Barrera</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		37	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45<br />Laboratorio: Jueves 14:30 - 17:45<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb71311283c5ec07245d454f5c6bc87d/perfil/c3883e53046a85f5210d31631bf6a978.jpg" class="photo foto chica" /> Vicente Salinas Barrera</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		56	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45<br />Laboratorio: Viernes 08:30 - 11:45<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/df/df2a6c24e43b5ae749841ff62e938ade/perfil/3c6793a67c55026f4d453036fa36136a.jpg" class="photo foto chica" /> Juvenal Letelier</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		39	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45<br />Laboratorio: Lunes 10:15 - 13:30<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/df/df2a6c24e43b5ae749841ff62e938ade/perfil/3c6793a67c55026f4d453036fa36136a.jpg" class="photo foto chica" /> Juvenal Letelier</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		51	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45<br />Laboratorio: Lunes 14:30 - 17:45<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5a/5a0f9ca2d00f4c4b8d54d657120ffb15/perfil/a8fcede61d9ee6dd14a78e0675368912.jpg" class="photo foto chica" /> Carla Hermann A.</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		55	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45<br />Laboratorio: Miércoles 08:30 - 11:45<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-8">
+	<td>
+		<h1>Sección 8</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5a/5a0f9ca2d00f4c4b8d54d657120ffb15/perfil/a8fcede61d9ee6dd14a78e0675368912.jpg" class="photo foto chica" /> Carla Hermann A.</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		30	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45<br />Laboratorio: Jueves 10:15 - 13:30<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-9">
+	<td>
+		<h1>Sección 9</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/SG.svg" class="photo foto chica" /> Sergio Godoy M.</h1></li>
+		</ul>
+	</td>
+	<td>56</td>
+	<td>
+		54	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45<br />Laboratorio: Miércoles 14:30 - 17:45<br />Control: Jueves 18:00 - 21:00, Miércoles 18:00 - 21:00, Semana: 4, 8, 12</td>
+</tr>
+<tr id="FI2003-10">
+	<td>
+		<h1>Sección 10</h1>
+		<h2>No Se Dicta 2018/2</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI2004" onclick="this.parentNode.toggleClassName('active')">
+	FI2004 Termodinámica
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI2004">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3492">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CM1001/CM1A1),(MA2001/MA2A1),(FI2001S/FI2A1S)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI2A4/FI22A/FI212/CM2004</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI2004">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI2004-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/NS.svg" class="photo foto chica" /> Néstor Sepúlveda S.</h1></li>
+		</ul>
+	</td>
+	<td>102</td>
+	<td>
+		41	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Lunes 19:30 - 21:00<br />Control: Jueves 18:00 - 21:00, Semana: 6, 10, 14</td>
+</tr>
+<tr id="FI2004-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9fb489fa4ab9f9d392a52acead06beb/perfil/481aaa3b4e65b96daa51dc94334d93c8.jpg" class="photo foto chica" /> Victor Fuenzalida E.</h1></li>
+		</ul>
+	</td>
+	<td>102</td>
+	<td>
+		101	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Lunes 19:30 - 21:00<br />Control: Jueves 18:00 - 21:00, Semana: 6, 10, 14</td>
+</tr>
+<tr id="FI2004-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7f/7fb81e1a5d8874481bed3a0d148604cb/perfil/aaf873824ad160cf0a3d78172f40d755.jpg" class="photo foto chica" /> Felipe Barra D.</h1></li>
+		</ul>
+	</td>
+	<td>102</td>
+	<td>
+		87	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Lunes 19:30 - 21:00<br />Control: Jueves 18:00 - 21:00, Semana: 6, 10, 14</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI3001" onclick="this.parentNode.toggleClassName('active')">
+	FI3001 Vibraciones y Ondas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI3001">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3466">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA2002,FI2001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI21B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI3001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI3001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e8/e87630ef3f98edc718bad6c837f86ee4/perfil/f6d15b45e89c28091ec2104a7331391c.jpg" class="photo foto chica" /> Claudio Falcon B.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		18	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI3002" onclick="this.parentNode.toggleClassName('active')">
+	FI3002 Métodos Matemáticos de la Física
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI3002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3467">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MA2002/MA2A2),(FI2002S/FI2A2S)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI30A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI3002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI3002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2f4147c9aaadd8cbc5d59d37b603cc9/perfil/42f1f03f0f548ebea28fe61e56fcedb7.jpg" class="photo foto chica" /> Hugo Arellano S.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI3003" onclick="this.parentNode.toggleClassName('active')">
+	FI3003 Física Experimental I
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI3003">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3468">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2002/FI2A2),(FI2003/FI2A3)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI35B</dd>
+
+	<dt>Comentario</dt>
+	<dd>Clases cada cuatro semanas</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI3003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI3003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbf41830622e088718cf360bc56ce9b2/perfil/9a996adb0a2e72715d3a8ad44ab99d5e.jpg" class="photo foto chica" /> Nicolás Mujica</h1></li>
+		</ul>
+	</td>
+	<td>11</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Miércoles 08:30 - 11:45</td>
+</tr>
+<tr id="FI3003-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9fb489fa4ab9f9d392a52acead06beb/perfil/481aaa3b4e65b96daa51dc94334d93c8.jpg" class="photo foto chica" /> Victor Fuenzalida E.</h1></li>
+		</ul>
+	</td>
+	<td>11</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Miércoles 08:30 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI3101" onclick="this.parentNode.toggleClassName('active')">
+	FI3101 Mecánica Clásica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI3101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3469">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI3001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI31A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI3101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI3101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b30e23c2751c29396c4e76c51a54a6a7/perfil/4ed1c759dcfd3db039eaf158e5ca9bd3.jpg" class="photo foto chica" /> Marcel Clerc G.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI3102" onclick="this.parentNode.toggleClassName('active')">
+	FI3102 Física Moderna
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI3102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3465">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2002,FI3001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI34A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI3102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI3102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/de/de384bf8fcb3067df9649a730ed4aa9e/perfil/31aacec8be1a51ff1ee7256aa911fa9b.jpg" class="photo foto chica" /> Gonzalo A. Palma</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Jueves 16:15 - 17:45</td>
+</tr>
+<tr id="FI3102-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/de/de384bf8fcb3067df9649a730ed4aa9e/perfil/31aacec8be1a51ff1ee7256aa911fa9b.jpg" class="photo foto chica" /> Gonzalo A. Palma</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Jueves 16:15 - 17:45, Viernes 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI3104" onclick="this.parentNode.toggleClassName('active')">
+	FI3104 Métodos Numéricos para la Ciencia e Ingeniería
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI3104">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3470">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA2002,(FI2004/CM2004/MA3401/MA3403)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MA33A/FI46A/MA367</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI3104">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI3104-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/39/39fd8141ef830e0dd281e7084c3571b8/perfil/2a4785b8e28136d7753c269bd3efddc9.jpg" class="photo foto chica" /> Valentino González C.</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		48	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI4001" onclick="this.parentNode.toggleClassName('active')">
+	FI4001 Mecánica Cuántica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI4001">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3619">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI3102,FI3002</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI41A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI4001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI4001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/94/947b2646ffb5b2d51450245075592a34/perfil/6f72975bf64576b5c2bc72bb8cbf5206.jpg" class="photo foto chica" /> Alvaro S. Núñez</h1></li>
+		</ul>
+	</td>
+	<td>49</td>
+	<td>
+		19	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Viernes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI4003" onclick="this.parentNode.toggleClassName('active')">
+	FI4003 Física Experimental II
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI4003">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI3003</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI3105</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI4003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI4003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/9057c0fa5c9587103c7a413a31b0cb9b/perfil/ea544ff22c690a7046edc9e9665a0dc1.jpg" class="photo foto chica" /> Marcos Flores Carrasco</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00</td>
+</tr>
+<tr id="FI4003-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b30e23c2751c29396c4e76c51a54a6a7/perfil/4ed1c759dcfd3db039eaf158e5ca9bd3.jpg" class="photo foto chica" /> Marcel Clerc G.</h1></li>
+		</ul>
+	</td>
+	<td>3</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00</td>
+</tr>
+<tr id="FI4003-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5d/5df9cdd01690e64cf4f5a6ddc62c7316/perfil/c0020d0f2c7bbaa96f88fee93484ceec.jpg" class="photo foto chica" /> Diana Dulic</h1></li>
+		</ul>
+	</td>
+	<td>4</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI4004" onclick="this.parentNode.toggleClassName('active')">
+	FI4004 Electrodinámica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI4004">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3618">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2002,FI3002</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI43A/FI3103</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI4004">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI4004-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3d2292c6aa399ea6b5b5323a7a272d2b/perfil/fd6676d886d0628a9208624079b8ca7a.jpg" class="photo foto chica" /> Simón Casassus M.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI4101" onclick="this.parentNode.toggleClassName('active')">
+	FI4101 Introducción a la Física del Sólido
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI4101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3542">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI4001,(FI2004/CM2004)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI4101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI4101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/59/593353b93f70015b45b1efc4c12e487f/perfil/a7de1d904ba07e8e5c4d92293478c8bd.jpg" class="photo foto chica" /> Luis Foa Torres</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		27	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI4104" onclick="this.parentNode.toggleClassName('active')">
+	FI4104 Mecánica Estadística
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI4104">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3762">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI3101S,(MA3401/MA3403),FI3102,(FI2004/CM2004)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FI4002</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI4104">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI4104-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3e/3e2a5936af42891438fb8989efceac28/perfil/d96ad8ae535a61f5cc3bbe73c62e33c8.jpg" class="photo foto chica" /> Rodrigo Soto B.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		25	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI4105" onclick="this.parentNode.toggleClassName('active')">
+	FI4105 Introducción a la Investigación Experimental y Teórica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI4105">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3788">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI3003/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI4105">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI4105-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/16/164575130807b9e675d287fdc55ec54c/perfil/fcc2c85c5acb0ebedf60857ca964cb03.jpg" class="photo foto chica" /> Mario Riquelme H.</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI4106" onclick="this.parentNode.toggleClassName('active')">
+	FI4106 Introducción a la Investigación II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI4106">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4089">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI4105</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI4106">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI4106-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/16/164575130807b9e675d287fdc55ec54c/perfil/fcc2c85c5acb0ebedf60857ca964cb03.jpg" class="photo foto chica" /> Mario Riquelme H.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI5024" onclick="this.parentNode.toggleClassName('active')">
+	FI5024 Coloquio: Introducción a la Elasticidad, Fractura
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI5024">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=34209">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI3001</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso electivo para Licenciatura en Física y para Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI5024">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI5024-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/95/95f5ae96700344f58d46efc58804013d/perfil/e4f27391f9be345d4b2574b780d1c1f4.jpg" class="photo foto chica" /> Rodrigo Arias F.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI5025" onclick="this.parentNode.toggleClassName('active')">
+	FI5025 Coloquio: Del Grafeno a los Aislantes Topológicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI5025">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=34213">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI4001</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso electivo para Licenciatura en Física y para Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI5025">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI5025-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/59/593353b93f70015b45b1efc4c12e487f/perfil/a7de1d904ba07e8e5c4d92293478c8bd.jpg" class="photo foto chica" /> Luis Foa Torres</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Martes 12:00 - 16:00, Jueves 12:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI6012" onclick="this.parentNode.toggleClassName('active')">
+	FI6012 Introducción a la Física Nuclear
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI6012">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=16266">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2002,MA2002</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Electivo para la Licenciatura en Física y para el Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI6012">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI6012-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2f4147c9aaadd8cbc5d59d37b603cc9/perfil/42f1f03f0f548ebea28fe61e56fcedb7.jpg" class="photo foto chica" /> Hugo Arellano S.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 16:15 - 17:45<br />Auxiliar: Viernes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI6019" onclick="this.parentNode.toggleClassName('active')">
+	FI6019 Introduccion a la Física de Superficies Sólidas:Estructura, Cinéti
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI6019">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Electivo para la Licenciatura en Física y para el Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI6019">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI6019-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c9/c9fb489fa4ab9f9d392a52acead06beb/perfil/481aaa3b4e65b96daa51dc94334d93c8.jpg" class="photo foto chica" /> Victor Fuenzalida E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/9057c0fa5c9587103c7a413a31b0cb9b/perfil/ea544ff22c690a7046edc9e9665a0dc1.jpg" class="photo foto chica" /> Marcos Flores Carrasco</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI6100" onclick="this.parentNode.toggleClassName('active')">
+	FI6100 Métodos Probabilísticos en Física
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI6100">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4396">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI6100">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI6100-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5a/5a59868505b5117fd1927299f1cdf821/perfil/772efe4c9f1043ecbf4e58842fe38ce4.jpg" class="photo foto chica" /> Domenico Sapone</h1></li>
+		</ul>
+	</td>
+	<td>5</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI6104" onclick="this.parentNode.toggleClassName('active')">
+	FI6104 Introducción a la Óptica Cuántica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI6104">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI4001,FI4004</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Electivo para la Licenciatura en Física y para el Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI6104">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI6104-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5a/5a0f9ca2d00f4c4b8d54d657120ffb15/perfil/a8fcede61d9ee6dd14a78e0675368912.jpg" class="photo foto chica" /> Carla Hermann A.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Martes 16:15 - 17:45, Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI7002" onclick="this.parentNode.toggleClassName('active')">
+	FI7002 Mecánica Cuántica II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI7002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=16398">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI4001</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Electivo para la Licenciatura en Física</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI7002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI7002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8f7be573965588efad93a8a385c2b784/perfil/f4092f1be264494e16fda44aa0629910.jpg" class="photo foto chica" /> Fernando Lund P.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Jueves 18:00 - 20:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI7007" onclick="this.parentNode.toggleClassName('active')">
+	FI7007 Ondas llamadas Frentes
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI7007">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=34469">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI3101/FI4004</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso electivo para Licenciatura en Física y para Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI7007">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI7007-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b30e23c2751c29396c4e76c51a54a6a7/perfil/4ed1c759dcfd3db039eaf158e5ca9bd3.jpg" class="photo foto chica" /> Marcel Clerc G.</h1></li>
+		</ul>
+	</td>
+	<td>9</td>
+	<td>
+		10	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI7031" onclick="this.parentNode.toggleClassName('active')">
+	FI7031 Teoría Cuántica de Campos en Materia Condensada
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI7031">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=16278">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI4001/FI4001S</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Electivo para la Licenciatura en Física y para el Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI7031">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI7031-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/94/947b2646ffb5b2d51450245075592a34/perfil/6f72975bf64576b5c2bc72bb8cbf5206.jpg" class="photo foto chica" /> Alvaro S. Núñez</h1></li>
+		</ul>
+	</td>
+	<td>19</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI797" onclick="this.parentNode.toggleClassName('active')">
+	FI797 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI797">
+
+	<dt>Créditos</dt>
+	<dd>24</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI797">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI797-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3e/3e2a5936af42891438fb8989efceac28/perfil/d96ad8ae535a61f5cc3bbe73c62e33c8.jpg" class="photo foto chica" /> Rodrigo Soto B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI798" onclick="this.parentNode.toggleClassName('active')">
+	FI798 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI798">
+
+	<dt>Créditos</dt>
+	<dd>24</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI797S,AUTOR)/FI797</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI798">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI798-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3e/3e2a5936af42891438fb8989efceac28/perfil/d96ad8ae535a61f5cc3bbe73c62e33c8.jpg" class="photo foto chica" /> Rodrigo Soto B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		7	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI896" onclick="this.parentNode.toggleClassName('active')">
+	FI896 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI896">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI896">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI896-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3e/3e2a5936af42891438fb8989efceac28/perfil/d96ad8ae535a61f5cc3bbe73c62e33c8.jpg" class="photo foto chica" /> Rodrigo Soto B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI897" onclick="this.parentNode.toggleClassName('active')">
+	FI897 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI897">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI896</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI897">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI897-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3e/3e2a5936af42891438fb8989efceac28/perfil/d96ad8ae535a61f5cc3bbe73c62e33c8.jpg" class="photo foto chica" /> Rodrigo Soto B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI898" onclick="this.parentNode.toggleClassName('active')">
+	FI898 Trabajo de Tesis III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI898">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI897</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI898">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI898-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3e/3e2a5936af42891438fb8989efceac28/perfil/d96ad8ae535a61f5cc3bbe73c62e33c8.jpg" class="photo foto chica" /> Rodrigo Soto B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FI899" onclick="this.parentNode.toggleClassName('active')">
+	FI899 Trabajo de Tesis IV
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFI899">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI898</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFI899">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FI899-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3e/3e2a5936af42891438fb8989efceac28/perfil/d96ad8ae535a61f5cc3bbe73c62e33c8.jpg" class="photo foto chica" /> Rodrigo Soto B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+	<dt>Atención</dt>
+	<dd>La información del catálogo para el período 2018 Primavera y los siguientes está sujeta a modificaciones.</dd>
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: '5b1b8s8atcmdkidtdnrpl86713',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"04697e2d00","applicationID":"195320401","transactionName":"bgdTMURRCkcDBhAMWFdNZBdfHxZRFRcNEVIXElkV","queueTime":0,"applicationTime":408,"atts":"QkBQRwxLGUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

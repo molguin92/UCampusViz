@@ -1,0 +1,5275 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus82-int&lang=es&_sess=07ts1knv3dtp6rfenb2ukclhj5&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li>Catálogo de Cursos FCFM</li>
+</ul>
+
+
+<div id="mensajes"><div id="merror" onclick="window.jQuery ? $('#merror').fadeOut( 'normal', function() { $(this).remove() } ) : $('merror').remove(); void(0);">
+<a class="close">x</a>
+<ul><li>No hay cursos disponibles para este semestre</li></ul>
+</div></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182" selected="selected">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="CC1000" onclick="this.parentNode.toggleClassName('active')">
+	CC1000 Herramientas Computacionales para Ingeniería y Ciencias
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC1000">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5995">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC1001</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC1000">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC1000-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/426f4a69494554cdf09ea9ffda2b7392/perfil/26e910ed666fea272dc5b50f64657c33.jpg" class="photo foto chica" /> Juan Álvarez R.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Miércoles 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC1002" onclick="this.parentNode.toggleClassName('active')">
+	CC1002 Introducción a la Programación
+
+	<em class="opcion nowrap">10 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC1002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5586">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR3</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC1001</dd>
+
+	<dt>Comentario</dt>
+	<dd>UD1</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC1002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC1002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/606bdc92ae84d22da3bbd914cc554bdd/perfil/d4c933c7b5fda0b0af1475052226bbf1.jpg" class="photo foto chica" /> Luis Mateu B.</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		94	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 18:00 - 20:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fc/fccf26399564810ec895718357ee8f45/perfil/ccbe3f08930b2480b04f49a90cf0cf1d.jpg" class="photo foto chica" /> Jose Pino U.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/57/57e71e02f07b8ab8043e3ffa1c842a38/perfil/50aa43f1c408e8bd1d8e83c461db30ab.jpg" class="photo foto chica" /> Nelson Baloian T.</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		93	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 18:00 - 20:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c6/c65f0b6d012efde8f0f5f4aee04effd3/perfil/5a3434cabab875266887a9edb9c33884.jpg" class="photo foto chica" /> Patricio Inostroza F.</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		94	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 18:00 - 20:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b35693632f855566ebb26ff67bbbb717/perfil/41a1945125a70dedf72c30449e04c519.jpg" class="photo foto chica" /> Francisco J. Gutiérrez</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		88	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Viernes 16:00 - 18:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1f/1f1f67dc9c3a64bb0b70d44e0d5cdc63/perfil/53325abc2a7230818a75240cad2764cf.jpg" class="photo foto chica" /> Alejandro Hevia</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		86	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Viernes 16:00 - 18:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fc/fccf26399564810ec895718357ee8f45/perfil/ccbe3f08930b2480b04f49a90cf0cf1d.jpg" class="photo foto chica" /> Jose Pino U.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/57/57e71e02f07b8ab8043e3ffa1c842a38/perfil/50aa43f1c408e8bd1d8e83c461db30ab.jpg" class="photo foto chica" /> Nelson Baloian T.</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		58	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 16:00 - 18:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/426f4a69494554cdf09ea9ffda2b7392/perfil/26e910ed666fea272dc5b50f64657c33.jpg" class="photo foto chica" /> Juan Álvarez R.</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		87	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 16:00 - 18:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-8">
+	<td>
+		<h1>Sección 8</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/426f4a69494554cdf09ea9ffda2b7392/perfil/26e910ed666fea272dc5b50f64657c33.jpg" class="photo foto chica" /> Juan Álvarez R.</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		89	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 18:00 - 20:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-9">
+	<td>
+		<h1>Sección 9</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e2e12f33f7007b5135cb5a829b097d5b/perfil/990297472e682cf40c577a9ac3080c6b.jpg" class="photo foto chica" /> Benjamín Bustos</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		26	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 16:00 - 18:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+<tr id="CC1002-10">
+	<td>
+		<h1>Sección 10</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/606bdc92ae84d22da3bbd914cc554bdd/perfil/d4c933c7b5fda0b0af1475052226bbf1.jpg" class="photo foto chica" /> Luis Mateu B.</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		82	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Viernes 16:00 - 18:00<br />Control: Sábado 08:30 - 11:45, Lunes 18:00 - 21:00, Semana: 5, 9, 14</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC3001" onclick="this.parentNode.toggleClassName('active')">
+	CC3001 Algoritmos y Estructuras de Datos
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC3001">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4613">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CC1001/CC1002),MA1101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC30A/CC253/CC211</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC3001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC3001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ba/baeed373cce62492cfab81d7c8d0c49f/perfil/8ce11afa1306b5a9ba261cc9a921a3e1.jpg" class="photo foto chica" /> Jérémy Barbay</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		67	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+<tr id="CC3001-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/77/77c190c3169885b20d03db4859a629a0/perfil/f4289fc5e2e16db7602a92cff90a3f95.jpg" class="photo foto chica" /> Patricio Poblete</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		68	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Miércoles 14:30 - 16:00<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC3002" onclick="this.parentNode.toggleClassName('active')">
+	CC3002 Metodologías de Diseño y Programación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC3002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3496">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3001/CC30A</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC51H</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC3002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC3002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/38/3887767b4ea8d8497c8176d566ad546f/perfil/3bc53a5a1cad8d334d6f2dd4c924b0b9.jpg" class="photo foto chica" /> Alexandre Bergel</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		80	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Miércoles 14:30 - 16:00<br />Auxiliar: Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC3101" onclick="this.parentNode.toggleClassName('active')">
+	CC3101 Matemáticas Discretas para la Computación
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC3101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3497">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CC1001/CC1002),MA1101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC40C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC3101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC3101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1f/1f1f67dc9c3a64bb0b70d44e0d5cdc63/perfil/53325abc2a7230818a75240cad2764cf.jpg" class="photo foto chica" /> Alejandro Hevia</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		68	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Viernes 16:15 - 17:45</td>
+</tr>
+<tr id="CC3101-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b2df112e793e4f8788176f53649e2a79/perfil/6546a443d52eea0ec9945e7aaa3a006e.jpg" class="photo foto chica" /> Federico Olmedo</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		49	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Viernes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC3102" onclick="this.parentNode.toggleClassName('active')">
+	CC3102 Teoría de la Computación
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC3102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3498">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3101,CC3001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC30B/CC214</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC3102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC3102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		56	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 16:15 - 17:45</td>
+</tr>
+<tr id="CC3102-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC3201" onclick="this.parentNode.toggleClassName('active')">
+	CC3201 Bases de Datos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC3201">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4588">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3101/FI2002</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC42A/CC432/CC705</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC3201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC3201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/35/35cd311c927aa1ecc20272c714b00f64/perfil/ecd20d37297e5101d420a355bd65c665.jpg" class="photo foto chica" /> Claudio Gutiérrez</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		74	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45<br />Auxiliar: Viernes 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC3301" onclick="this.parentNode.toggleClassName('active')">
+	CC3301 Programación de Software de Sistemas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC3301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3500">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC31A/CC212/CC252</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC3301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC3301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/606bdc92ae84d22da3bbd914cc554bdd/perfil/d4c933c7b5fda0b0af1475052226bbf1.jpg" class="photo foto chica" /> Luis Mateu B.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		87	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC3501" onclick="this.parentNode.toggleClassName('active')">
+	CC3501 Modelación y Computación Gráfica para Ingenieros
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC3501">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3501">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CC1001/CC1002),MA2601</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC3501">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC3501-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27704b5d0f3c65de02c774021bcc23f8/perfil/b19a5d265c23460dfb297cc660836be1.jpg" class="photo foto chica" /> María Cecilia Rivara Z.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/43/431fe74d1715a5a0bb54f08b91a40239/perfil/e83fdf87c08a2c30cab7c47ec8aebe9d.jpg" class="photo foto chica" /> Daniel Calderón</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a1/a171f6e007fb6ab6491d294aaba79586/perfil/0b543fa685da191e080f1788bf66c2c4.jpg" class="photo foto chica" /> Carlos Gonzalez Cortes</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		40	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4002" onclick="this.parentNode.toggleClassName('active')">
+	CC4002 Taller de Programación B
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5199">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/51/5132b98d84bb020a8640eddce63988e4/perfil/5727aaa26e8a187e26c21fef7a9ce57a.jpg" class="photo foto chica" /> Jorge Pérez</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		53	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4006" onclick="this.parentNode.toggleClassName('active')">
+	CC4006 Taller de Programación Competitiva B
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4006">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4006">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4006-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/51/5132b98d84bb020a8640eddce63988e4/perfil/5727aaa26e8a187e26c21fef7a9ce57a.jpg" class="photo foto chica" /> Jorge Pérez</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		21	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4101" onclick="this.parentNode.toggleClassName('active')">
+	CC4101 Lenguajes de Programación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12526">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC41A/CC362/CC251</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b2df112e793e4f8788176f53649e2a79/perfil/6546a443d52eea0ec9945e7aaa3a006e.jpg" class="photo foto chica" /> Federico Olmedo</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		43	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4102" onclick="this.parentNode.toggleClassName('active')">
+	CC4102 Diseño y Análisis de Algoritmos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=10842">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MA3403/MA3401),(MA5201/CC3102/AUTOR),FI2003</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC40A/CC412</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/820f9f683e6ce0aa9a79639a9547a8c7/perfil/a3db7f2f3fc67f39bb5b8cfbbbfadd55.jpg" class="photo foto chica" /> Pablo Barcelo B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		54	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4301" onclick="this.parentNode.toggleClassName('active')">
+	CC4301 Arquitectura de Computadores
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3503">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3301,FI2002</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC41C/CC213/EL4102</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f5/f5ce946a696ea315b63de183f76dab14/perfil/5ea486a7947ce0e17d81ea01a9c2d7c3.jpg" class="photo foto chica" /> Pablo Guerrero P.</h1></li>
+		</ul>
+	</td>
+	<td>45</td>
+	<td>
+		42	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45<br />Auxiliar: Viernes 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4302" onclick="this.parentNode.toggleClassName('active')">
+	CC4302 Sistemas Operativos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4302">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3590">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC41B/CC582/CC452</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4302">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4302-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/606bdc92ae84d22da3bbd914cc554bdd/perfil/d4c933c7b5fda0b0af1475052226bbf1.jpg" class="photo foto chica" /> Luis Mateu B.</h1></li>
+		</ul>
+	</td>
+	<td>60</td>
+	<td>
+		52	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4303" onclick="this.parentNode.toggleClassName('active')">
+	CC4303 Redes
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4303">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3632">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4302S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC51C/CC458/EL4107</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4303">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4303-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2a/2a032b9e2a4ca6e04efd83e81576575d/perfil/2b68dee888f533e965b59597133a22a4.jpg" class="photo foto chica" /> Catalina Álvarez</h1></li>
+		</ul>
+	</td>
+	<td>60</td>
+	<td>
+		43	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4310" onclick="this.parentNode.toggleClassName('active')">
+	CC4310 Taller de Ingeniería de Sistemas Confiables
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4310">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3301,CC3201</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4310">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4310-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7b/7bd04c5ccb84bf959f8ba6dcc6adfe05/perfil/702371ea3a6f83f2c59dc8224f98c04a.jpg" class="photo foto chica" /> Javier Bustos Jiménez</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4401" onclick="this.parentNode.toggleClassName('active')">
+	CC4401 Ingeniería de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4401">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3504">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3001,CC3002,CC3201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC31B/CC332/CC355</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/822ef80ba02f54867cd2e5325f01edfd/perfil/097e68f6ea48e7286954eb63756ab619.jpg" class="photo foto chica" /> Jocelyn Simmonds</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		33	</td>
+	<td>Cátedra: Martes 16:15 - 17:45, Jueves 16:15 - 17:45<br />Auxiliar: Miércoles 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC4901" onclick="this.parentNode.toggleClassName('active')">
+	CC4901 Práctica Profesional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC4901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3505">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3002,CC3201,CC3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC49A/CC399</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/38/3887767b4ea8d8497c8176d566ad546f/perfil/3bc53a5a1cad8d334d6f2dd4c924b0b9.jpg" class="photo foto chica" /> Alexandre Bergel</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		16	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5002" onclick="this.parentNode.toggleClassName('active')">
+	CC5002 Desarrollo de Aplicaciones Web
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5002">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4599">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3001/CC30A</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC51T</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/af/af3388407707794bd2c1e4a8f5acbb54/perfil/89112d2a0309e2b5196287cf868bb9c6.jpg" class="photo foto chica" /> Jose Urzua R.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		19	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Lunes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5101" onclick="this.parentNode.toggleClassName('active')">
+	CC5101 Análisis Avanzado de Algoritmos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=15338">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3001,(MA3403/AUTOR)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC50N</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/77/77c190c3169885b20d03db4859a629a0/perfil/f4289fc5e2e16db7602a92cff90a3f95.jpg" class="photo foto chica" /> Patricio Poblete</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5114" onclick="this.parentNode.toggleClassName('active')">
+	CC5114 Redes Neuronales y Programación Genética
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5114">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=25854">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3002</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5114">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5114-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/38/3887767b4ea8d8497c8176d566ad546f/perfil/3bc53a5a1cad8d334d6f2dd4c924b0b9.jpg" class="photo foto chica" /> Alexandre Bergel</h1></li>
+		</ul>
+	</td>
+	<td>49</td>
+	<td>
+		41	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5206" onclick="this.parentNode.toggleClassName('active')">
+	CC5206 Introducción a la Mineria de Datos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5206">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4589">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3001/(FI2002,AUTOR)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC71Q</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5206">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5206-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/93/93ed8944db0c192208042be58618af44/perfil/b1880d9ed824445683c6be1532152c03.jpg" class="photo foto chica" /> Bárbara Poblete</h1></li>
+		</ul>
+	</td>
+	<td>45</td>
+	<td>
+		44	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5213" onclick="this.parentNode.toggleClassName('active')">
+	CC5213 Recuperación de Información Multimedia
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5213">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=25850">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC5206/EL4106/CC4102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC5204</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5213">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5213-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7a02dc7c54d8ecbe7ed64f75eb93880a/perfil/8f050ea30658f08a28e97992f9c00096.jpg" class="photo foto chica" /> Juan Manuel Barrios</h1></li>
+		</ul>
+	</td>
+	<td>35</td>
+	<td>
+		26	</td>
+	<td>Cátedra: Martes 16:15 - 17:45, Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5304" onclick="this.parentNode.toggleClassName('active')">
+	CC5304 Arquitectura de Sistemas de Alta Disponibilidad
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5304">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CC3201/CC42A),(CC4302/CC41B)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC61S</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5304">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5304-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42bec726c042e3429ad7c15a7c3c3daf/perfil/051240f1652adfa55778d6c5a05848b0.jpg" class="photo foto chica" /> Cesar Guerrero S.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Martes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5322" onclick="this.parentNode.toggleClassName('active')">
+	CC5322 Taller de Redes De Datos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5322">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=34561">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4303</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5322">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5322-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/05/05d98991e752bede65f390f9da836603/perfil/0e823cc5f6206de77b4ee9a7d50be151.jpg" class="photo foto chica" /> Rodrigo Arenas A.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Martes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5401" onclick="this.parentNode.toggleClassName('active')">
+	CC5401 Ingeniería de Software II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5401">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5230">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4101,CC4401</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC51A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/01/01d3cf7f4459c14eded38cea5c3cceb4/perfil/c40837e3feb0322fd6ff879a9616a6aa.jpg" class="photo foto chica" /> Sergio F. Ochoa D.</h1></li>
+		</ul>
+	</td>
+	<td>28</td>
+	<td>
+		21	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5402" onclick="this.parentNode.toggleClassName('active')">
+	CC5402 Proyecto de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5402">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3933">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>12</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN3301,CC5401,CC4303,CC4102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC61A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5402">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5402-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7e/7e5dec793a72d4cba7e91fcdcc177144/perfil/085ae79cfdfb53308e07d1a4019958dc.jpg" class="photo foto chica" /> Cecilia Bastarrica</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		35	</td>
+	<td>Cátedra: Martes 18:00 - 19:30, Jueves 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5508" onclick="this.parentNode.toggleClassName('active')">
+	CC5508 Procesamiento y Análisis de Imágenes
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5508">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=16746">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3001</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5508">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5508-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c0a5eccc64b9e79fa042a7c206e5cf3/perfil/7924ea0ded103e371536d8f6db67ad9c.jpg" class="photo foto chica" /> José M. Saavedra R.</h1></li>
+		</ul>
+	</td>
+	<td>34</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Martes 16:15 - 17:45, Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5511" onclick="this.parentNode.toggleClassName('active')">
+	CC5511 Fundamentos e Ingeniería de Interacciones Humano-Computador
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5511">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=30070">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4401</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5511">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5511-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fc/fccf26399564810ec895718357ee8f45/perfil/ccbe3f08930b2480b04f49a90cf0cf1d.jpg" class="photo foto chica" /> Jose Pino U.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/57/57e71e02f07b8ab8043e3ffa1c842a38/perfil/50aa43f1c408e8bd1d8e83c461db30ab.jpg" class="photo foto chica" /> Nelson Baloian T.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		18	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5602" onclick="this.parentNode.toggleClassName('active')">
+	CC5602 Gestión Informática
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5602">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=25474">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC5401,IN3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC52F</dd>
+
+	<dt>Comentario</dt>
+	<dd>Curso Nucleo Gestión para Ingenieros</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5602">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5602-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fe/fec98034b871400d474b493e9bd71d0c/perfil/671019eb73c865cd1b77e56c3e6f1e91.jpg" class="photo foto chica" /> Jose Benguria D.</h1></li>
+		</ul>
+	</td>
+	<td>48</td>
+	<td>
+		48	</td>
+	<td>Cátedra: Viernes 08:30 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5604" onclick="this.parentNode.toggleClassName('active')">
+	CC5604 Aplicaciones Empresariales sobre la Plataforma Java  J2EE
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5604">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC30A/CC3001</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC68J</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5604">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5604-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AF.svg" class="photo foto chica" /> Andrés Farías</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Martes 18:00 - 19:30, Jueves 18:00 - 19:30<br />Auxiliar: Lunes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5609" onclick="this.parentNode.toggleClassName('active')">
+	CC5609 Taller de Desarrollo Comercial
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5609">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5134">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3002</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Formación Integral de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5609">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5609-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AC.svg" class="photo foto chica" /> Adolfo Carrasco A.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		30	</td>
+	<td>Cátedra: Lunes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5613" onclick="this.parentNode.toggleClassName('active')">
+	CC5613 Taller de Comunicación Efectiva: Caso Práctico de Lanzamiento de Producto
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5613">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=7134">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3002</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso de Formación Integral de la Especialidad. Aprobado por el Consejo de Escuela</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5613">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5613-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/93/9370bc544a0752cd4e7f40900dc9c4cb/perfil/a16162e11de4f653137b4c4c7e4ebfe7.jpg" class="photo foto chica" /> Eduardo Godoy Vega</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Lunes 18:00 - 19:30<br />Auxiliar: Martes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5614" onclick="this.parentNode.toggleClassName('active')">
+	CC5614 Herramientas para el Trabajo en Equipo
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5614">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3002</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso de Formación Integral de la Especialidad. Aprobado por el Consejo de Escuela</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5614">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5614-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/88/88f1c1e2593c0924c0390ead6f1d1a80/perfil/77460ca0e0e52c47afa9c97766f2a233.jpg" class="photo foto chica" /> Andrea Rodríguez Silva</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		20	</td>
+	<td>Cátedra: Jueves 16:15 - 17:45</td>
+</tr>
+<tr id="CC5614-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/88/88f1c1e2593c0924c0390ead6f1d1a80/perfil/77460ca0e0e52c47afa9c97766f2a233.jpg" class="photo foto chica" /> Andrea Rodríguez Silva</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		18	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5615" onclick="this.parentNode.toggleClassName('active')">
+	CC5615 Business Analytics
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5615">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5198">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC5608</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5615">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5615-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/HM.svg" class="photo foto chica" /> Hugo Mora R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MC.svg" class="photo foto chica" /> Marcela Calderón C.</h1></li>
+		</ul>
+	</td>
+	<td>45</td>
+	<td>
+		38	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5617" onclick="this.parentNode.toggleClassName('active')">
+	CC5617 Taller de Exploración de Oportunidades para Innovar Aplicando TI
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5617">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4401</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5617">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5617-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MC.svg" class="photo foto chica" /> María Concha</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		0	</td>
+	<td>Cátedra: Jueves 08:30 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5701" onclick="this.parentNode.toggleClassName('active')">
+	CC5701 Informática Médica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5701">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5211">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3201/CC42A/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC50M</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5701">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5701-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/21/21de3c2012f28e2dc8f38905ecd6337b/perfil/aa9309e7d57df8b71bf58fab724bcc5f.jpg" class="photo foto chica" /> Sandra De la Fuente G.</h1></li>
+		</ul>
+	</td>
+	<td>35</td>
+	<td>
+		25	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5703" onclick="this.parentNode.toggleClassName('active')">
+	CC5703 Computación Social
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5703">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5209">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC5401/CC51A/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC68V</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5703">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5703-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/01/01d3cf7f4459c14eded38cea5c3cceb4/perfil/c40837e3feb0322fd6ff879a9616a6aa.jpg" class="photo foto chica" /> Sergio F. Ochoa D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b35693632f855566ebb26ff67bbbb717/perfil/41a1945125a70dedf72c30449e04c519.jpg" class="photo foto chica" /> Francisco J. Gutiérrez</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		19	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5901" onclick="this.parentNode.toggleClassName('active')">
+	CC5901 Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3712">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4901,CC4401,CC4101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC59A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/38/3887767b4ea8d8497c8176d566ad546f/perfil/3bc53a5a1cad8d334d6f2dd4c924b0b9.jpg" class="photo foto chica" /> Alexandre Bergel</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		16	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC5905" onclick="this.parentNode.toggleClassName('active')">
+	CC5905 Trabajo Dirigido
+
+	<em class="opcion nowrap">5 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC5905">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5207">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC59B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC5905">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC5905-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ba/baeed373cce62492cfab81d7c8d0c49f/perfil/8ce11afa1306b5a9ba261cc9a921a3e1.jpg" class="photo foto chica" /> Jérémy Barbay</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="CC5905-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7b/7bd04c5ccb84bf959f8ba6dcc6adfe05/perfil/702371ea3a6f83f2c59dc8224f98c04a.jpg" class="photo foto chica" /> Javier Bustos Jiménez</h1></li>
+		</ul>
+	</td>
+	<td>3</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+<tr id="CC5905-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/94/945d4a3a3f04f462aa1ef63f8448b7ee/perfil/d081c6e994c56b1d2bed16e5e258e1ff.jpg" class="photo foto chica" /> Aidan Hogan</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="CC5905-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/822ef80ba02f54867cd2e5325f01edfd/perfil/097e68f6ea48e7286954eb63756ab619.jpg" class="photo foto chica" /> Jocelyn Simmonds</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="CC5905-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/51/5132b98d84bb020a8640eddce63988e4/perfil/5727aaa26e8a187e26c21fef7a9ce57a.jpg" class="photo foto chica" /> Jorge Pérez</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC6501" onclick="this.parentNode.toggleClassName('active')">
+	CC6501 Taller de Interacción Humano-Computador
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC6501">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5202">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC5401/CC5504/CC52E</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC62T</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC6501">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC6501-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/28/285d969e13bd57c4e556057cca19d167/perfil/11c99d30be8a0efbf36ab007d5c931f2.jpg" class="photo foto chica" /> Jaime Sanchez I.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC6502" onclick="this.parentNode.toggleClassName('active')">
+	CC6502 Taller de Usabilidad de Interfaces de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC6502">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5201">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC5401/CC51A/CC5504</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC61E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC6502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC6502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/28/285d969e13bd57c4e556057cca19d167/perfil/11c99d30be8a0efbf36ab007d5c931f2.jpg" class="photo foto chica" /> Jaime Sanchez I.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC6908" onclick="this.parentNode.toggleClassName('active')">
+	CC6908 Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC6908">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5231">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR267,(EI4205S/EI2090),CC5401</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC69E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC6908">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC6908-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/94/945d4a3a3f04f462aa1ef63f8448b7ee/perfil/d081c6e994c56b1d2bed16e5e258e1ff.jpg" class="photo foto chica" /> Aidan Hogan</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		21	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC6909" onclick="this.parentNode.toggleClassName('active')">
+	CC6909 Trabajo de Título
+
+	<em class="opcion nowrap">11 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC6909">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5232">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC6908,(EI4205/EI2090),CC5402</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC69F</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC6909">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC6909-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/822ef80ba02f54867cd2e5325f01edfd/perfil/097e68f6ea48e7286954eb63756ab619.jpg" class="photo foto chica" /> Jocelyn Simmonds</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Martes 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e2e12f33f7007b5135cb5a829b097d5b/perfil/990297472e682cf40c577a9ac3080c6b.jpg" class="photo foto chica" /> Benjamín Bustos</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b3488809dab510fab71fce9f1703705b/perfil/03477a1af6c2a0902a05a4c5d0c932bd.jpg" class="photo foto chica" /> Nancy Hitschfeld K.</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/01/01d3cf7f4459c14eded38cea5c3cceb4/perfil/c40837e3feb0322fd6ff879a9616a6aa.jpg" class="photo foto chica" /> Sergio F. Ochoa D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ba/baeed373cce62492cfab81d7c8d0c49f/perfil/8ce11afa1306b5a9ba261cc9a921a3e1.jpg" class="photo foto chica" /> Jérémy Barbay</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		0	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1f/1f1f67dc9c3a64bb0b70d44e0d5cdc63/perfil/53325abc2a7230818a75240cad2764cf.jpg" class="photo foto chica" /> Alejandro Hevia</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		0	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fc/fccf26399564810ec895718357ee8f45/perfil/ccbe3f08930b2480b04f49a90cf0cf1d.jpg" class="photo foto chica" /> Jose Pino U.</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		0	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-8">
+	<td>
+		<h1>Sección 8</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7b/7bd04c5ccb84bf959f8ba6dcc6adfe05/perfil/702371ea3a6f83f2c59dc8224f98c04a.jpg" class="photo foto chica" /> Javier Bustos Jiménez</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-9">
+	<td>
+		<h1>Sección 9</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3c/3c0a5eccc64b9e79fa042a7c206e5cf3/perfil/7924ea0ded103e371536d8f6db67ad9c.jpg" class="photo foto chica" /> José M. Saavedra R.</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-10">
+	<td>
+		<h1>Sección 10</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/606bdc92ae84d22da3bbd914cc554bdd/perfil/d4c933c7b5fda0b0af1475052226bbf1.jpg" class="photo foto chica" /> Luis Mateu B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f5/f5ce946a696ea315b63de183f76dab14/perfil/5ea486a7947ce0e17d81ea01a9c2d7c3.jpg" class="photo foto chica" /> Pablo Guerrero P.</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		0	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+<tr id="CC6909-11">
+	<td>
+		<h1>Sección 11</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/38/3887767b4ea8d8497c8176d566ad546f/perfil/3bc53a5a1cad8d334d6f2dd4c924b0b9.jpg" class="photo foto chica" /> Alexandre Bergel</h1></li>
+		</ul>
+	</td>
+	<td>21</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7010" onclick="this.parentNode.toggleClassName('active')">
+	CC7010 Pasantía de Investigación I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7010">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC79P</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7010">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7010-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7015" onclick="this.parentNode.toggleClassName('active')">
+	CC7015 Pasantía de Investigación II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7015">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC79Q</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7015">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7015-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7020" onclick="this.parentNode.toggleClassName('active')">
+	CC7020 Investigación Dirigida
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7020">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC79A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7020">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7020-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7126" onclick="this.parentNode.toggleClassName('active')">
+	CC7126 Análisis y Verificación de Programas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7126">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=30618">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4101</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso electivo para Magister y Doctorado en Computación</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7126">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7126-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b2df112e793e4f8788176f53649e2a79/perfil/6546a443d52eea0ec9945e7aaa3a006e.jpg" class="photo foto chica" /> Federico Olmedo</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Jueves 16:15 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7220" onclick="this.parentNode.toggleClassName('active')">
+	CC7220 La Web de Datos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7220">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC71X</dd>
+
+	<dt>Comentario</dt>
+	<dd>Electivo Magíster y Doctorado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7220">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7220-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/94/945d4a3a3f04f462aa1ef63f8448b7ee/perfil/d081c6e994c56b1d2bed16e5e258e1ff.jpg" class="photo foto chica" /> Aidan Hogan</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		35	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7515" onclick="this.parentNode.toggleClassName('active')">
+	CC7515 Computación en GPU
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7515">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=27138">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC3301,(CC3501/FI3104)</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo Magíster y Doctorado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7515">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7515-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b3488809dab510fab71fce9f1703705b/perfil/03477a1af6c2a0902a05a4c5d0c932bd.jpg" class="photo foto chica" /> Nancy Hitschfeld K.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		26	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7910" onclick="this.parentNode.toggleClassName('active')">
+	CC7910 Investigación en Ciencia de la Computación (Métodos, Técnicas, Perspectivas)
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7910">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC4102/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC71T/CC6201</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7910">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7910-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/35/35cd311c927aa1ecc20272c714b00f64/perfil/ecd20d37297e5101d420a355bd65c665.jpg" class="photo foto chica" /> Claudio Gutiérrez</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7920" onclick="this.parentNode.toggleClassName('active')">
+	CC7920 Introducción a la Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7920">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC79T</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7920">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7920-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		5	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7970" onclick="this.parentNode.toggleClassName('active')">
+	CC7970 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7970">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC797</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7970">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7970-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7e/7e5dec793a72d4cba7e91fcdcc177144/perfil/085ae79cfdfb53308e07d1a4019958dc.jpg" class="photo foto chica" /> Cecilia Bastarrica</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC7980" onclick="this.parentNode.toggleClassName('active')">
+	CC7980 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC7980">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC798</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC7980">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC7980-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7e/7e5dec793a72d4cba7e91fcdcc177144/perfil/085ae79cfdfb53308e07d1a4019958dc.jpg" class="photo foto chica" /> Cecilia Bastarrica</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		13	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC8910" onclick="this.parentNode.toggleClassName('active')">
+	CC8910 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC8910">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC896</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC8910">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC8910-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC8920" onclick="this.parentNode.toggleClassName('active')">
+	CC8920 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC8920">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC897</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC8920">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC8920-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC8930" onclick="this.parentNode.toggleClassName('active')">
+	CC8930 Trabajo de Tesis III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC8930">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC898</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC8930">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC8930-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC8940" onclick="this.parentNode.toggleClassName('active')">
+	CC8940 Trabajo de Tesis IV
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC8940">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC899</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC8940">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC8940-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC8950" onclick="this.parentNode.toggleClassName('active')">
+	CC8950 Trabajo de Tesis V
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC8950">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC8950">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC8950-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC8960" onclick="this.parentNode.toggleClassName('active')">
+	CC8960 Trabajo de Tesis VI
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC8960">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC8960">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC8960-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b68258ad0a1b47e1c64ad7a534aa12c5/perfil/cf5a6e6216040cdd342b625132705ef4.jpg" class="photo foto chica" /> Gonzalo Navarro.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC63D" onclick="this.parentNode.toggleClassName('active')">
+	CC63D Seminario de Actualización Tecnológica I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC63D">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Exclusivo del Magister Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC63D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC63D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/01/01d3cf7f4459c14eded38cea5c3cceb4/perfil/c40837e3feb0322fd6ff879a9616a6aa.jpg" class="photo foto chica" /> Sergio F. Ochoa D.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		28	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC63E" onclick="this.parentNode.toggleClassName('active')">
+	CC63E Gestión del Conocimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC63E">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC63E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC63E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/70/70b88ec33c86ec93d79c436774f36cfe/perfil/6320862ce16b6b8fe62481930d04a507.jpg" class="photo foto chica" /> Jorge Walters</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		28	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC63L" onclick="this.parentNode.toggleClassName('active')">
+	CC63L Introducción a la Gestión de Calidad de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC63L">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC63L">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC63L-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/PS.svg" class="photo foto chica" /> Pablo Straub</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC63O" onclick="this.parentNode.toggleClassName('active')">
+	CC63O Técnicas de Prueba de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC63O">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC63O">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC63O-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/822ef80ba02f54867cd2e5325f01edfd/perfil/097e68f6ea48e7286954eb63756ab619.jpg" class="photo foto chica" /> Jocelyn Simmonds</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC63P" onclick="this.parentNode.toggleClassName('active')">
+	CC63P Administración de Proyectos de Gestión de Calidad
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC63P">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC63P">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC63P-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AL.svg" class="photo foto chica" /> Alejandro Lagos S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC63Q" onclick="this.parentNode.toggleClassName('active')">
+	CC63Q Métrica y Calidad de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC63Q">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC63Q">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC63Q-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MV.svg" class="photo foto chica" /> Marcelo Visconti.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		28	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC64D" onclick="this.parentNode.toggleClassName('active')">
+	CC64D Seminario de Actualización Tecnológica II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC64D">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC64D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC64D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CR.svg" class="photo foto chica" /> Cynthia Rothen D.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		28	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC66A" onclick="this.parentNode.toggleClassName('active')">
+	CC66A Programación Estadística
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC66A">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC66A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC66A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b35693632f855566ebb26ff67bbbb717/perfil/41a1945125a70dedf72c30449e04c519.jpg" class="photo foto chica" /> Francisco J. Gutiérrez</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a2/a20204598cb85b559915ffe83bf4e32d/perfil/a19e2d052e8a0726b5e6e45de8b150db.jpg" class="photo foto chica" /> Hernán Sarmiento A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC66B" onclick="this.parentNode.toggleClassName('active')">
+	CC66B Visualización de Datos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC66B">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC66B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC66B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e2e12f33f7007b5135cb5a829b097d5b/perfil/990297472e682cf40c577a9ac3080c6b.jpg" class="photo foto chica" /> Benjamín Bustos</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC66C" onclick="this.parentNode.toggleClassName('active')">
+	CC66C Recuperación de Información
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC66C">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC66C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC66C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7a02dc7c54d8ecbe7ed64f75eb93880a/perfil/8f050ea30658f08a28e97992f9c00096.jpg" class="photo foto chica" /> Juan Manuel Barrios</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC66E" onclick="this.parentNode.toggleClassName('active')">
+	CC66E Minería de Datos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC66E">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC66E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC66E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/93/93ed8944db0c192208042be58618af44/perfil/b1880d9ed824445683c6be1532152c03.jpg" class="photo foto chica" /> Bárbara Poblete</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC66G" onclick="this.parentNode.toggleClassName('active')">
+	CC66G Taller de Proyecto
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC66G">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC66G">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC66G-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7a02dc7c54d8ecbe7ed64f75eb93880a/perfil/8f050ea30658f08a28e97992f9c00096.jpg" class="photo foto chica" /> Juan Manuel Barrios</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5d/5da5b646f8be23128aecf84e1cccfa71/perfil/51c87e73e45eefe8db0bbbbc1ae3d6c0.jpg" class="photo foto chica" /> Camila Álvarez I.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC66H" onclick="this.parentNode.toggleClassName('active')">
+	CC66H Aprendizaje de Máquinas y Deep Learning
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC66H">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=33565">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC66D</dd>
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC66H">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC66H-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/51/5132b98d84bb020a8640eddce63988e4/perfil/5727aaa26e8a187e26c21fef7a9ce57a.jpg" class="photo foto chica" /> Jorge Pérez</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC66I" onclick="this.parentNode.toggleClassName('active')">
+	CC66I Big Data
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC66I">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=33569">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CC66F</dd>
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC66I">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC66I-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/94/945d4a3a3f04f462aa1ef63f8448b7ee/perfil/d081c6e994c56b1d2bed16e5e258e1ff.jpg" class="photo foto chica" /> Aidan Hogan</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC67A" onclick="this.parentNode.toggleClassName('active')">
+	CC67A Introducción a la Programación
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC67A">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC67A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC67A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e2e12f33f7007b5135cb5a829b097d5b/perfil/990297472e682cf40c577a9ac3080c6b.jpg" class="photo foto chica" /> Benjamín Bustos</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+<tr id="CC67A-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e2e12f33f7007b5135cb5a829b097d5b/perfil/990297472e682cf40c577a9ac3080c6b.jpg" class="photo foto chica" /> Benjamín Bustos</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		19	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC67B" onclick="this.parentNode.toggleClassName('active')">
+	CC67B Fundamentos de Criptografía
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC67B">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC67B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC67B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8a/8a592bf41bc3592344a90d74043af91e/perfil/f094a54c7fa09105b651ada35dd43dcb.jpg" class="photo foto chica" /> Marcos Kiwi</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC67C" onclick="this.parentNode.toggleClassName('active')">
+	CC67C Seguridad de Redes
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC67C">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC67C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC67C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/05/05a0801137e6e9e4de3da0b0a383fd92/perfil/8ec797fccd16da49422bff3e06e14ac3.jpg" class="photo foto chica" /> Sergio Miranda M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC67D" onclick="this.parentNode.toggleClassName('active')">
+	CC67D Seguridad de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC67D">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC67D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC67D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/41/4126e825c48915e5b5d4467a5097a8b9/perfil/7f21bd8288fbd76975e1a32eb90a467b.jpg" class="photo foto chica" /> Cristian Rojas</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC67E" onclick="this.parentNode.toggleClassName('active')">
+	CC67E Análisis de Riesgo y Planificación de Contingencia
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC67E">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC67E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC67E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/IS.svg" class="photo foto chica" /> Carlos Samaniego Chunga</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+<tr id="CC67E-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/EM.svg" class="photo foto chica" /> Esteban Maurin</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC67F" onclick="this.parentNode.toggleClassName('active')">
+	CC67F Aspectos del Derecho Informático
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC67F">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC67F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC67F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25e41d9aa6208d01e6d7d3649bfd584/perfil/21b2357ce9a86c0a1bb7a14d92fcbdc0.jpg" class="photo foto chica" /> Lorena Donoso Abarca</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC67G" onclick="this.parentNode.toggleClassName('active')">
+	CC67G Comercio Electrónico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC67G">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC67G">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC67G-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MZ.svg" class="photo foto chica" /> Marco Zuñiga Y.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC73C" onclick="this.parentNode.toggleClassName('active')">
+	CC73C Taller de Proyectos de Gestión de Calidad
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC73C">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC73C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC73C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5f/5faf7cf96d1754f80975ce72db6cb21d/perfil/028b20d379380aaae8f9c60188dea535.jpg" class="photo foto chica" /> Alcides Quispe S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC73F" onclick="this.parentNode.toggleClassName('active')">
+	CC73F Avances en Bases de Datos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC73F">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>SOLO MAGISTER PROFESIONAL</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC73F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC73F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RF.svg" class="photo foto chica" /> Rodrigo Frez P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		28	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC73I" onclick="this.parentNode.toggleClassName('active')">
+	CC73I Normas y Estandares de Calidad de Software
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC73I">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo del Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC73I">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC73I-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/17/1738f65532976dfe261820b9b340bfb3/perfil/31cc304b87f227f517629e5c70c308f5.jpg" class="photo foto chica" /> Daniel Ramírez A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC79C" onclick="this.parentNode.toggleClassName('active')">
+	CC79C Seminario de Proyecto de Grado I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC79C">
+
+	<dt>Créditos</dt>
+	<dd>9</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>"CURSO EXCLUSIVO DEL MAGISTER PROFESIONAL"</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC79C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC79C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC79D" onclick="this.parentNode.toggleClassName('active')">
+	CC79D Seminario de Proyecto de Grado II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC79D">
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Exclusivo del Magister Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC79D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC79D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC79E" onclick="this.parentNode.toggleClassName('active')">
+	CC79E Seminario de Proyectos de TI I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC79E">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=27886">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Sólo Magíster en TI</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC79E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC79E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/01/01d3cf7f4459c14eded38cea5c3cceb4/perfil/c40837e3feb0322fd6ff879a9616a6aa.jpg" class="photo foto chica" /> Sergio F. Ochoa D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b35693632f855566ebb26ff67bbbb717/perfil/41a1945125a70dedf72c30449e04c519.jpg" class="photo foto chica" /> Francisco J. Gutiérrez</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		0	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC79F" onclick="this.parentNode.toggleClassName('active')">
+	CC79F Seminario de Proyectos de TI II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC79F">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=27890">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC79E</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Sólo Magíster en TI</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC79F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC79F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/01/01d3cf7f4459c14eded38cea5c3cceb4/perfil/c40837e3feb0322fd6ff879a9616a6aa.jpg" class="photo foto chica" /> Sergio F. Ochoa D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b3/b35693632f855566ebb26ff67bbbb717/perfil/41a1945125a70dedf72c30449e04c519.jpg" class="photo foto chica" /> Francisco J. Gutiérrez</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC79G" onclick="this.parentNode.toggleClassName('active')">
+	CC79G Proyecto de Grado I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC79G">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=32142">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CC79F</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC79G">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC79G-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CC79H" onclick="this.parentNode.toggleClassName('active')">
+	CC79H Proyecto de Grado II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCC79H">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=33973">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso exclusivo Magíster Profesional</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCC79H">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CC79H-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+	<dt>Atención</dt>
+	<dd>La información del catálogo para el período 2018 Primavera y los siguientes está sujeta a modificaciones.</dd>
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+	<dt>Sustentabilidad</dt>
+	<dd>Los cursos llevan una marca según si están <span class="sustentable">relacionados con sustentabilidad</span> o <span class="sustentable enfocado">enfocados en sustentabilidad</span>. <a target="_blank" href="http://ingenieria.uchile.cl/oficina-de-ingenieria-para-la-sustentabilidad/que-hacemos/106441/docencia">Más información de esta iniciativa</a>.</dd>
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: '07ts1knv3dtp6rfenb2ukclhj5',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+</body>
+</html>

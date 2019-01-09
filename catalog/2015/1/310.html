@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus81-int&lang=es&_sess=hiq3mc7tsrpthrpnm9puscm0a2&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>FG - Plataforma</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151" selected="selected">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="27">EI - Escuela de Ingeniería</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310" selected="selected">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option><option value="26">QI - Departamento de Química Básica</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="FG1048" onclick="this.parentNode.toggleClassName('active')">
+	FG1048 La Química: Ayer y Hoy
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG1048">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FG1E8</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG1048">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG1048-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3a/3a4380f12bf8b9a57d0cf7bd29f73b5c/perfil/4ba24f18ea704db062f2ec805fe50a41.jpg" class="photo foto chica" /> Jorge Valenzuela Pedevila</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/08/0827358bf939e0c27146545dfecde3b0/perfil/99d0de27afe12e31b53c1518001c01e5.jpg" class="photo foto chica" /> Martín Pérez Comisso</h1></li>
+		</ul>
+	</td>
+	<td>17</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Lunes 15:00 - 16:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6016" onclick="this.parentNode.toggleClassName('active')">
+	FG6016 Euskera y Cultura Vasca , los más Antiguos de Europa
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6016">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>FG1B6</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6016">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6016-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/OS.svg" class="photo foto chica" /> Olatz Sánchez</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/NG.svg" class="photo foto chica" /> Nora Garmendia B.</h1></li>
+		</ul>
+	</td>
+	<td>4</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6047" onclick="this.parentNode.toggleClassName('active')">
+	FG6047 Acoso Multilateral al Cine de Raúl Ruiz
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6047">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6047">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6047-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/79578ce2618564372a4702c84d492e5c/perfil/98095d8fd9b9013c6216aa4feb397e23.jpg" class="photo foto chica" /> Carlos Flores D.</h1></li>
+		</ul>
+	</td>
+	<td>11</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6048" onclick="this.parentNode.toggleClassName('active')">
+	FG6048 Razonamiento Matemático en la Escuela
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6048">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6048">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6048-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b5/b5741ca959da5843e28d12e272a35ef3/perfil/75b0cfaf92157db4d0f76939100fb338.jpg" class="photo foto chica" /> Maria Leonor Varas S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/97/97109642c9049ee77a9282a2562721d1/perfil/1f4ebe8210d8c7d635ecd69356ec6035.jpg" class="photo foto chica" /> Maria Martinez V.</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Martes 15:00 - 16:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6057" onclick="this.parentNode.toggleClassName('active')">
+	FG6057 Indagación Científica en la Escuela
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6057">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6057">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6057-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2df9c4c57f4c943dc32f07d71d31eb81/perfil/08d2239aa2385d193ca95020119d66d5.jpg" class="photo foto chica" /> Rosa Deves</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/PR.svg" class="photo foto chica" /> Pilar Reyes J.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FV.svg" class="photo foto chica" /> Filomena Vargas U.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/be/bebbf843ce5e1efb07f4e697d1379aaa/perfil/a4dd30e241467089f142c7b08ffc99ef.jpg" class="photo foto chica" /> Andrea Elgueta P.</h1></li>
+		</ul>
+	</td>
+	<td>8</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Miércoles 15:00 - 16:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6061" onclick="this.parentNode.toggleClassName('active')">
+	FG6061 Sexualidad y Ciudadanía en Debates y Políticas Públicas en la Sociedad Chilena Contemporánea
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6061">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6061">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6061-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/IP.svg" class="photo foto chica" /> Irma Palma M.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6063" onclick="this.parentNode.toggleClassName('active')">
+	FG6063 Memoria y Escritura: Acercamiento a la Oralidad y la Literatura Ma
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6063">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6063">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6063-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/EM.svg" class="photo foto chica" /> Elsa Mora C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3b/3b1d4e91cfb06b7da719a6ebc4e2dc25/perfil/dcf780bafe13f09a8c436e8125395d5d.jpg" class="photo foto chica" /> Daniela Núñez R.</h1></li>
+		</ul>
+	</td>
+	<td>9</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Miércoles 15:00 - 16:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6066" onclick="this.parentNode.toggleClassName('active')">
+	FG6066 Terremotos: Usos y Abusos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6066">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6066">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6066-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2c82c843de191e5334c509db74647feb/perfil/c5ecfe1abc3756065ffbcdf35152fd66.jpg" class="photo foto chica" /> Diana Comte S.</h1></li>
+		</ul>
+	</td>
+	<td>26</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6067" onclick="this.parentNode.toggleClassName('active')">
+	FG6067 El Cine Como Arte
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6067">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6067">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6067-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bd/bd8d25b3b6144e20bf05e967fbfc9eb0/perfil/90e3a2d45903e9d5b52ad1fac57078fd.jpg" class="photo foto chica" /> Néstor Olhagaray Llanos</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b8/b8bc6242ca4dee878e66840cd6ec499b/perfil/6b3b087b7d440bcf51ed68072c3f167b.jpg" class="photo foto chica" /> Víctor Muñoz</h1></li>
+		</ul>
+	</td>
+	<td>8</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6070" onclick="this.parentNode.toggleClassName('active')">
+	FG6070 Compromiso Social en Acción de los Estudiantes de la Universidad d
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6070">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6070">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6070-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/91/919034b0c4ddd808dd12c6cc127771fe/perfil/0a58d38561a8bee55762b52ac3b4866c.jpg" class="photo foto chica" /> Gabriela Valenzuela A.</h1></li>
+		</ul>
+	</td>
+	<td>4</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6075" onclick="this.parentNode.toggleClassName('active')">
+	FG6075 Pueblos Indígenas Hoy: Nuevos Enfoques, Nuevos Desafíos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6075">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6075">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6075-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/41/41bb704f8f035e4d24c2790f32ab6628/perfil/be4ca083a49836009d1349cd1748fff1.jpg" class="photo foto chica" /> Nicolás Gissi B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CM.svg" class="photo foto chica" /> Claudio Millacura S.</h1></li>
+		</ul>
+	</td>
+	<td>6</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6076" onclick="this.parentNode.toggleClassName('active')">
+	FG6076 Desafíos del Discurso: Pensamiento, Discurso y Compromiso para la Acción
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6076">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6076">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6076-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5b/5bfa41ff0a49bf2063a6579fdca28827/perfil/2b366fdf006256da6127978a2de1faf6.jpg" class="photo foto chica" /> Cyntia Edith Maciel Canales</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6092" onclick="this.parentNode.toggleClassName('active')">
+	FG6092 Globalización, Cobre y Nueva Economía Chilena
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6092">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6092">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6092-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/HL.svg" class="photo foto chica" /> Hugo Latorre F.</h1></li>
+		</ul>
+	</td>
+	<td>8</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Miércoles 18:30 - 20:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6097" onclick="this.parentNode.toggleClassName('active')">
+	FG6097 El Abc de la Agricultura Moderna: Nociones Básicas del Manejo Agronómico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6097">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6097">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6097-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/29/291833c8e1ab112a686220239ec9fb60/perfil/8a076aed841499979595c065e696c32c.jpg" class="photo foto chica" /> Loreto Prat</h1></li>
+		</ul>
+	</td>
+	<td>7</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Miércoles 13:30 - 15:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6098" onclick="this.parentNode.toggleClassName('active')">
+	FG6098 Los Problemas Ambientales de Chile: Política, Economía y Sociedad.
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6098">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6098">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6098-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/4a/4a56a308a7eb005b56209f7702bd3b11/perfil/b0d33c4a64f0776cdf26955be35051f6.jpg" class="photo foto chica" /> Mauricio Folchi</h1></li>
+		</ul>
+	</td>
+	<td>7</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6104" onclick="this.parentNode.toggleClassName('active')">
+	FG6104 De Especialista a Profesional: Pensamiento, Discurso y Compromiso para la Acción
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6104">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6104">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6104-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/49/49f40f3839042ae9fdf8685eca5c5a86/perfil/d9ae28d679db77c6fd9ba8c8224dc8f6.jpg" class="photo foto chica" /> Tamara Tadich G.</h1></li>
+		</ul>
+	</td>
+	<td>9</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Martes 17:00 - 18:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6108" onclick="this.parentNode.toggleClassName('active')">
+	FG6108 Translations And Betrayals, Manga And Anime: From The Grafic Novel To The Audio Visual
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6108">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6108">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6108-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/aa/aabbe9a93226989d6b86bfa983dceeac/perfil/efd718e9b1fd1874235e8c7cae56f1aa.jpg" class="photo foto chica" /> Diego Vallejos O.</h1></li>
+		</ul>
+	</td>
+	<td>3</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6117" onclick="this.parentNode.toggleClassName('active')">
+	FG6117 Existencialismo (en la Perspectiva de Jaspers, Heidegger, Sartre y Camus)
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6117">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6117">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6117-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/dc/dc6a99fd04b27599863c5cb25f404925/perfil/2bfaf2440c0df0db1402b9287f427112.jpg" class="photo foto chica" /> Cristóbal Holzapfel</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6120" onclick="this.parentNode.toggleClassName('active')">
+	FG6120 Lo Árabes, el Islam y Occidente: ¿Diálogo de Culturas o Choque de Civilizaciones?
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6120">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6120">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6120-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/4f/4fb953d38c196165ad28814ad0210d3b/perfil/7fcc5e609599c2a33598e26322a89995.jpg" class="photo foto chica" /> Eugenio C. Chahuan</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/70/70c4a6604576ffe303afb450289f6566/perfil/2fc8d445ff9429fb3be0f01b8d46a0ef.jpg" class="photo foto chica" /> Kamal Cumsille M.</h1></li>
+		</ul>
+	</td>
+	<td>5</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6130" onclick="this.parentNode.toggleClassName('active')">
+	FG6130 Planificación y Estrategias para el Capital de Aprendizaje - Campus Beauchef
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6130">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6130">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6130-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/24/247f8d0a9283d2968d9ebaeb227ed029/perfil/a27ed4ce20526bd4bbd711eedab78a9b.jpg" class="photo foto chica" /> Gustavo Adolfo Castro P.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/30/3067bda972fc916f17127f8515d64d81/perfil/7b300b130b29153c3d448b8f7c05b062.jpg" class="photo foto chica" /> Alejandra Ávila</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/72/72bbcd3a83606a6fd1966dee1e924873/perfil/e525ad7d1ddd8bfb97b6371e98f271f6.jpg" class="photo foto chica" /> Paola González</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/17/17b2730007c3df735b34fc41c2877464/perfil/8993e47f8281ab28982cf142ec8a8f28.jpg" class="photo foto chica" /> Monica Osorio V.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6131" onclick="this.parentNode.toggleClassName('active')">
+	FG6131 Habitar Santiago: ¿Qué le falta a la Ciudad?
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6131">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6131">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6131-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bfc599ac9c6b960e8f063e40629a4faa/perfil/956b288ca03b92ad39039579529ac9cc.jpg" class="photo foto chica" /> Carlos Lange</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a5/a54654b36588f6e410e9dd5c01b3282a/perfil/ff985b3c73073ea4dae81cf4e80b25fd.jpg" class="photo foto chica" /> Mariela Gaete R.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6133" onclick="this.parentNode.toggleClassName('active')">
+	FG6133 Historia Ecológica de Chile: procesos y transformaciones en la  relación sociedad-naturaleza en la historia nacional
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6133">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6133">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6133-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3a/3afb8a9d310ba6c59d2337d31e74cf0b/perfil/cf47e7abc854af1e2266eb84addf79e2.jpg" class="photo foto chica" /> Fernando Ramirez</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6134" onclick="this.parentNode.toggleClassName('active')">
+	FG6134 Cátedra Amanda Labarca: Desafíos de la Perspectivas de Género en las Ciencias
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6134">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6134">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6134-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/18/18bb6702192face62f8250ef93d8da1f/perfil/2d6e87610cbf3185e15a428f666e5adc.jpg" class="photo foto chica" /> María Rebolledo G.</h1></li>
+		</ul>
+	</td>
+	<td>17</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6135" onclick="this.parentNode.toggleClassName('active')">
+	FG6135 Memoria, Identidad e Historia (Reconstruyendo el Pasado para Asegurar el Futuro)
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6135">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6135">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6135-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8c/8cbe27b08f883966394ce4b96668f447/perfil/99c1f0681fbd62523fb6db0c263c21f3.jpg" class="photo foto chica" /> Ana M. Tapia Adler</h1></li>
+		</ul>
+	</td>
+	<td>13</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Miércoles 15:00 - 16:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6136" onclick="this.parentNode.toggleClassName('active')">
+	FG6136 Desafíos de Legislación en Ciencia y Tecnología para Chile
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6136">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6136">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6136-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5b/5bfa41ff0a49bf2063a6579fdca28827/perfil/2b366fdf006256da6127978a2de1faf6.jpg" class="photo foto chica" /> Cyntia Edith Maciel Canales</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/08/0827358bf939e0c27146545dfecde3b0/perfil/99d0de27afe12e31b53c1518001c01e5.jpg" class="photo foto chica" /> Martín Pérez Comisso</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Lunes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6137" onclick="this.parentNode.toggleClassName('active')">
+	FG6137 Cuerpo y Sociedad: Una Reflexión Crítica sobre las Sociedades Modernas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6137">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6137">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6137-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/eb/ebcce8f52d6e21163e97baf84562ffc6/perfil/6a32c1f5e4d91be7a971d5f581a49c16.jpg" class="photo foto chica" /> María Emilia Tijoux M.</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Miércoles 15:30 - 17:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6138" onclick="this.parentNode.toggleClassName('active')">
+	FG6138 Ideologías sobre el Crimen: Ciencia, Tecnologías y Racismo. Chile y Latinoamérica en el Siglo XXI
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6138">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6138">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6138-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3f/3f29728e03aaf914cde2c5bb89a773dd/perfil/2c7eb320d09bd263449f6e3b76787bf9.jpg" class="photo foto chica" /> Cristian Palacios L.</h1></li>
+		</ul>
+	</td>
+	<td>14</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Miércoles 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FG6139" onclick="this.parentNode.toggleClassName('active')">
+	FG6139 El Cuerpo: Visiones Transdisciplinares
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFG6139">
+
+	<dt>Créditos</dt>
+	<dd>2</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFG6139">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FG6139-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/87/87cf5c9bcb854fa71dc0f741bda4dd6c/perfil/c0877794737911afea7cd5ed5a7aa308.jpg" class="photo foto chica" /> Yuri Carvaja B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/08/0827358bf939e0c27146545dfecde3b0/perfil/99d0de27afe12e31b53c1518001c01e5.jpg" class="photo foto chica" /> Martín Pérez Comisso</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Lunes 13:00 - 14:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+	<dt>Sustentabilidad</dt>
+	<dd>Los cursos llevan una marca según si están <span class="sustentable">relacionados con sustentabilidad</span> o <span class="sustentable enfocado">enfocados en sustentabilidad</span>. <a target="_blank" href="http://ingenieria.uchile.cl/oficina-de-ingenieria-para-la-sustentabilidad/que-hacemos/106441/docencia">Más información de esta iniciativa</a>.</dd>
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: 'hiq3mc7tsrpthrpnm9puscm0a2',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"04697e2d00","applicationID":"195320401","transactionName":"bgdTMURRCkcDBhAMWFdNZBdfHxZRFRcNEVIXElkV","queueTime":0,"applicationTime":289,"atts":"QkBQRwxLGUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

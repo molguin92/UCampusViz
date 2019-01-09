@@ -1,0 +1,2971 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus82-int&lang=es&_sess=0tefi9ndbvf140f7o4iug4tgo0&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>ME - Departamento de Ingeniería Mecánica</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131" selected="selected">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="304">FG - Formación General</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22" selected="selected">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option><option value="26">QI - Departamento de Química Básica</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="ME3201" onclick="this.parentNode.toggleClassName('active')">
+	ME3201 Ciencias de los Materiales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME3201">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3511">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CM2004/FI2004)/(CM1001,FI2001)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME32A/CM3201</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME3201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME3201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1c/1c17c885df74ed6af7aa3f8b4a6280b0/perfil/682028cb718ac771a52af524781dc8db.jpg" class="photo foto chica" /> Aquiles Sepulveda O.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		70	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME3202" onclick="this.parentNode.toggleClassName('active')">
+	ME3202 Resistencia de Materiales
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME3202">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3519">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2A1/FI2001),(MA2002/MA2A2)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME46A/ME3204</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME3202">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME3202-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/4e/4ea917fe80a0c5c7ace4eb5ed8081535/perfil/eefd13f315e92ffa0a7e36a4f67b5ff7.jpg" class="photo foto chica" /> Roger Bustamante P.</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		72	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Martes 16:15 - 17:45</td>
+</tr>
+<tr id="ME3202-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c5/c5f0b3fbd19b553d40ba6f8dfe418ff7/perfil/37c8f9a45bff0a7d4c364679ff01f266.jpg" class="photo foto chica" /> Eduardo Salas L.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		49	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Viernes 08:30 - 10:00<br />Control: Viernes 12:00 - 14:00, Semana: 11</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME3301" onclick="this.parentNode.toggleClassName('active')">
+	ME3301 Mecánica de Fluidos
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME3301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3513">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2004/CM2004</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME33A/CI3101</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME3301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME3301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ee/eeecc54a2180339992561c7c18370baf/perfil/5b61bb054bdc775b1b42e0f309f1090d.jpg" class="photo foto chica" /> Williams R. Calderón Muñoz</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Miércoles 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 16:00<br />Laboratorio: Miércoles 08:30 - 10:00</td>
+</tr>
+<tr id="ME3301-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ee/eeecc54a2180339992561c7c18370baf/perfil/5b61bb054bdc775b1b42e0f309f1090d.jpg" class="photo foto chica" /> Williams R. Calderón Muñoz</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		7	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Miércoles 10:15 - 11:45<br />Auxiliar: Viernes 14:30 - 16:00<br />Laboratorio: Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME3601" onclick="this.parentNode.toggleClassName('active')">
+	ME3601 Ingeniería de Materiales I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME3601">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3512">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME42A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME3601">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME3601-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/08/08fc714941a1fd935471451ead1ab25c/perfil/0fb9e41f8400e0a5c429a9f5bb2f626d.jpg" class="photo foto chica" /> Rodrigo Palma H.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		28	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 10:15 - 11:45<br />Auxiliar: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4010" onclick="this.parentNode.toggleClassName('active')">
+	ME4010 Introducción a la Ingeniería Nuclear
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4010">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3847">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2004/CM2004</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME400</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4010">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4010-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a4/a4d6624b8a55f6b5f3223e4221e638c0/perfil/e94f33dcf5f518b83763d0ebcc7d78e1.jpg" class="photo foto chica" /> Sergio Courtin V.</h1></li>
+		</ul>
+	</td>
+	<td>22</td>
+	<td>
+		18	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Viernes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4030" onclick="this.parentNode.toggleClassName('active')">
+	ME4030 Seminario de Diseño e Innovación Tecnológica
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4030">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3853">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2001,(CC1001/(CC1000,CC1002))</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4030">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4030-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f3/f3705a1b3c86758c4dcb6cdbd45c5d71/perfil/7215ab7fd20593d5e0eeaa3c8b068b10.jpg" class="photo foto chica" /> Marcos Diaz Q.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9a/9a21ecb4cb26433005af26aba96e4fef/perfil/ab4f94dd87f1aead8f6bc9b57e48e06d.jpg" class="photo foto chica" /> Juan C. Zagal</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4301" onclick="this.parentNode.toggleClassName('active')">
+	ME4301 Termotecnia
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3517">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME43A/IQ3201</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66721a2f3f91eea0d19d79fd95c09c56/perfil/3fac818b730d043dd54f559f83ca38a0.jpg" class="photo foto chica" /> Alvaro Valencia M.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		21	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Jueves 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4302" onclick="this.parentNode.toggleClassName('active')">
+	ME4302 Transferencia de Calor
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4302">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME4301/ME3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME43B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4302">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4302-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/829888224b2319905c7852fbd4736b43/perfil/831624ef0fd7642f2da68f518008bc93.jpg" class="photo foto chica" /> Ramon Frederick G.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		35	</td>
+	<td>Cátedra: Miércoles 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4501" onclick="this.parentNode.toggleClassName('active')">
+	ME4501 Control de Sistemas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4501">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3515">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3401</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME55A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4501">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4501-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1e/1eb8226394a0b14d412cab52023b16ef/perfil/e25cd6a4b6620f8b97308921c81d01ae.jpg" class="photo foto chica" /> Rodrigo Hernandez P.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		34	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 10:00 - 12:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4601" onclick="this.parentNode.toggleClassName('active')">
+	ME4601 Ingeniería de Materiales II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4601">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3516">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3601</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME42B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4601">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4601-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MC.svg" class="photo foto chica" /> Manuel Cabrera C.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		21	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Miércoles 16:15 - 17:45<br />Control: Jueves 14:00 - 16:00, Semana: 11</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4602" onclick="this.parentNode.toggleClassName('active')">
+	ME4602 Proyecto Mecánico I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4602">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3563">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME46B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4602">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4602-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74292fa64cafae29c813ae1d09087d4b/perfil/4b7eba59b5aa5dce3ac8beeb649d7f03.jpg" class="photo foto chica" /> Juan Carlos Salgado T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/OM.svg" class="photo foto chica" /> Óscar Monsalve</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		35	</td>
+	<td>Cátedra: Viernes 16:15 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4701" onclick="this.parentNode.toggleClassName('active')">
+	ME4701 Vibraciones Mecánicas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4701">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3401,(ME3204/MA3403)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4701">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4701-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a6/a6b99a61a6ac3ad73df48bb736350972/perfil/e5e17a85cd149185510018a468a39052.jpg" class="photo foto chica" /> Viviana Meruane N.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Miércoles 14:30 - 16:00<br />Control: Miércoles 16:15 - 19:30, Semana: 5</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME4901" onclick="this.parentNode.toggleClassName('active')">
+	ME4901 Práctica Profesional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME4901">
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME4603/ME3203</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME49A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		43	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5300" onclick="this.parentNode.toggleClassName('active')">
+	ME5300 Máquinas
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5300">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME4302</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME53A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5300">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5300-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		45	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Miércoles 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Jueves 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5301" onclick="this.parentNode.toggleClassName('active')">
+	ME5301 Laboratorio de Máquinas
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3737">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5300S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME53B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RD.svg" class="photo foto chica" /> Roberto De Petris Z.</h1></li>
+		</ul>
+	</td>
+	<td>13</td>
+	<td>
+		13	</td>
+	<td>Laboratorio: Lunes 14:30 - 17:45</td>
+</tr>
+<tr id="ME5301-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RD.svg" class="photo foto chica" /> Ricardo Díaz S.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		12	</td>
+	<td>Laboratorio: Martes 14:30 - 17:45</td>
+</tr>
+<tr id="ME5301-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RD.svg" class="photo foto chica" /> Ricardo Díaz S.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		10	</td>
+	<td>Laboratorio: Jueves 16:15 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5400" onclick="this.parentNode.toggleClassName('active')">
+	ME5400 Ingeniería en Termofluidos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5400">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5300/ME5301</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5400">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5400-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/829888224b2319905c7852fbd4736b43/perfil/831624ef0fd7642f2da68f518008bc93.jpg" class="photo foto chica" /> Ramon Frederick G.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Jueves 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5600" onclick="this.parentNode.toggleClassName('active')">
+	ME5600 Diseño de Elementos Mecánicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5600">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3738">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(ME3202,ME3203)/ME4602</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME56A/ME5500</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5600">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5600-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/00/00e408a6b10f15bdedf13aecbf44da37/perfil/9f1d91ab2fab4e6a7c895931d29942b3.jpg" class="photo foto chica" /> Alejandro Ortiz Bernardin</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		39	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5601" onclick="this.parentNode.toggleClassName('active')">
+	ME5601 Diseño de Sistemas Mecánicos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5601">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5600/(ME5500,ME4701)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5601">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5601-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9a/9a21ecb4cb26433005af26aba96e4fef/perfil/ab4f94dd87f1aead8f6bc9b57e48e06d.jpg" class="photo foto chica" /> Juan C. Zagal</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Lunes 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5700" onclick="this.parentNode.toggleClassName('active')">
+	ME5700 Procesos de Manufactura
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5700">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(ME4601,(ME4707/ME4603))/ME4602</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME58A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5700">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5700-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d8/d8d0684d212a7ea518360ecf194fe429/perfil/cee54bb145f4b29abc3c7e97a60bdfe3.jpg" class="photo foto chica" /> James Griffin</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		44	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45<br />Auxiliar: Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5701" onclick="this.parentNode.toggleClassName('active')">
+	ME5701 Proyectos en Materiales y Manufactura
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5701">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3869">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5700</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5701">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5701-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1a/1adcaf86042a18d5ae23178e3dbf376e/perfil/ff4977f5a38c041a8f13daeae73a5711.jpg" class="photo foto chica" /> Leonel Nuñez L.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		24	</td>
+	<td>Cátedra: Jueves 08:30 - 10:00<br />Auxiliar: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5702" onclick="this.parentNode.toggleClassName('active')">
+	ME5702 Gestión de Activos Físicos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5702">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME4701/IN4703</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME57A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5702">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5702-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/ES.svg" class="photo foto chica" /> Eduardo Salamanca H.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		25	</td>
+	<td>Cátedra: Viernes 08:30 - 10:00<br />Auxiliar: Viernes 16:15 - 17:45<br />Control: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5800" onclick="this.parentNode.toggleClassName('active')">
+	ME5800 Taller en Innovación y Sustentabilidad
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5800">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3854">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3203/ME4603/ME5300/ME4602</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Formación Integral de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5800">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5800-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/DC.svg" class="photo foto chica" /> David Carrasco M.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Martes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5801" onclick="this.parentNode.toggleClassName('active')">
+	ME5801 Taller en Administración y Gestión de Proyectos de Ingeniería
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5801">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3855">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5300/ME3203/ME4603</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Formación Integral de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5801">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5801-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3f/3f7be6bc97f451b8b1698e6429330646/perfil/cbdcd00d71b76b6deab58b9cfeb3bccb.jpg" class="photo foto chica" /> Roberto Corvalan P.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Martes 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5802" onclick="this.parentNode.toggleClassName('active')">
+	ME5802 Taller de Habilidades Comunicacionales en la Organización
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5802">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3851">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5901S</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5802">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5802-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/cf/cfd9600ef036d9edea4765c79f032647/perfil/e89b6a48e57d7f9b4c5c1306efbe3b2e.jpg" class="photo foto chica" /> Paula Cabrera P.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Martes 19:30 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME5901" onclick="this.parentNode.toggleClassName('active')">
+	ME5901 Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME5901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3790">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME4901</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME59A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME5901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME5901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		55	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME6600" onclick="this.parentNode.toggleClassName('active')">
+	ME6600 Proyecto en Ingeniería Mecánica
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME6600">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5601,IN3301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME66A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME6600">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME6600-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d3bdd14963d95de0fb93a3306c48683b/perfil/cfa31450d519307b00b10545c73b1c6d.jpg" class="photo foto chica" /> Guillermo Ugarte</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		19	</td>
+	<td>Cátedra: Jueves 10:15 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME6901" onclick="this.parentNode.toggleClassName('active')">
+	ME6901 Práctica Profesional III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME6901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3848">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5901</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME69A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME6901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME6901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		16	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME6908" onclick="this.parentNode.toggleClassName('active')">
+	ME6908 Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME6908">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME69E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME6908">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME6908-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1c/1c17c885df74ed6af7aa3f8b4a6280b0/perfil/682028cb718ac771a52af524781dc8db.jpg" class="photo foto chica" /> Aquiles Sepulveda O.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME6909" onclick="this.parentNode.toggleClassName('active')">
+	ME6909 Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME6909">
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME6908</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME69F</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cME6909">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME6909-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3f/3f7be6bc97f451b8b1698e6429330646/perfil/cbdcd00d71b76b6deab58b9cfeb3bccb.jpg" class="photo foto chica" /> Roberto Corvalan P.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME49A" onclick="this.parentNode.toggleClassName('active')">
+	ME49A Práctica Profesional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME49A">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1308">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME38A</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME399</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME49A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME49A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME52B" onclick="this.parentNode.toggleClassName('active')">
+	ME52B Tratamientos Térmicos, Propiedades y Selección de Acero
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME52B">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1326">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME42B/ME4601</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME52B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME52B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/KS.svg" class="photo foto chica" /> Konstantin Sipos H.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Miércoles 08:30 - 10:00<br />Auxiliar: Jueves 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME59A" onclick="this.parentNode.toggleClassName('active')">
+	ME59A Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME59A">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1317">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME49A,ME56AS</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME499/ME5901</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME59A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME59A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME63B" onclick="this.parentNode.toggleClassName('active')">
+	ME63B Combustión de Sistemas Gaseosos Reactivos
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME63B">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3840">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>5</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME53A</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME63B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME63B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME66A" onclick="this.parentNode.toggleClassName('active')">
+	ME66A Taller de Proyecto Mecánico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME66A">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1318">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN42A,ME56B</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME620/ME630/ME660/ME6600</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME66A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME66A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d3bdd14963d95de0fb93a3306c48683b/perfil/cfa31450d519307b00b10545c73b1c6d.jpg" class="photo foto chica" /> Guillermo Ugarte</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Jueves 10:15 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME69A" onclick="this.parentNode.toggleClassName('active')">
+	ME69A Práctica Profesional III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME69A">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1319">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME59A,ME56B</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME599/ME6901</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME69A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME69A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME69E" onclick="this.parentNode.toggleClassName('active')">
+	ME69E Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME69E">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1320">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(EH050/EH052/EH09A/EI11BS/EI004/EI20A/EI005/EI21A),CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME6908</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME69E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME69E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1c/1c17c885df74ed6af7aa3f8b4a6280b0/perfil/682028cb718ac771a52af524781dc8db.jpg" class="photo foto chica" /> Aquiles Sepulveda O.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME69F" onclick="this.parentNode.toggleClassName('active')">
+	ME69F Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME69F">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1321">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>22</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME69E,(EH09A/EI20A/EI29A/EI04AS),CR320</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME6909</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 12 UD. EN OTRAS ASIGNATURAS.</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cME69F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME69F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3f/3f7be6bc97f451b8b1698e6429330646/perfil/cbdcd00d71b76b6deab58b9cfeb3bccb.jpg" class="photo foto chica" /> Roberto Corvalan P.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME538" onclick="this.parentNode.toggleClassName('active')">
+	ME538 Fundamentos de Aire Acondicionado y Refrigeración
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME538">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1492">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>4</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME43BS/ME4302S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>ME208,ME209</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME538">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME538-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/10/10661dbce6818def5cdd2a07fd9f3815/perfil/d473c69227314b0f2e4a9ffb4c52b669.jpg" class="photo foto chica" /> Roberto Román L.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Viernes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME542" onclick="this.parentNode.toggleClassName('active')">
+	ME542 Trabajo Dirigido
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME542">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1341">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>4</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(ME43A,ME42B)/(ME4301,ME4601)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME542">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME542-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a6/a6b99a61a6ac3ad73df48bb736350972/perfil/e5e17a85cd149185510018a468a39052.jpg" class="photo foto chica" /> Viviana Meruane N.</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="ME542-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9a/9a21ecb4cb26433005af26aba96e4fef/perfil/ab4f94dd87f1aead8f6bc9b57e48e06d.jpg" class="photo foto chica" /> Juan C. Zagal</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="ME542-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66721a2f3f91eea0d19d79fd95c09c56/perfil/3fac818b730d043dd54f559f83ca38a0.jpg" class="photo foto chica" /> Alvaro Valencia M.</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME567" onclick="this.parentNode.toggleClassName('active')">
+	ME567 Diseño y Gestión de Procesos para Construcción y Producción
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME567">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3850">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5700,(ME4602/(ME3203,ME4603)),IN2201</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cME567">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME567-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/db/db8fd5a2c744b7db89b834104746fa69/perfil/2a40001d1b792b07e92324cbd3dd6ebd.jpg" class="photo foto chica" /> Sergio Espinoza Marín</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME702" onclick="this.parentNode.toggleClassName('active')">
+	ME702 Elasticidad Aplicada
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME702">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1351">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME46A/ME3202</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME702">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME702-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/59/59a6bbdeeb1b72b23ee58833c03d2ba8/perfil/6159c07587d639660460003e19e8719f.jpg" class="photo foto chica" /> Elena Atroshchenko</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME703" onclick="this.parentNode.toggleClassName('active')">
+	ME703 Resistencia Probabilística de Materiales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME703">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1352">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME46A/ME3202</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME703">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME703-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e3/e358e6f615d0f9ebeba67fe7a807284e/perfil/0e81fae2f9f760e1d7e35233d1a24c40.jpg" class="photo foto chica" /> Pablo Kittl D.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME704" onclick="this.parentNode.toggleClassName('active')">
+	ME704 Robótica y Automatización del Diseño
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME704">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3832">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME55A/ME4501/EL4003/CC3301/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME704">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME704-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9a/9a21ecb4cb26433005af26aba96e4fef/perfil/ab4f94dd87f1aead8f6bc9b57e48e06d.jpg" class="photo foto chica" /> Juan C. Zagal</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME705" onclick="this.parentNode.toggleClassName('active')">
+	ME705 Métodos de Elemento Finito Generalizado
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME705">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3822">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME5600S,ME5500S</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME705">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME705-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/00/00e408a6b10f15bdedf13aecbf44da37/perfil/9f1d91ab2fab4e6a7c895931d29942b3.jpg" class="photo foto chica" /> Alejandro Ortiz Bernardin</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Martes 14:00 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME706" onclick="this.parentNode.toggleClassName('active')">
+	ME706 Dinámica Estructural
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME706">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3835">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME4701</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME706">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME706-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a6/a6b99a61a6ac3ad73df48bb736350972/perfil/e5e17a85cd149185510018a468a39052.jpg" class="photo foto chica" /> Viviana Meruane N.</h1></li>
+		</ul>
+	</td>
+	<td>13</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Martes 14:00 - 16:00, Jueves 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME711" onclick="this.parentNode.toggleClassName('active')">
+	ME711 Transferencia de Calor y Masa
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME711">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1504">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME4302/ME43B/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME711">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME711-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/829888224b2319905c7852fbd4736b43/perfil/831624ef0fd7642f2da68f518008bc93.jpg" class="photo foto chica" /> Ramon Frederick G.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME718" onclick="this.parentNode.toggleClassName('active')">
+	ME718 Gestión de la Calidad y la Productividad para Empresas de Manufact
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME718">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR210</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Electivo</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cME718">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME718-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/SM.svg" class="photo foto chica" /> Sady Maureria F.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Sábado 08:30 - 11:45, Lunes 18:00 - 19:30, Semana: 0, 11<br />Control: Viernes 19:30 - 21:00, Semana: 10</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME721" onclick="this.parentNode.toggleClassName('active')">
+	ME721 Comportamiento Mecánico de los Materiales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME721">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1514">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME3601/ME42B/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME721">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME721-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1c/1c17c885df74ed6af7aa3f8b4a6280b0/perfil/682028cb718ac771a52af524781dc8db.jpg" class="photo foto chica" /> Aquiles Sepulveda O.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Jueves 16:15 - 19:30<br />Auxiliar: Miércoles 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME733" onclick="this.parentNode.toggleClassName('active')">
+	ME733 Pulvimetalurgia
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME733">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1517">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>ME58B/ME4601</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME733">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME733-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/08/08fc714941a1fd935471451ead1ab25c/perfil/0fb9e41f8400e0a5c429a9f5bb2f626d.jpg" class="photo foto chica" /> Rodrigo Palma H.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		7	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Miércoles 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME736" onclick="this.parentNode.toggleClassName('active')">
+	ME736 Diseño Mecánico y Selección de Materiales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME736">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1518">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(ME32A,ME42A)/(ME3201,ME3601)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME736">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME736-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9a/9ad2083883651cf00f53a30d88dad490/perfil/be09adee1d57850bcaaaf986e2285417.jpg" class="photo foto chica" /> M. Theodor Deleanu</h1></li>
+		</ul>
+	</td>
+	<td>22</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Martes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME797" onclick="this.parentNode.toggleClassName('active')">
+	ME797 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME797">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1526">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME797">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME797-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/829888224b2319905c7852fbd4736b43/perfil/831624ef0fd7642f2da68f518008bc93.jpg" class="photo foto chica" /> Ramon Frederick G.</h1></li>
+		</ul>
+	</td>
+	<td>7</td>
+	<td>
+		7	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="ME798" onclick="this.parentNode.toggleClassName('active')">
+	ME798 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cME798">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=1527">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>18</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cME798">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="ME798-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/829888224b2319905c7852fbd4736b43/perfil/831624ef0fd7642f2da68f518008bc93.jpg" class="photo foto chica" /> Ramon Frederick G.</h1></li>
+		</ul>
+	</td>
+	<td>8</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+	<dt>Sustentabilidad</dt>
+	<dd>Los cursos llevan una marca según si están <span class="sustentable">relacionados con sustentabilidad</span> o <span class="sustentable enfocado">enfocados en sustentabilidad</span>. <a target="_blank" href="http://ingenieria.uchile.cl/oficina-de-ingenieria-para-la-sustentabilidad/que-hacemos/106441/docencia">Más información de esta iniciativa</a>.</dd>
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: '0tefi9ndbvf140f7o4iug4tgo0',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+</body>
+</html>

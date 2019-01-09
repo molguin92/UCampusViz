@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus82-int&lang=es&_sess=d6lurv5n3dhq78hns10262clg4&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>AS - Departamento de Astronomía</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141" selected="selected">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3" selected="selected">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option><option value="26">QI - Departamento de Química Básica</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="AS2001" onclick="this.parentNode.toggleClassName('active')">
+	AS2001 Astronomía General
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS2001">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=6729">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI1002/FI1A2</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>AS30A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS2001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS2001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c0/c0fbe392b56b02bdb8b811687c1553cc/perfil/6c4f7836c7366b1217f79c1a8ecd80f0.jpg" class="photo foto chica" /> Jose Maza S.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		85	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 18:00 - 19:30</td>
+</tr>
+<tr id="AS2001-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8b/8bbc46b593ce965969687b4ba1dca247/perfil/1d5dac99588d3c35a711ee6c91b31b1e.jpg" class="photo foto chica" /> Edgardo Costa H.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		29	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Jueves 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS3003" onclick="this.parentNode.toggleClassName('active')">
+	AS3003 Introducción a la Cosmología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS3003">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3698">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2002,(FI2004/CM2004)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>AS42B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS3003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS3003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2c70f74ab425a9e6d2bea6bd5c70ac23/perfil/ddd2b6ddcb18388f5191e7964f9e54ec.jpg" class="photo foto chica" /> Luis Campusano B.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Viernes 18:00 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS3101" onclick="this.parentNode.toggleClassName('active')">
+	AS3101 Astrofísica de Estrellas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS3101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3507">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2002,(FI2004/CM2004)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>AS31B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS3101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS3101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		22	</td>
+	<td>Cátedra: Lunes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS4101" onclick="this.parentNode.toggleClassName('active')">
+	AS4101 Astrofísica de Galaxias
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS4101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3508">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AS3101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>AS42A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS4101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS4101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/90073c60ef8195b3a94771211741691d/perfil/68c951fd9fca0c6338cfd2cc513b6bc7.jpg" class="photo foto chica" /> Ricardo Muñoz V.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Viernes 16:15 - 17:45<br />Auxiliar: Jueves 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS4107" onclick="this.parentNode.toggleClassName('active')">
+	AS4107 Investigación Dirigida
+
+	<em class="opcion nowrap">5 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS4107">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AS4901S,AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS4107">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS4107-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="AS4107-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3d2292c6aa399ea6b5b5323a7a272d2b/perfil/fd6676d886d0628a9208624079b8ca7a.jpg" class="photo foto chica" /> Simón Casassus M.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS4107-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/90073c60ef8195b3a94771211741691d/perfil/68c951fd9fca0c6338cfd2cc513b6bc7.jpg" class="photo foto chica" /> Ricardo Muñoz V.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS4107-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/73/7334c45f512bb833f12e6dad47a52e7f/perfil/55ea821cdd0aeddc1afe69ad30fc6bb6.jpg" class="photo foto chica" /> Mario Hamuy W.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS4107-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/cc/ccf7f4772b9c53e9ae42de3595586601/perfil/a14d06412bb15fbbbcfb296e785557c7.jpg" class="photo foto chica" /> Leonardo Bronfman A.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS4108" onclick="this.parentNode.toggleClassName('active')">
+	AS4108 Investigación Dirigida II
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS4108">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AS4901,AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS4108">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS4108-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+<tr id="AS4108-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/73/7334c45f512bb833f12e6dad47a52e7f/perfil/55ea821cdd0aeddc1afe69ad30fc6bb6.jpg" class="photo foto chica" /> Mario Hamuy W.</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS4201" onclick="this.parentNode.toggleClassName('active')">
+	AS4201 Astronomía Experimental
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS4201">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3509">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(FI2003/FI2A3/(FI25A,FI35A)),AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>AS45B</dd>
+
+	<dt>Comentario</dt>
+	<dd>1RA. PRIORIDAD ALUMNOS AS
+2DA. PRIORIDAD ALUMNOS MINOR AS
+3RA. PRIORIDAD ALUMNOS DE OTRAS CARRERAS.
+LA PRIORIZACION SE HARA LUEGO DE LA 1RA. INSCRIPCION.</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS4201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS4201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8b/8bbc46b593ce965969687b4ba1dca247/perfil/1d5dac99588d3c35a711ee6c91b31b1e.jpg" class="photo foto chica" /> Edgardo Costa H.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/cc/ccf7f4772b9c53e9ae42de3595586601/perfil/a14d06412bb15fbbbcfb296e785557c7.jpg" class="photo foto chica" /> Leonardo Bronfman A.</h1></li>
+		</ul>
+	</td>
+	<td>16</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Lunes 16:15 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS4901" onclick="this.parentNode.toggleClassName('active')">
+	AS4901 Trabajo Tutorial Básico
+
+	<em class="opcion nowrap">6 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS4901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3541">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AS3101,AS4201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>AS49A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>16</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+<tr id="AS4901-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a9/a99771249cdb506769a41df6f9d5544d/perfil/f79fc2fa315308cae1e5aed1b3964d55.jpg" class="photo foto chica" /> Patricio Rojo</h1></li>
+		</ul>
+	</td>
+	<td>3</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+<tr id="AS4901-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2c70f74ab425a9e6d2bea6bd5c70ac23/perfil/ddd2b6ddcb18388f5191e7964f9e54ec.jpg" class="photo foto chica" /> Luis Campusano B.</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="AS4901-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d340955b1420576d909f3e35b1ac9b19/perfil/b69197e75999693b90ecb28befc057bd.jpg" class="photo foto chica" /> Paulina Lira T.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS4901-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c0/c0fbe392b56b02bdb8b811687c1553cc/perfil/6c4f7836c7366b1217f79c1a8ecd80f0.jpg" class="photo foto chica" /> Jose Maza S.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS4901-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/33/3358195defe1bf8b1efce9f3ea7d3d80/perfil/38e361fb0572b879a7bbb762a86f3af0.jpg" class="photo foto chica" /> Andres Escala Astorquiza</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS710" onclick="this.parentNode.toggleClassName('active')">
+	AS710 Procesos Radiativos en Astrofísica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS710">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=494">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS710">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS710-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>5</td>
+	<td>
+		7	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS715" onclick="this.parentNode.toggleClassName('active')">
+	AS715 Astrofísica Estelar
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS715">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=495">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS715">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS715-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/52/52c9e0055ca3404ff76a71fe97140939/perfil/943ac0fae9476f9f4d66cf5c56104108.jpg" class="photo foto chica" /> James Jenkins</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		5	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS730" onclick="this.parentNode.toggleClassName('active')">
+	AS730 Galaxias
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS730">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=497">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS730">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS730-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d340955b1420576d909f3e35b1ac9b19/perfil/b69197e75999693b90ecb28befc057bd.jpg" class="photo foto chica" /> Paulina Lira T.</h1></li>
+		</ul>
+	</td>
+	<td>5</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS787" onclick="this.parentNode.toggleClassName('active')">
+	AS787 Tópicos en Astrofísica Observacional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS787">
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS787">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS787-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3d2292c6aa399ea6b5b5323a7a272d2b/perfil/fd6676d886d0628a9208624079b8ca7a.jpg" class="photo foto chica" /> Simón Casassus M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS794" onclick="this.parentNode.toggleClassName('active')">
+	AS794 Taller de Investigación I
+
+	<em class="opcion nowrap">9 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS794">
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS794">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS794-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/52/52c9e0055ca3404ff76a71fe97140939/perfil/943ac0fae9476f9f4d66cf5c56104108.jpg" class="photo foto chica" /> James Jenkins</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3d2292c6aa399ea6b5b5323a7a272d2b/perfil/fd6676d886d0628a9208624079b8ca7a.jpg" class="photo foto chica" /> Simón Casassus M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/82ea8af52438dca37f57d6c5edbf2478/perfil/096a13397cf4db13458f66db506a2ef3.jpg" class="photo foto chica" /> Sebastián Lopez M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/33/3358195defe1bf8b1efce9f3ea7d3d80/perfil/38e361fb0572b879a7bbb762a86f3af0.jpg" class="photo foto chica" /> Andres Escala Astorquiza</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5f/5f85c40d99ea3d2566e1daf0652a42cb/perfil/b134646ab6771d5bb5343876594e08f1.jpg" class="photo foto chica" /> Guido Garay B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-6">
+	<td>
+		<h1>Sección 6</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/90073c60ef8195b3a94771211741691d/perfil/68c951fd9fca0c6338cfd2cc513b6bc7.jpg" class="photo foto chica" /> Ricardo Muñoz V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-7">
+	<td>
+		<h1>Sección 7</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d340955b1420576d909f3e35b1ac9b19/perfil/b69197e75999693b90ecb28befc057bd.jpg" class="photo foto chica" /> Paulina Lira T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-8">
+	<td>
+		<h1>Sección 8</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/52/52c9e0055ca3404ff76a71fe97140939/perfil/943ac0fae9476f9f4d66cf5c56104108.jpg" class="photo foto chica" /> James Jenkins</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS794-9">
+	<td>
+		<h1>Sección 9</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS795" onclick="this.parentNode.toggleClassName('active')">
+	AS795 Taller de Investigación II
+
+	<em class="opcion nowrap">5 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS795">
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS795">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS795-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/90073c60ef8195b3a94771211741691d/perfil/68c951fd9fca0c6338cfd2cc513b6bc7.jpg" class="photo foto chica" /> Ricardo Muñoz V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS795-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5f/5f85c40d99ea3d2566e1daf0652a42cb/perfil/b134646ab6771d5bb5343876594e08f1.jpg" class="photo foto chica" /> Guido Garay B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS795-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d340955b1420576d909f3e35b1ac9b19/perfil/b69197e75999693b90ecb28befc057bd.jpg" class="photo foto chica" /> Paulina Lira T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS795-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/52/52c9e0055ca3404ff76a71fe97140939/perfil/943ac0fae9476f9f4d66cf5c56104108.jpg" class="photo foto chica" /> James Jenkins</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS795-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS802" onclick="this.parentNode.toggleClassName('active')">
+	AS802 Taller de Investigación IV
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS802">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS802">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS802-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/33/3358195defe1bf8b1efce9f3ea7d3d80/perfil/38e361fb0572b879a7bbb762a86f3af0.jpg" class="photo foto chica" /> Andres Escala Astorquiza</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/52/52c9e0055ca3404ff76a71fe97140939/perfil/943ac0fae9476f9f4d66cf5c56104108.jpg" class="photo foto chica" /> James Jenkins</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS803" onclick="this.parentNode.toggleClassName('active')">
+	AS803 Taller de Investigación V
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS803">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS803">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS803-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5f/5f85c40d99ea3d2566e1daf0652a42cb/perfil/b134646ab6771d5bb5343876594e08f1.jpg" class="photo foto chica" /> Guido Garay B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS803-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d340955b1420576d909f3e35b1ac9b19/perfil/b69197e75999693b90ecb28befc057bd.jpg" class="photo foto chica" /> Paulina Lira T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS803-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/52/52c9e0055ca3404ff76a71fe97140939/perfil/943ac0fae9476f9f4d66cf5c56104108.jpg" class="photo foto chica" /> James Jenkins</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS895" onclick="this.parentNode.toggleClassName('active')">
+	AS895 Trabajo de Tesis I
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS895">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS895">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS895-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3d2292c6aa399ea6b5b5323a7a272d2b/perfil/fd6676d886d0628a9208624079b8ca7a.jpg" class="photo foto chica" /> Simón Casassus M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="AS895-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/cc/ccf7f4772b9c53e9ae42de3595586601/perfil/a14d06412bb15fbbbcfb296e785557c7.jpg" class="photo foto chica" /> Leonardo Bronfman A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS896" onclick="this.parentNode.toggleClassName('active')">
+	AS896 Trabajo de Tesis II
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS896">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AS895/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS896">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS896-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/90073c60ef8195b3a94771211741691d/perfil/68c951fd9fca0c6338cfd2cc513b6bc7.jpg" class="photo foto chica" /> Ricardo Muñoz V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS896-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d3/d340955b1420576d909f3e35b1ac9b19/perfil/b69197e75999693b90ecb28befc057bd.jpg" class="photo foto chica" /> Paulina Lira T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS896-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/de/de384bf8fcb3067df9649a730ed4aa9e/perfil/31aacec8be1a51ff1ee7256aa911fa9b.jpg" class="photo foto chica" /> Gonzalo A. Palma</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS897" onclick="this.parentNode.toggleClassName('active')">
+	AS897 Tesis III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS897">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS897">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS897-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS899" onclick="this.parentNode.toggleClassName('active')">
+	AS899 Trabajo de Tesis V
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS899">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS899">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS899-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/73/7334c45f512bb833f12e6dad47a52e7f/perfil/55ea821cdd0aeddc1afe69ad30fc6bb6.jpg" class="photo foto chica" /> Mario Hamuy W.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS899-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fbba04737c3b3cf501a87fe729387ab5/perfil/a15f86e42d742e8680eff0e4a831dc13.jpg" class="photo foto chica" /> Diego Mardones P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="AS900" onclick="this.parentNode.toggleClassName('active')">
+	AS900 Trabajo de Tesis VI
+
+	<em class="opcion nowrap">5 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cAS900">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cAS900">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="AS900-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/73/7334c45f512bb833f12e6dad47a52e7f/perfil/55ea821cdd0aeddc1afe69ad30fc6bb6.jpg" class="photo foto chica" /> Mario Hamuy W.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS900-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/82/82ea8af52438dca37f57d6c5edbf2478/perfil/096a13397cf4db13458f66db506a2ef3.jpg" class="photo foto chica" /> Sebastián Lopez M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS900-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2c70f74ab425a9e6d2bea6bd5c70ac23/perfil/ddd2b6ddcb18388f5191e7964f9e54ec.jpg" class="photo foto chica" /> Luis Campusano B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS900-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5f/5f85c40d99ea3d2566e1daf0652a42cb/perfil/b134646ab6771d5bb5343876594e08f1.jpg" class="photo foto chica" /> Guido Garay B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="AS900-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/90/90073c60ef8195b3a94771211741691d/perfil/68c951fd9fca0c6338cfd2cc513b6bc7.jpg" class="photo foto chica" /> Ricardo Muñoz V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: 'd6lurv5n3dhq78hns10262clg4',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+</body>
+</html>

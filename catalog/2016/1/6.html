@@ -1,0 +1,5049 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus82-int&lang=es&_sess=k2ou314pjgqvk505ir599q90d2&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>CI - Departamento de Ingeniería Civil</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161" selected="selected">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6" selected="selected">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="27">EI - Escuela de Ingeniería</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="CI3101" onclick="this.parentNode.toggleClassName('active')">
+	CI3101 Mecánica de Fluidos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI3101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3691">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA2002,MA2601,FI2003,(FI2004/CM2004)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI31A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI3101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI3101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/44/446158ea718b6e0f21b68f42aae380b4/perfil/ad662cefa3e3352b37da544cb197e67c.jpg" class="photo foto chica" /> Alberto De la Fuente S.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		65	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Miércoles 08:30 - 10:00<br />Auxiliar: Viernes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI3201" onclick="this.parentNode.toggleClassName('active')">
+	CI3201 Análisis de Estructuras Isostáticas
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI3201">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3559">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2001/FI2A1</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI32B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI3201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI3201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/17/178cf84f940c285f35ebea4508110f1a/perfil/d8d8717ff80a121ac68f1b4f235f9428.jpg" class="photo foto chica" /> Pedro Soto</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		86	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 10:00 - 12:00</td>
+</tr>
+<tr id="CI3201-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7adf76fab91cca459338764844f86028/perfil/e40645480055473416e41f3d99d585a7.jpg" class="photo foto chica" /> Patricio Arrue C.</h1></li>
+		</ul>
+	</td>
+	<td>90</td>
+	<td>
+		60	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 10:00 - 12:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI3202" onclick="this.parentNode.toggleClassName('active')">
+	CI3202 Mecánica de Sólidos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI3202">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3557">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3201,MA2601</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI32C/ME3202</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI3202">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI3202-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/83ce77e60b412cf3990cbd6761e775d3/perfil/53938fc0a35031df44f727927eb2624f.jpg" class="photo foto chica" /> J Felipe Beltran M.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		61	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 10:00 - 12:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI3501" onclick="this.parentNode.toggleClassName('active')">
+	CI3501 Materiales de Construcción
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI3501">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3556">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>FI2003,CI3201,(FI2004/CM2004)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI34A/ME3601</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI3501">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI3501-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/28/28113e7afc290d41636c949e5bbceb65/perfil/f72104f0f0caa8c2be3ac5c0ea202a00.jpg" class="photo foto chica" /> Eduardo Donoso C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e1/e1d53b0f860b9f769ad34b7e8dca75a0/perfil/56b778e659f16d62fe5c7689bd6bc10b.jpg" class="photo foto chica" /> Gerardo Díaz Rodenas</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		31	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Lunes 14:00 - 16:00</td>
+</tr>
+<tr id="CI3501-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/28/28113e7afc290d41636c949e5bbceb65/perfil/f72104f0f0caa8c2be3ac5c0ea202a00.jpg" class="photo foto chica" /> Eduardo Donoso C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e1/e1d53b0f860b9f769ad34b7e8dca75a0/perfil/56b778e659f16d62fe5c7689bd6bc10b.jpg" class="photo foto chica" /> Gerardo Díaz Rodenas</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Lunes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI3502" onclick="this.parentNode.toggleClassName('active')">
+	CI3502 Topografía
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI3502">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3555">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MA2002/MA2A2),(FI2003/FI2A3)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI35A</dd>
+
+	<dt>Comentario</dt>
+	<dd>CONTROLES 5.6-5.7.-</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI3502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI3502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/10/102b70c804fa4ddd4a6ba8fa1b11750e/perfil/b934fb93db4eb45ce0ce12b1e9d7d518.jpg" class="photo foto chica" /> Ivan Bejarano B.</h1></li>
+		</ul>
+	</td>
+	<td>45</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Sábado 08:30 - 11:45</td>
+</tr>
+<tr id="CI3502-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/10/102b70c804fa4ddd4a6ba8fa1b11750e/perfil/b934fb93db4eb45ce0ce12b1e9d7d518.jpg" class="photo foto chica" /> Ivan Bejarano B.</h1></li>
+		</ul>
+	</td>
+	<td>45</td>
+	<td>
+		21	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Jueves 14:30 - 17:45</td>
+</tr>
+<tr id="CI3502-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/10/102b70c804fa4ddd4a6ba8fa1b11750e/perfil/b934fb93db4eb45ce0ce12b1e9d7d518.jpg" class="photo foto chica" /> Ivan Bejarano B.</h1></li>
+		</ul>
+	</td>
+	<td>45</td>
+	<td>
+		45	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Lunes 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4101" onclick="this.parentNode.toggleClassName('active')">
+	CI4101 Hidráulica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3633">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3101</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI41A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/32/32758e5db8e2ca2fb607028e4faa10c0/perfil/4cb71b9c56addb6191c6cd4fa63df11f.jpg" class="photo foto chica" /> Aldo Tamburrino T.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		54	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Miércoles 08:30 - 10:00<br />Auxiliar: Viernes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4102" onclick="this.parentNode.toggleClassName('active')">
+	CI4102 Ingeniería Ambiental
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4102">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3101/ME3301/IQ3202/MI3010</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI41B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a2/a2c1cfd4103522f3d67700d1f09fd886/perfil/66ae4e1782edaf26b53325e6ee2fc472.jpg" class="photo foto chica" /> Marcelo Olivares A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		77	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Miércoles 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4201" onclick="this.parentNode.toggleClassName('active')">
+	CI4201 Hormigón Estructural
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4201">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3558">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3202,CI3501</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI42B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/8336cc40acf4a75a1f7cd9eb95ff0530/perfil/586387d40fd3079cd6ca801e216c4516.jpg" class="photo foto chica" /> Fernando Yañez U.</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		52	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Jueves 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4202" onclick="this.parentNode.toggleClassName('active')">
+	CI4202 Análisis Estructural
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4202">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3595">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI42A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4202">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4202-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/83ce77e60b412cf3990cbd6761e775d3/perfil/53938fc0a35031df44f727927eb2624f.jpg" class="photo foto chica" /> J Felipe Beltran M.</h1></li>
+		</ul>
+	</td>
+	<td>60</td>
+	<td>
+		44	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4203" onclick="this.parentNode.toggleClassName('active')">
+	CI4203 Dinámica de Estructuras
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4203">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3634">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI42G</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4203">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4203-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/77/77594724d255341d23214a2cba5d8c9c/perfil/173fcee537dedc74338814feedaff974.jpg" class="photo foto chica" /> Fabian Rojas B.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		36	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 16:00 - 18:00</td>
+</tr>
+<tr id="CI4203-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/83ce77e60b412cf3990cbd6761e775d3/perfil/53938fc0a35031df44f727927eb2624f.jpg" class="photo foto chica" /> J Felipe Beltran M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		11	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4301" onclick="this.parentNode.toggleClassName('active')">
+	CI4301 Análisis de Sistemas de Transporte
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3554">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA2002,IN2201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI43A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5b/5b21538c4b75410671d306625fa43a0b/perfil/21a70d92868dc1be90efc34c6b0db980.jpg" class="photo foto chica" /> Marcela Munizaga M.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		76	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Laboratorio: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4401" onclick="this.parentNode.toggleClassName('active')">
+	CI4401 Geotecnia
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4401">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3596">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101,CI3202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI44A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bd/bdb7d957fff6c2c6fc6efb653b9bf7c9/perfil/41570b542b01640f9b0140c69de6c2e3.jpg" class="photo foto chica" /> César Pasten</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		51	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 10:00 - 12:00<br />Laboratorio: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4402" onclick="this.parentNode.toggleClassName('active')">
+	CI4402 Geomecánica
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4402">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3561">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4401</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI44B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4402">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4402-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b9/b99e8ec1dd38bc36fd96c0ed8358a2a4/perfil/eb00ab562f438957bb00986d246be294.jpg" class="photo foto chica" /> Roberto Gesche S.</h1></li>
+		</ul>
+	</td>
+	<td>80</td>
+	<td>
+		54	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 10:00 - 12:00<br />Laboratorio: Lunes 16:00 - 18:00</td>
+</tr>
+<tr id="CI4402-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/83ce77e60b412cf3990cbd6761e775d3/perfil/53938fc0a35031df44f727927eb2624f.jpg" class="photo foto chica" /> J Felipe Beltran M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI4901" onclick="this.parentNode.toggleClassName('active')">
+	CI4901 Práctica de Topografía
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI4901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3658">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3502</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI39A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/10/102b70c804fa4ddd4a6ba8fa1b11750e/perfil/b934fb93db4eb45ce0ce12b1e9d7d518.jpg" class="photo foto chica" /> Ivan Bejarano B.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		92	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5101" onclick="this.parentNode.toggleClassName('active')">
+	CI5101 Hidrología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5015">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4101,(MA3403/MA3402)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI41C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b8/b85d423b17d3e0b43f4c99184fe39ac7/perfil/a4f5cba6eebe630bf63ad7a774b20a08.jpg" class="photo foto chica" /> Ximena Vargas M.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Martes 16:15 - 17:45, Miércoles 16:15 - 17:45<br />Auxiliar: Miércoles 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5102" onclick="this.parentNode.toggleClassName('active')">
+	CI5102 Calidad del Agua
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3697">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI51I</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/15/158a92fbf6ca721aee89f301fbaeef94/perfil/6f22f7bcb5d46ef40c61605bf81d2f61.jpg" class="photo foto chica" /> Katherine Lizama Allende</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		35	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5103" onclick="this.parentNode.toggleClassName('active')">
+	CI5103 Análisis de Sistemas Ambientales
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5103">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI51K</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5103">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5103-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a2/a2c1cfd4103522f3d67700d1f09fd886/perfil/66ae4e1782edaf26b53325e6ee2fc472.jpg" class="photo foto chica" /> Marcelo Olivares A.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		33	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Martes 14:00 - 16:00</td>
+</tr>
+<tr id="CI5103-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/83ce77e60b412cf3990cbd6761e775d3/perfil/53938fc0a35031df44f727927eb2624f.jpg" class="photo foto chica" /> J Felipe Beltran M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5104" onclick="this.parentNode.toggleClassName('active')">
+	CI5104 Hidráulica Aplicada al Diseño de Obras
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5104">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12738">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5101,CI4102S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI51B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5104">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5104-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fb/fb70815547802633243dbd21f453e205/perfil/f12e28fe8464d57b5da1e2fb2e4ad85a.jpg" class="photo foto chica" /> Cristian Hadad W.</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Miércoles 08:30 - 10:00<br />Auxiliar: Viernes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5107" onclick="this.parentNode.toggleClassName('active')">
+	CI5107 Regulación del Agua en Chile: Conceptos y Casos de Estudio
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5107">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5016">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4102</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5107">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5107-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/PR.svg" class="photo foto chica" /> Pedro Rivera I.</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5108" onclick="this.parentNode.toggleClassName('active')">
+	CI5108 Seminario de Recursos Hidrícos y Medio Ambiente
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5108">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4102</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5108">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5108-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d9/d96bad4488f5921f5eaaecbd9a7ffb46/perfil/c8113a44bb9f67ca32754e12d69587da.jpg" class="photo foto chica" /> Jorge Castillo G.</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5111" onclick="this.parentNode.toggleClassName('active')">
+	CI5111 Seminario de Recursos Hídricos y Medio Ambiente IV
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5111">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4102</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5111">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5111-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1b/1b6561936b804dfa99476021f2a6c275/perfil/eabbdb9b6a0a1cbb0b78f34e90ac8e5b.jpg" class="photo foto chica" /> M. María del Carmen L. Muñoz</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Jueves 18:00 - 20:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5201" onclick="this.parentNode.toggleClassName('active')">
+	CI5201 Diseño Sísmico de Estructuras
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5201">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4201,CI4203,CI5202S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52S</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/14922afc24c1fc69152d50f8cecc2e06/perfil/696e88bfc18110bdc78ea09634f889fe.jpg" class="photo foto chica" /> Ruben Boroschek Krauskopf</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		24	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 10:00 - 12:00</td>
+</tr>
+<tr id="CI5201-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/83ce77e60b412cf3990cbd6761e775d3/perfil/53938fc0a35031df44f727927eb2624f.jpg" class="photo foto chica" /> J Felipe Beltran M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		7	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5202" onclick="this.parentNode.toggleClassName('active')">
+	CI5202 Estructuras de Acero
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5202">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3652">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3501,CI4202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52R</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5202">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5202-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ae/ae7118082affba91bf4eaa9d17c597d3/perfil/6fe389136473a65d587f72a5dd6812b2.jpg" class="photo foto chica" /> Ricardo Herrera M.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		45	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Miércoles 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5206" onclick="this.parentNode.toggleClassName('active')">
+	CI5206 Proyecto de Hormigón Armado
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5206">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5401,CI5201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52G</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5206">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5206-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8a/8a6db12fbb6280f7f29ae2515c05a04a/perfil/11ba4a9877a9c76ea9b07b76b74e364c.jpg" class="photo foto chica" /> Andrés Larrain C.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Miércoles 08:30 - 11:45</td>
+</tr>
+<tr id="CI5206-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/59/59539a5eab23c165178f9b78d56e7a31/perfil/22586f2e057c7f872e212f6e5b59a1fd.jpg" class="photo foto chica" /> Mariane Kupfer Cauty</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Miércoles 08:30 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5212" onclick="this.parentNode.toggleClassName('active')">
+	CI5212 Mecánica de Sólidos II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5212">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI42A/CI4202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI42F</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5212">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5212-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5b/5be27ef64c50ecc5a18b7f9f9696f459/perfil/0f7904797da71c2db772b2c796719c48.jpg" class="photo foto chica" /> Francisco Ortega C.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5221" onclick="this.parentNode.toggleClassName('active')">
+	CI5221 Hormigón Estructural II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5221">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4201</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52I</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5221">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5221-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b4/b4a59384e7c1f139269550934ab79197/perfil/2724f07176146f6fe0ea0e9e67a7dd61.jpg" class="photo foto chica" /> Leonardo Massone S.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5224" onclick="this.parentNode.toggleClassName('active')">
+	CI5224 Diseño y Construcción en Madera
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5224">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3501,CI4202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52J</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5224">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5224-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MW.svg" class="photo foto chica" /> Mario Wagner M.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5225" onclick="this.parentNode.toggleClassName('active')">
+	CI5225 Seminario: Sistemas Pasivos de Protección Sísmica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5225">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4203,(CI52S/CI5201)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI62K</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5225">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5225-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/81/81432dcfac9815ceb97982b13620fccb/perfil/7fbf739b9b663c24ded20a6af25e57e3.jpg" class="photo foto chica" /> Rodrigo Retamales Saavedra</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5301" onclick="this.parentNode.toggleClassName('active')">
+	CI5301 Optimización de Redes
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3641">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4301/CI43A</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c8d7e5ff357bf923445bd02149e56528/perfil/f25a6058bf90a0541eb3bc913f13eb9e.jpg" class="photo foto chica" /> Cristián E. Cortés</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Martes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5302" onclick="this.parentNode.toggleClassName('active')">
+	CI5302 Procesos Estocásticos en Transporte
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5302">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3642">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5301S,(MA3401/MA3403/MA34A)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI43C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5302">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5302-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c8d7e5ff357bf923445bd02149e56528/perfil/f25a6058bf90a0541eb3bc913f13eb9e.jpg" class="photo foto chica" /> Cristián E. Cortés</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		14	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5303" onclick="this.parentNode.toggleClassName('active')">
+	CI5303 Microeconomía
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5303">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3643">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN2201/IN41A</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI43B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5303">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5303-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/29/29bab296d48764bd5d44f2b80fcce22d/perfil/d868568aa0daf62198de4bcca77eb148.jpg" class="photo foto chica" /> Sergio Jara D.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5304" onclick="this.parentNode.toggleClassName('active')">
+	CI5304 Economía de Transporte
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5304">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3703">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CI4301/CI43A),CI5303S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI73H</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5304">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5304-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/29/29bab296d48764bd5d44f2b80fcce22d/perfil/d868568aa0daf62198de4bcca77eb148.jpg" class="photo foto chica" /> Sergio Jara D.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5306" onclick="this.parentNode.toggleClassName('active')">
+	CI5306 Economía de Localización
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5306">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3705">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5304</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI63E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5306">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5306-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/cc/cc14ed0a1acfc5122faf5b8e2fc2fd39/perfil/39b43e7b0d156c9e1813d65f2cc74094.jpg" class="photo foto chica" /> Leonardo Basso</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5307" onclick="this.parentNode.toggleClassName('active')">
+	CI5307 Modelos de Localización
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5307">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3702">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5306S</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5307">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5307-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c6/c6d3046be85639b5b4acc446148a4046/perfil/532ff0e9a98fef6629730d1665a5d488.jpg" class="photo foto chica" /> Cristián Guevara Cue</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		11	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5311" onclick="this.parentNode.toggleClassName('active')">
+	CI5311 Logística y Producción
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5311">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(IN2201/IN41A),(MA34B/MA3403/(MA3401,MA3402)),(MA3701/IN34A/IN3701)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5311">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5311-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ed/ed3ee5c5dd9cc2edcc9275755ac3ff1c/perfil/7823c8b90954b88ba19685488447b1df.jpg" class="photo foto chica" /> Andres Weintraub P.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c8d7e5ff357bf923445bd02149e56528/perfil/f25a6058bf90a0541eb3bc913f13eb9e.jpg" class="photo foto chica" /> Cristián E. Cortés</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		1	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Miércoles 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5312" onclick="this.parentNode.toggleClassName('active')">
+	CI5312 Transporte Sustentable
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5312">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=6031">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN2201</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5312">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5312-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/79bc36b84366b3f5549bbc64d96f7e86/perfil/c4406941afae253da471120ea6e3c5a6.jpg" class="photo foto chica" /> Alejandro Tirachini H.</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5401" onclick="this.parentNode.toggleClassName('active')">
+	CI5401 Fundaciones
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5401">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3653">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4201,CI4402</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52Q</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/65/654e4ecfab46128b9cd1fad218b46a82/perfil/045347b58bd1b9d98257be823f5ed918.jpg" class="photo foto chica" /> Ricardo Moffat C.</h1></li>
+		</ul>
+	</td>
+	<td>60</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5415" onclick="this.parentNode.toggleClassName('active')">
+	CI5415 Seminario de Geotecnia
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5415">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5401S</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5415">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5415-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ed/edf6f3dcae55a93ed341430f639aacd0/perfil/8b93234ed86424ef1b23a30ff18feb93.jpg" class="photo foto chica" /> Felipe Ochoa Cornejo</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5501" onclick="this.parentNode.toggleClassName('active')">
+	CI5501 Métodos Constructivos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5501">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3501,MA3403,CI4301</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5501">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5501-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b9/b9c43452251b5235d96d77cfd1d7f366/perfil/4c9ca88680b52f642e954c909e1ffb7d.jpg" class="photo foto chica" /> Edgardo González Lizama</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		54	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5502" onclick="this.parentNode.toggleClassName('active')">
+	CI5502 Planificación y Control de Proyectos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5502">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5501,IN3301,(IN3701/MA3701)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ec/eca0169f1689ed029f61e3679ef529f6/perfil/7e55e68a52cb2b6e7e06f63a8e30242c.jpg" class="photo foto chica" /> William Wragg L.</h1></li>
+		</ul>
+	</td>
+	<td>70</td>
+	<td>
+		57	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5503" onclick="this.parentNode.toggleClassName('active')">
+	CI5503 Tecnología del Hormigón
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5503">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA3403,CI3501</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI52C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5503">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5503-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0c/0cbfad7dbe747b455e9e90a8606cc7cb/perfil/ebef7a393bc1d488ef802e0e491376b4.jpg" class="photo foto chica" /> Jacques Phillipes Bornand A.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		24	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Jueves 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5512" onclick="this.parentNode.toggleClassName('active')">
+	CI5512 Gestión y Mejoramiento de la Calidad
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5512">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5501/CI52A</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5512">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5512-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/142d5754b707d98610aab5ca39b734d9/perfil/b1322b0ae828796563e6a1d72f260e16.jpg" class="photo foto chica" /> Alejandro Polanco Carrasco</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5513" onclick="this.parentNode.toggleClassName('active')">
+	CI5513 Gestión Contractual
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5513">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5502/CI52B</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5513">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5513-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f7/f72b455bb78420cfc22982ab9c66ffc7/perfil/a0601b0d146e428b9f6fdd28fd73fd86.jpg" class="photo foto chica" /> Jorge Pulgar A.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Miércoles 14:30 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5521" onclick="this.parentNode.toggleClassName('active')">
+	CI5521 Física de la Construcción
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5521">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI52A/CI5501</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI57A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5521">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5521-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GR.svg" class="photo foto chica" /> Gabriel Rodriguez J.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/84/84c8d14889f02fe599665b0fd3c6f4e8/perfil/f8026b5ab246639a88e6c15c56379cfe.jpg" class="photo foto chica" /> Miguel Bustamante S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7a1be0e5ab1fe64d0c7c03a2eb72c93e/perfil/82fbf8d803952e456dc7f6da568844b9.jpg" class="photo foto chica" /> Esteban Ruedlinger</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5533" onclick="this.parentNode.toggleClassName('active')">
+	CI5533 Diseño y Construcción de Puentes
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5533">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CI5401/CI52Q),CI4201</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5533">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5533-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a7/a73bd60b71f3318a551005b1428884db/perfil/41f8528fb7365f142d481b3ee7aee00c.jpg" class="photo foto chica" /> Pedro Astaburuaga G.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		20	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Viernes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5534" onclick="this.parentNode.toggleClassName('active')">
+	CI5534 Construcción de Túneles
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5534">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CI4402/CI44B),(CI5501/CI52A)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5534">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5534-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2ccd96fd768edae5fa4d03e1856f4de/perfil/95ea3edaf91f9c6e1e333aa6ba91b855.jpg" class="photo foto chica" /> Alexandre Gomes</h1></li>
+		</ul>
+	</td>
+	<td>35</td>
+	<td>
+		22	</td>
+	<td>Cátedra: Martes 18:00 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5551" onclick="this.parentNode.toggleClassName('active')">
+	CI5551 Seminario:Mercado de Energía Convencional y Renovable para Ingenie
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5551">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI52A/CI5501</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5551">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5551-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b6/b644fa8cdb43aac12f5643060c19449b/perfil/4177d570a5e31c3a9e691ce333ac159f.jpg" class="photo foto chica" /> Gonzalo Badal Z.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5801" onclick="this.parentNode.toggleClassName('active')">
+	CI5801 Taller de Redacción y Comprensión de Textos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5801">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5017">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR210</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5801">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5801-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7b/7bfaed897eb3d55ac85db393d97afa31/perfil/46ee955d043262421a984d496e6eb754.jpg" class="photo foto chica" /> Marcelo Casares</h1></li>
+		</ul>
+	</td>
+	<td>29</td>
+	<td>
+		26	</td>
+	<td>Cátedra: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5802" onclick="this.parentNode.toggleClassName('active')">
+	CI5802 Tecnologías de Información
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5802">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3789">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR210</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI55D</dd>
+
+	<dt>Comentario</dt>
+	<dd>Formación Integral</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5802">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5802-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/00/009b041b0f6368bb5699f34595e4b060/perfil/3d76786750cc36d4ae8047d7b0810fbd.jpg" class="photo foto chica" /> Ricardo Rojas P.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		28	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5803" onclick="this.parentNode.toggleClassName('active')">
+	CI5803 Trabajo Dirigido en Ingeniería Civil
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5803">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI65A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5803">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5803-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/14922afc24c1fc69152d50f8cecc2e06/perfil/696e88bfc18110bdc78ea09634f889fe.jpg" class="photo foto chica" /> Ruben Boroschek Krauskopf</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5804" onclick="this.parentNode.toggleClassName('active')">
+	CI5804 Fundamentos de Seguridad Ocupacional
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5804">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR210</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5804">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5804-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CI.svg" class="photo foto chica" /> Catalina Iborra</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		19	</td>
+	<td>Cátedra: Miércoles 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5805" onclick="this.parentNode.toggleClassName('active')">
+	CI5805 Aspectos Legales en la Ingeniería Civil
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5805">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5501</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI55G</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5805">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5805-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/39/3995541bae1cb330e420824194e474ac/perfil/fbf9f732b13557cb9e6c71dccc033cb6.jpg" class="photo foto chica" /> Roberto Andrés Ceron Reyes</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e7/e702baf72beb4e2c6385e77db54cf120/perfil/1a729eb2e484cba2f9f871df1f284c0d.jpg" class="photo foto chica" /> Jorge Ramón Martínez Rivera</h1></li>
+		</ul>
+	</td>
+	<td>40</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Martes 18:00 - 20:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5807" onclick="this.parentNode.toggleClassName('active')">
+	CI5807 Derecho y Regulación Ambiental
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5807">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3986">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Formación Integral</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5807">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5807-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/64/641e88010b55bf21b33b4361fc081624/perfil/df27359f5a3cbe4d808406dc0490eac2.jpg" class="photo foto chica" /> Pablo Andres Aranda Valenzuela</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/69/6968c462b58414a63887fa648cc2f683/perfil/fb3172519f2fbd5dfc77ab62a7705c2f.jpg" class="photo foto chica" /> Ezio Costa Cordella</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		28	</td>
+	<td>Cátedra: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI5901" onclick="this.parentNode.toggleClassName('active')">
+	CI5901 Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI5901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3692">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4901,(CI4102/CI4301/CI4201)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI59A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI5901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI5901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c8d7e5ff357bf923445bd02149e56528/perfil/f25a6058bf90a0541eb3bc913f13eb9e.jpg" class="photo foto chica" /> Cristián E. Cortés</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		86	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6101" onclick="this.parentNode.toggleClassName('active')">
+	CI6101 Procesos de Transporte en Sistemas Acuáticos
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6101">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5105</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/44/446158ea718b6e0f21b68f42aae380b4/perfil/ad662cefa3e3352b37da544cb197e67c.jpg" class="photo foto chica" /> Alberto De la Fuente S.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		32	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Viernes 10:00 - 12:00</td>
+</tr>
+<tr id="CI6101-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/83ce77e60b412cf3990cbd6761e775d3/perfil/53938fc0a35031df44f727927eb2624f.jpg" class="photo foto chica" /> J Felipe Beltran M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		5	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6102" onclick="this.parentNode.toggleClassName('active')">
+	CI6102 Proyecto Integrado de Recursos Hídricos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6102">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12718">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI61B/CI61C/CI61D/CI61E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GC.svg" class="photo foto chica" /> Gabriel Castro A.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		18	</td>
+	<td>Cátedra: Miércoles 08:30 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6103" onclick="this.parentNode.toggleClassName('active')">
+	CI6103 Proyecto de Sistemas Hidráulicos/Sanitarios/Ambiental
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6103">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=12714">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI61B/CI61C/CI61D/CI61E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6103">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6103-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JS.svg" class="photo foto chica" /> Juan Carlos Sanhueza N.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		7	</td>
+	<td>Cátedra: Jueves 18:00 - 21:00</td>
+</tr>
+<tr id="CI6103-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e29b3726905fc92a6bad53a1043a01b1/perfil/8a26baa20dda1ff4549ff9ea760d50e8.jpg" class="photo foto chica" /> Tania I. Fernández</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Jueves 18:00 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6108" onclick="this.parentNode.toggleClassName('active')">
+	CI6108 Escurrimientos Transitorios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6108">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5104/CI51B</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI61P</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6108">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6108-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/60e8a217c996a7d60e53b1838fa98df7/perfil/4b9852ba6c8cdc940b09c12fb91b2fd7.jpg" class="photo foto chica" /> Tomás Trewhela</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Lunes 18:00 - 19:30, Miércoles 18:00 - 19:30<br />Auxiliar: Jueves 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6110" onclick="this.parentNode.toggleClassName('active')">
+	CI6110 Análisis Hidrológico y Evaluación de Recursos Hídricos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6110">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5104</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI61R</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6110">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6110-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b8/b85d423b17d3e0b43f4c99184fe39ac7/perfil/a4f5cba6eebe630bf63ad7a774b20a08.jpg" class="photo foto chica" /> Ximena Vargas M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c890565df1fd87bc3185b9bbd8411b8e/perfil/5615b56dfad7a2ebe8b45fcde54b67a3.jpg" class="photo foto chica" /> James McPhee T.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6111" onclick="this.parentNode.toggleClassName('active')">
+	CI6111 Hidrodinámica Ambiental
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6111">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI51B/CI5104</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI61S</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6111">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6111-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 16:15 - 17:45<br />Auxiliar: Viernes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6201" onclick="this.parentNode.toggleClassName('active')">
+	CI6201 Proyecto de Estructuras de Acero
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6201">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4102,(CI5202/CI52R)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI62A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6d/6d5bc329ae2e8a188f50cf7c65f83e8c/perfil/342857a293c37c1bd68087f1ca05932f.jpg" class="photo foto chica" /> Alejandro Verdugo P.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Lunes 16:15 - 19:30</td>
+</tr>
+<tr id="CI6201-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7a62db1f3bd08c7741db2b6349bb6906/perfil/947b2f5d6edae8bfe0d3e980afe7f02f.jpg" class="photo foto chica" /> Ramón Montecinos C.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Lunes 16:15 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6210" onclick="this.parentNode.toggleClassName('active')">
+	CI6210 Dinámica Avanzada de Estructuras
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6210">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4203</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6210">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6210-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/14922afc24c1fc69152d50f8cecc2e06/perfil/696e88bfc18110bdc78ea09634f889fe.jpg" class="photo foto chica" /> Ruben Boroschek Krauskopf</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Viernes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6301" onclick="this.parentNode.toggleClassName('active')">
+	CI6301 Ingeniería de Tránsito
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6301">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3646">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4301/CI43A</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI53G</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/79bc36b84366b3f5549bbc64d96f7e86/perfil/c4406941afae253da471120ea6e3c5a6.jpg" class="photo foto chica" /> Alejandro Tirachini H.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6302" onclick="this.parentNode.toggleClassName('active')">
+	CI6302 Proyecto de Diseño Tecnológico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6302">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI6301S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI68A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6302">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6302-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JC.svg" class="photo foto chica" /> Juan Enrique Cannobbio Salas</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Lunes 18:00 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6304" onclick="this.parentNode.toggleClassName('active')">
+	CI6304 Seminario de Ingeniería de Transporte
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6304">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI63B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6304">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6304-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/79bc36b84366b3f5549bbc64d96f7e86/perfil/c4406941afae253da471120ea6e3c5a6.jpg" class="photo foto chica" /> Alejandro Tirachini H.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6310" onclick="this.parentNode.toggleClassName('active')">
+	CI6310 Seguridad de Tránsito
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6310">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3650">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA3402/MA3403</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI63H</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6310">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6310-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/af/af271be0b3ae13a4e49c7805d643bbea/perfil/aa716b0a7cd0526d55a65497a26f17a3.jpg" class="photo foto chica" /> Milton Bertin</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		7	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6401" onclick="this.parentNode.toggleClassName('active')">
+	CI6401 Proyecto de Geotecnia
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6401">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5401S</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6401">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6401-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b9/b99e8ec1dd38bc36fd96c0ed8358a2a4/perfil/eb00ab562f438957bb00986d246be294.jpg" class="photo foto chica" /> Roberto Gesche S.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Jueves 16:15 - 19:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6402" onclick="this.parentNode.toggleClassName('active')">
+	CI6402 Comportamiento de Medios Particulados
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6402">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4402</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6402">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6402-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/EB.svg" class="photo foto chica" /> Edgar Bard O.</h1></li>
+		</ul>
+	</td>
+	<td>8</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6501" onclick="this.parentNode.toggleClassName('active')">
+	CI6501 Proyecto de Construcción de Edificios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6501">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CI41B/CI4102),(CI52B/CI5502),(CI52CS/CI5503S)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI62B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6501">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6501-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f7/f72b455bb78420cfc22982ab9c66ffc7/perfil/a0601b0d146e428b9f6fdd28fd73fd86.jpg" class="photo foto chica" /> Jorge Pulgar A.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6502" onclick="this.parentNode.toggleClassName('active')">
+	CI6502 Proyecto de Construcción de Obras Civiles
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6502">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4102,(CI52B/CI5502)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI62C</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6502">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6502-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/da/dadfec1fe446fd468950163b74ba4fca/perfil/c3f9b4f5a238c2d17a5cef4b164c62bd.jpg" class="photo foto chica" /> Jaime Tellez T.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Martes 18:00 - 21:00<br />Auxiliar: Lunes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6901" onclick="this.parentNode.toggleClassName('active')">
+	CI6901 Práctica Profesional III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3710">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5901,CI4102</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI69A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c8d7e5ff357bf923445bd02149e56528/perfil/f25a6058bf90a0541eb3bc913f13eb9e.jpg" class="photo foto chica" /> Cristián E. Cortés</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		71	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6908" onclick="this.parentNode.toggleClassName('active')">
+	CI6908 Introducción al Trabajo de Título
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6908">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI69E/CI697</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6908">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6908-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/86/86eb46816309fd3c8b5f45e6ab76422d/perfil/72a1a0ba0d1a63c33e49ea5476d361b7.jpg" class="photo foto chica" /> Maria Ofelia Moroni Y.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+<tr id="CI6908-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/86/86eb46816309fd3c8b5f45e6ab76422d/perfil/72a1a0ba0d1a63c33e49ea5476d361b7.jpg" class="photo foto chica" /> Maria Ofelia Moroni Y.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		9	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+<tr id="CI6908-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		28	</td>
+	<td>Cátedra: Martes 16:00 - 18:00</td>
+</tr>
+<tr id="CI6908-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b8/b8f5747c21cb6d1fa71c4b962a7b3022/perfil/456500446740e8f27fce741d2579053d.jpg" class="photo foto chica" /> Alejandro Aldea S.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6909" onclick="this.parentNode.toggleClassName('active')">
+	CI6909 Trabajo de Título
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6909">
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI6901S,CI6908,(EI2090/EI4205)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI69F/CI698</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6909">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6909-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f7/f72b455bb78420cfc22982ab9c66ffc7/perfil/a0601b0d146e428b9f6fdd28fd73fd86.jpg" class="photo foto chica" /> Jorge Pulgar A.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+<tr id="CI6909-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/dd/dd85ce62f50f7edadba7eaa24464557f/perfil/5f5fd5a73581d1107772fe629014085c.jpg" class="photo foto chica" /> David Campusano B.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+<tr id="CI6909-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+<tr id="CI6909-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b8/b8f5747c21cb6d1fa71c4b962a7b3022/perfil/456500446740e8f27fce741d2579053d.jpg" class="photo foto chica" /> Alejandro Aldea S.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI6910" onclick="this.parentNode.toggleClassName('active')">
+	CI6910 Trabajo de Memoria de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI6910">
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI6901S,CI6908,(EI2090/EI4205),AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI69H</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15
+ UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI6910">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI6910-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74cfa3a43913c69414df26ba676698ad/perfil/b2f3cc8fecaecfac938a9cfd07ed380c.jpg" class="photo foto chica" /> Mauricio Sarrazin A.</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Viernes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7112" onclick="this.parentNode.toggleClassName('active')">
+	CI7112 Hidrología de Nieve
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7112">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=11046">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI5104</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7112">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7112-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c890565df1fd87bc3185b9bbd8411b8e/perfil/5615b56dfad7a2ebe8b45fcde54b67a3.jpg" class="photo foto chica" /> James McPhee T.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Martes 08:30 - 10:00<br />Auxiliar: Miércoles 08:00 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7201" onclick="this.parentNode.toggleClassName('active')">
+	CI7201 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7201">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Magíster en Ciencias de la Ingeniería, Mención Ingeniería Estructural, Sísmica y Geotécnica</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Solo Alumnos de Postgrado</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		7	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7211" onclick="this.parentNode.toggleClassName('active')">
+	CI7211 Introducción al Análisis no Lineal de Estructuras
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7211">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI3501,CI4202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI72E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7211">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7211-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ae/ae7118082affba91bf4eaa9d17c597d3/perfil/6fe389136473a65d587f72a5dd6812b2.jpg" class="photo foto chica" /> Ricardo Herrera M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b4/b4a59384e7c1f139269550934ab79197/perfil/2724f07176146f6fe0ea0e9e67a7dd61.jpg" class="photo foto chica" /> Leonardo Massone S.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Miércoles 14:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7212" onclick="this.parentNode.toggleClassName('active')">
+	CI7212 Elementos Finitos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7212">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4202</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI72A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7212">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7212-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/74/74cfa3a43913c69414df26ba676698ad/perfil/b2f3cc8fecaecfac938a9cfd07ed380c.jpg" class="photo foto chica" /> Mauricio Sarrazin A.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7213" onclick="this.parentNode.toggleClassName('active')">
+	CI7213 Dinámica Avanzada de Estructuras
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7213">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4203</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7213">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7213-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/14922afc24c1fc69152d50f8cecc2e06/perfil/696e88bfc18110bdc78ea09634f889fe.jpg" class="photo foto chica" /> Ruben Boroschek Krauskopf</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Viernes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7214" onclick="this.parentNode.toggleClassName('active')">
+	CI7214 Ingeniería Sísmica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7214">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CI5201/CI52S),AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7214">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7214-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/609c7a8951dbeee158ba7e8084da7d61/perfil/45515532844ae3c841dfd8176edd1113.jpg" class="photo foto chica" /> Rodolfo Saragoni H.</h1></li>
+		</ul>
+	</td>
+	<td>25</td>
+	<td>
+		22	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7301" onclick="this.parentNode.toggleClassName('active')">
+	CI7301 Trabajo de Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7301">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI73N</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7301">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7301-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/79bc36b84366b3f5549bbc64d96f7e86/perfil/c4406941afae253da471120ea6e3c5a6.jpg" class="photo foto chica" /> Alejandro Tirachini H.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7302" onclick="this.parentNode.toggleClassName('active')">
+	CI7302 Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7302">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>CI73P</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7302">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7302-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/79bc36b84366b3f5549bbc64d96f7e86/perfil/c4406941afae253da471120ea6e3c5a6.jpg" class="photo foto chica" /> Alejandro Tirachini H.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI7411" onclick="this.parentNode.toggleClassName('active')">
+	CI7411 Dinámica de Suelos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI7411">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5054">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>CI4402/CI44B</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI7411">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI7411-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ed/edf6f3dcae55a93ed341430f639aacd0/perfil/8b93234ed86424ef1b23a30ff18feb93.jpg" class="photo foto chica" /> Felipe Ochoa Cornejo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bd/bdb7d957fff6c2c6fc6efb653b9bf7c9/perfil/41570b542b01640f9b0140c69de6c2e3.jpg" class="photo foto chica" /> César Pasten</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Martes 16:15 - 17:45, Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI71C" onclick="this.parentNode.toggleClassName('active')">
+	CI71C Análisis Hidrológico y Evaluación de Recursos Hídricos Avanzados
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI71C">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=564">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI71C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI71C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b8/b85d423b17d3e0b43f4c99184fe39ac7/perfil/a4f5cba6eebe630bf63ad7a774b20a08.jpg" class="photo foto chica" /> Ximena Vargas M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c8/c890565df1fd87bc3185b9bbd8411b8e/perfil/5615b56dfad7a2ebe8b45fcde54b67a3.jpg" class="photo foto chica" /> James McPhee T.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Miércoles 14:00 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI71L" onclick="this.parentNode.toggleClassName('active')">
+	CI71L Escurrimientos Transitorios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI71L">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI71L">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI71L-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/60e8a217c996a7d60e53b1838fa98df7/perfil/4b9852ba6c8cdc940b09c12fb91b2fd7.jpg" class="photo foto chica" /> Tomás Trewhela</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Lunes 18:00 - 19:30, Miércoles 18:00 - 19:30<br />Auxiliar: Jueves 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI71Q" onclick="this.parentNode.toggleClassName('active')">
+	CI71Q Hidrodinámica Ambiental
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI71Q">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI71Q">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI71Q-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Lunes 16:15 - 17:45, Miércoles 16:15 - 17:45<br />Auxiliar: Viernes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI71Z" onclick="this.parentNode.toggleClassName('active')">
+	CI71Z Dinámica de Mezclas Hiperconcentradas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI71Z">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI71Z">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI71Z-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/32/32758e5db8e2ca2fb607028e4faa10c0/perfil/4cb71b9c56addb6191c6cd4fa63df11f.jpg" class="photo foto chica" /> Aldo Tamburrino T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/16/16ef199295dc6b1f422c5cd7477dcc15/perfil/f4148ed091473f12e69242b6633a08b4.jpg" class="photo foto chica" /> Christian Ihle</h1></li>
+		</ul>
+	</td>
+	<td>20</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00, Viernes 08:30 - 10:00<br />Auxiliar: Martes 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI72P" onclick="this.parentNode.toggleClassName('active')">
+	CI72P Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI72P">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI72P">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI72P-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/60/609c7a8951dbeee158ba7e8084da7d61/perfil/45515532844ae3c841dfd8176edd1113.jpg" class="photo foto chica" /> Rodolfo Saragoni H.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI79A" onclick="this.parentNode.toggleClassName('active')">
+	CI79A Introducción a la Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI79A">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI79A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI79A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Viernes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI79B" onclick="this.parentNode.toggleClassName('active')">
+	CI79B Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI79B">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI79B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI79B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CI79C" onclick="this.parentNode.toggleClassName('active')">
+	CI79C Trabajo de Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCI79C">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCI79C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CI79C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+	<dt>Sustentabilidad</dt>
+	<dd>Los cursos llevan una marca según si están <span class="sustentable">relacionados con sustentabilidad</span> o <span class="sustentable enfocado">enfocados en sustentabilidad</span>. <a target="_blank" href="http://ingenieria.uchile.cl/oficina-de-ingenieria-para-la-sustentabilidad/que-hacemos/106441/docencia">Más información de esta iniciativa</a>.</dd>
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: 'k2ou314pjgqvk505ir599q90d2',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+</body>
+</html>

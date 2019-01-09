@@ -1,0 +1,3294 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus82-int&lang=es&_sess=m79odt3b5apmk4u7mpo6kmq504&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>MI - Departamento de Ingeniería de Minas</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132" selected="selected">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23" selected="selected">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option><option value="26">QI - Departamento de Química Básica</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="MI3010" onclick="this.parentNode.toggleClassName('active')">
+	MI3010 Fenómenos de Transporte en Metalurgia Extractiva
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI3010">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3544">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(CM2004/FI2004),MA2002</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI31A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI3010">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI3010-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/16/16ef199295dc6b1f422c5cd7477dcc15/perfil/f4148ed091473f12e69242b6633a08b4.jpg" class="photo foto chica" /> Christian Ihle</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0fc7f3822cb5f612b5de9d4372e6558a/perfil/a5117dbd798e21ad64ce931074b8df49.jpg" class="photo foto chica" /> Leandro A. Voisin A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		57	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI3130" onclick="this.parentNode.toggleClassName('active')">
+	MI3130 Minería
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI3130">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3576">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(IN2201/IN2C1),(EI1102/EI1B2/CC10A/CC10B)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI47A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI3130">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI3130-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42713465fa7178b37b992fcba0924c7b/perfil/b380408cfebbd71489eca1b5d3ef5122.jpg" class="photo foto chica" /> Aldo Casali B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/68/68f54ee4ddd0b78c8a8e01ac36d24315/perfil/623f3c9e5f0ff6666cb3aa3fd953f73d.jpg" class="photo foto chica" /> Emilio Castillo Dintrans</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		56	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Martes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI4020" onclick="this.parentNode.toggleClassName('active')">
+	MI4020 Fundamentos de Procesos Mineralúrgicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI4020">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3550">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI3010/IQ3202</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI4020">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI4020-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42713465fa7178b37b992fcba0924c7b/perfil/b380408cfebbd71489eca1b5d3ef5122.jpg" class="photo foto chica" /> Aldo Casali B.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		49	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00<br />Auxiliar: Martes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI4040" onclick="this.parentNode.toggleClassName('active')">
+	MI4040 Análisis Estadístico y Geoestadístico de Datos
+
+	<em class="opcion nowrap">5 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI4040">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3543">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MA3403/MA3402S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI68A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI4040">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI4040-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Laboratorio: Lunes 14:30 - 16:00</td>
+</tr>
+<tr id="MI4040-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Laboratorio: Martes 14:30 - 16:00</td>
+</tr>
+<tr id="MI4040-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Laboratorio: Jueves 14:30 - 16:00</td>
+</tr>
+<tr id="MI4040-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Laboratorio: Martes 16:15 - 17:45</td>
+</tr>
+<tr id="MI4040-5">
+	<td>
+		<h1>Sección 5</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI4060" onclick="this.parentNode.toggleClassName('active')">
+	MI4060 Mecánica de Rocas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI4060">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3716">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI3130,(GL4102/AUTOR),((ME3202/CI3202/MI3060)/AUTOR)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI46B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI4060">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI4060-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/de/de2a93995370f0d16d8590653b7209cd/perfil/d4c5b6d5edfbd785d6c6f535950a6a5e.jpg" class="photo foto chica" /> Sofia Rebolledo L.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/85/85729b3cb643f0d398e2ed60b1e55f30/perfil/12fb7b05e6d42965045d751166e49de9.jpg" class="photo foto chica" /> Javier Vallejos M.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		34	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Viernes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI4070" onclick="this.parentNode.toggleClassName('active')">
+	MI4070 Fundamentos de Tecnología Minera
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI4070">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3547">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101,MI3130,MI4060</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI57G</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI4070">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI4070-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RL.svg" class="photo foto chica" /> René Le Feaux C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		41	</td>
+	<td>Cátedra: Lunes 18:00 - 21:00<br />Auxiliar: Martes 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI4100" onclick="this.parentNode.toggleClassName('active')">
+	MI4100 Fundamentos de Metalurgia Extractiva
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI4100">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3546">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI4110/IQ3203</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI41D</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI4100">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI4100-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/be/be10ef9a4bdad19114008bab3e5cde52/perfil/2e9c849fa3de3f18274ad3e4e2614e71.jpg" class="photo foto chica" /> Luis Cifuentes S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2cd384579134a63f6e44f2cff6778e84/perfil/cfdc85f5cb06b9cdcf5943f1c1c61981.jpg" class="photo foto chica" /> Gonzalo Montes A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0fc7f3822cb5f612b5de9d4372e6558a/perfil/a5117dbd798e21ad64ce931074b8df49.jpg" class="photo foto chica" /> Leandro A. Voisin A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		36	</td>
+	<td>Cátedra: Martes 08:30 - 10:00, Jueves 08:30 - 10:00<br />Auxiliar: Viernes 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI4110" onclick="this.parentNode.toggleClassName('active')">
+	MI4110 Fisicoquímica Metalúrgica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI4110">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3577">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MI3010/IQ3202),(CM2004/FI2004),MA2001</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI4110">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI4110-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/be/be10ef9a4bdad19114008bab3e5cde52/perfil/2e9c849fa3de3f18274ad3e4e2614e71.jpg" class="photo foto chica" /> Luis Cifuentes S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2cd384579134a63f6e44f2cff6778e84/perfil/cfdc85f5cb06b9cdcf5943f1c1c61981.jpg" class="photo foto chica" /> Gonzalo Montes A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		26	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Viernes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI4901" onclick="this.parentNode.toggleClassName('active')">
+	MI4901 Práctica Profesional I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI4901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3549">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>GL3101,MI3130</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI49A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI4901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI4901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/53/5336f61d7d8c9b02049ede4043ce7b43/perfil/bca1f3ab194f2884bc44e3652a7d7af3.jpg" class="photo foto chica" /> Hans Göpfert</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		34	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5021" onclick="this.parentNode.toggleClassName('active')">
+	MI5021 Ingeniería del Procesamiento de Minerales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5021">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3629">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI4020,(MI4110/IQ3203)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5021">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5021-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3dde03b963fa64ffe153640bbe3fa159/perfil/904b90e7fb33e040d2bee81500a9e44c.jpg" class="photo foto chica" /> Willy Kracht</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		30	</td>
+	<td>Cátedra: Lunes 14:30 - 16:00, Viernes 14:30 - 16:00<br />Auxiliar: Martes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5022" onclick="this.parentNode.toggleClassName('active')">
+	MI5022 Análisis y Simulación de Procesos Mineralurgicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5022">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3667">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5021,MI4040</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5022">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5022-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42713465fa7178b37b992fcba0924c7b/perfil/b380408cfebbd71489eca1b5d3ef5122.jpg" class="photo foto chica" /> Aldo Casali B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3dde03b963fa64ffe153640bbe3fa159/perfil/904b90e7fb33e040d2bee81500a9e44c.jpg" class="photo foto chica" /> Willy Kracht</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e2ffd0dcfda3cec4fd60ecda396f9844/perfil/bb90a65b23eb7a592dcd806426763002.jpg" class="photo foto chica" /> Magin Torres</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Martes 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5031" onclick="this.parentNode.toggleClassName('active')">
+	MI5031 Procesos Hidro Metalúrgicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5031">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3707">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5101</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5031">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5031-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/be/be10ef9a4bdad19114008bab3e5cde52/perfil/2e9c849fa3de3f18274ad3e4e2614e71.jpg" class="photo foto chica" /> Luis Cifuentes S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2cd384579134a63f6e44f2cff6778e84/perfil/cfdc85f5cb06b9cdcf5943f1c1c61981.jpg" class="photo foto chica" /> Gonzalo Montes A.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		4	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Viernes 10:15 - 11:45<br />Auxiliar: Lunes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5041" onclick="this.parentNode.toggleClassName('active')">
+	MI5041 Evaluación de Yacimientos
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5041">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3628">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI4040,GL4401S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI54A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5041">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5041-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/80/805720a71cac4dc30abf09991cf2f35a/perfil/0b8c3d77875415487f3f3d93e69421f5.jpg" class="photo foto chica" /> Julián M. Ortiz</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		20	</td>
+	<td>Cátedra: Jueves 10:15 - 11:45, Viernes 10:15 - 11:45<br />Laboratorio: Lunes 12:00 - 13:30</td>
+</tr>
+<tr id="MI5041-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/80/805720a71cac4dc30abf09991cf2f35a/perfil/0b8c3d77875415487f3f3d93e69421f5.jpg" class="photo foto chica" /> Julián M. Ortiz</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		21	</td>
+	<td>Cátedra: Jueves 10:15 - 11:45, Viernes 10:15 - 11:45<br />Laboratorio: Viernes 12:00 - 13:30</td>
+</tr>
+<tr id="MI5041-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/80/805720a71cac4dc30abf09991cf2f35a/perfil/0b8c3d77875415487f3f3d93e69421f5.jpg" class="photo foto chica" /> Julián M. Ortiz</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Jueves 10:15 - 11:45, Viernes 10:15 - 11:45<br />Laboratorio: Miércoles 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5051" onclick="this.parentNode.toggleClassName('active')">
+	MI5051 Sustentabilidad en Minería
+	<span class="sustentable enfocado" title="Curso Enfocado en Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5051">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3719">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MI4070,MI4020,MI4100)/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI55D</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5051">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5051-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/64/6403725f20f6da6ab1b52e2f0e3b8783/perfil/4df2d04e01cad2c024fbd2444d294fc0.jpg" class="photo foto chica" /> Jacques Wiertz</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		42	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5071" onclick="this.parentNode.toggleClassName('active')">
+	MI5071 Sistemas Mineros
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5071">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3631">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI4070,MI4060</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI58A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5071">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5071-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/63/63a39c8cad9e03887bc2c568caf54844/perfil/cd78e72a407dd53b42ebca323e5cd504.jpg" class="photo foto chica" /> Nidia Meza M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/69/69eaae8e300a34bcbdf421d4685868c8/perfil/f12ac49f42d4255ed208501ce2d1fefb.jpg" class="photo foto chica" /> Ernesto Arancibia V.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		22	</td>
+	<td>Cátedra: Miércoles 18:00 - 21:00<br />Auxiliar: Lunes 18:00 - 20:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5072" onclick="this.parentNode.toggleClassName('active')">
+	MI5072 Simulación de Procesos Mineros
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5072">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3769">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5071/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5072">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5072-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/07/07eccce5e675831320989b7bd4b3a388/perfil/6e16d88a23e3dd416a89a62798eb0f62.jpg" class="photo foto chica" /> Raúl Castro R.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		23	</td>
+	<td>Cátedra: Martes 10:15 - 11:45, Jueves 10:15 - 11:45<br />Auxiliar: Martes 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5073" onclick="this.parentNode.toggleClassName('active')">
+	MI5073 Planificación Minera
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5073">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3706">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5071,MI5041</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5073">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5073-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0d/0d2f62b8c77c9caf2097edeb156d4e08/perfil/e0e73988dafa882b5b558ce2f977b319.jpg" class="photo foto chica" /> Juan Yarmuch G.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b275d92c53411673b1fcad478acd840f/perfil/1ddd530ae2f90931daf173730254133a.jpg" class="photo foto chica" /> Nelson Morales V.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		15	</td>
+	<td>Cátedra: Jueves 18:00 - 21:00<br />Laboratorio: Jueves 16:15 - 17:45, Viernes 10:15 - 11:45</td>
+</tr>
+<tr id="MI5073-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0d/0d2f62b8c77c9caf2097edeb156d4e08/perfil/e0e73988dafa882b5b558ce2f977b319.jpg" class="photo foto chica" /> Juan Yarmuch G.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b275d92c53411673b1fcad478acd840f/perfil/1ddd530ae2f90931daf173730254133a.jpg" class="photo foto chica" /> Nelson Morales V.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Jueves 18:00 - 21:00<br />Laboratorio: Jueves 16:15 - 17:45, Viernes 14:30 - 16:00</td>
+</tr>
+<tr id="MI5073-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0d/0d2f62b8c77c9caf2097edeb156d4e08/perfil/e0e73988dafa882b5b558ce2f977b319.jpg" class="photo foto chica" /> Juan Yarmuch G.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b275d92c53411673b1fcad478acd840f/perfil/1ddd530ae2f90931daf173730254133a.jpg" class="photo foto chica" /> Nelson Morales V.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		10	</td>
+	<td>Cátedra: Jueves 18:00 - 21:00<br />Laboratorio: Jueves 16:15 - 17:45, Viernes 16:15 - 17:45</td>
+</tr>
+<tr id="MI5073-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0d/0d2f62b8c77c9caf2097edeb156d4e08/perfil/e0e73988dafa882b5b558ce2f977b319.jpg" class="photo foto chica" /> Juan Yarmuch G.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b275d92c53411673b1fcad478acd840f/perfil/1ddd530ae2f90931daf173730254133a.jpg" class="photo foto chica" /> Nelson Morales V.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Jueves 18:00 - 21:00<br />Laboratorio: Miércoles 10:15 - 11:45, Jueves 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5081" onclick="this.parentNode.toggleClassName('active')">
+	MI5081 Economía de Minerales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5081">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3664">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>IN2201,MI5041</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5081">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5081-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/63/631afd0664b99fc9698646a9393094c7/perfil/3ea63f89b2e1d8edf2c9fcd3a121ae02.jpg" class="photo foto chica" /> Fernando Acosta B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7b/7bde7f1b2999cdca7dae62fef25c13e6/perfil/ef35c488d449d921cf79dce376115a1c.jpg" class="photo foto chica" /> Christian Moscoso Wallace</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		39	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Auxiliar: Jueves 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5082" onclick="this.parentNode.toggleClassName('active')">
+	MI5082 Gestión y Evaluación de Proyectos Mineros
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5082">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3663">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5071,MI5041S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI65A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5082">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5082-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c5/c56c39fe00eddf35d96c4d2254de3dae/perfil/70586de8b9dc4d852c64dd72ad9fd1db.jpg" class="photo foto chica" /> Mario Solari M.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		47	</td>
+	<td>Cátedra: Martes 14:30 - 16:00, Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5101" onclick="this.parentNode.toggleClassName('active')">
+	MI5101 Ingeniería de Procesos Metalúrgicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5101">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3731">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI4100</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/37/3737346f912443b2f5145e1ce0dd9246/perfil/708f0344532b7846df8fdbbc630cd44e.jpg" class="photo foto chica" /> Tomas Vargas V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CP.svg" class="photo foto chica" /> Claudio Pizarro R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2cd384579134a63f6e44f2cff6778e84/perfil/cfdc85f5cb06b9cdcf5943f1c1c61981.jpg" class="photo foto chica" /> Gonzalo Montes A.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		28	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00, Viernes 08:30 - 10:00<br />Auxiliar: Viernes 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI5901" onclick="this.parentNode.toggleClassName('active')">
+	MI5901 Práctica Profesional II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI5901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3630">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MI4070/MI4020),(MI4901/AUTOR)</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI59A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI5901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI5901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/53/5336f61d7d8c9b02049ede4043ce7b43/perfil/bca1f3ab194f2884bc44e3652a7d7af3.jpg" class="photo foto chica" /> Hans Göpfert</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		23	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6072" onclick="this.parentNode.toggleClassName('active')">
+	MI6072 Diseño Minero
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6072">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3785">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5071</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6072">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6072-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/40/40ba811089dcc846bd0f89a4f3530478/perfil/f02d4bbd22fbaec2719ed5fe9eb5f644.jpg" class="photo foto chica" /> Marcelo Vargas V.</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		5	</td>
+	<td>Cátedra: Viernes 14:30 - 17:45<br />Laboratorio: Martes 08:30 - 10:00</td>
+</tr>
+<tr id="MI6072-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/40/40ba811089dcc846bd0f89a4f3530478/perfil/f02d4bbd22fbaec2719ed5fe9eb5f644.jpg" class="photo foto chica" /> Marcelo Vargas V.</h1></li>
+		</ul>
+	</td>
+	<td>18</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Viernes 14:30 - 17:45<br />Laboratorio: Jueves 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6081" onclick="this.parentNode.toggleClassName('active')">
+	MI6081 Gestión de Operaciones Mineras
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6081">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3739">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5071,(MI5021/MI5101),MI5051S</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6081">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6081-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/BG.svg" class="photo foto chica" /> Benjamín Galdames C.</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		24	</td>
+	<td>Cátedra: Martes 18:00 - 19:30, Viernes 18:00 - 19:30<br />Auxiliar: Martes 19:30 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6121" onclick="this.parentNode.toggleClassName('active')">
+	MI6121 Taller de Proyecto Minero
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6121">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3763">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5073S,MI5082S</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI64B</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6121">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6121-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5a/5a0a7925a757bfbed3e5375da9f9b4cd/perfil/3752f5d09550cd5ca9f0f1390561636d.jpg" class="photo foto chica" /> Alfonso Ovalle W.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/00/00b67b5b95672835ae658274d49dba79/perfil/3bab0da480de4fd99bd0d1ee51d5b37e.jpg" class="photo foto chica" /> Marco Vera H.</h1></li>
+		</ul>
+	</td>
+	<td>16</td>
+	<td>
+		16	</td>
+	<td>Cátedra: Jueves 18:00 - 21:00</td>
+</tr>
+<tr id="MI6121-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JM.svg" class="photo foto chica" /> Juan Alberto Montes A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>16</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Viernes 19:30 - 21:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6131" onclick="this.parentNode.toggleClassName('active')">
+	MI6131 Legislación Minera
+	<span class="sustentable" title="Curso Relacionado con Sustentabilidad" />
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6131">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3717">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI3130,MI5901</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI65G</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6131">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6131-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f9/f93b6016228c3dc7bafdd2421bcf128d/perfil/88359a853703af20dd2aacfa125b8f4e.jpg" class="photo foto chica" /> Marcelo Olivares Cabrera</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Lunes 08:30 - 10:00<br />Auxiliar: Miércoles 08:30 - 10:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6141" onclick="this.parentNode.toggleClassName('active')">
+	MI6141 Taller de Autoconocimiento y Repertorios Sociales
+
+	<em class="opcion nowrap">3 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6141">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3776">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5901,CR264</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Formación Integral de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6141">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6141-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JL.svg" class="photo foto chica" /> Jorge Luzoro G.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		12	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45</td>
+</tr>
+<tr id="MI6141-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JL.svg" class="photo foto chica" /> Jorge Luzoro G.</h1></li>
+		</ul>
+	</td>
+	<td>12</td>
+	<td>
+		13	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30</td>
+</tr>
+<tr id="MI6141-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JL.svg" class="photo foto chica" /> Jorge Luzoro G.</h1></li>
+		</ul>
+	</td>
+	<td>10</td>
+	<td>
+		11	</td>
+	<td>Cátedra: Miércoles 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6142" onclick="this.parentNode.toggleClassName('active')">
+	MI6142 Taller de Redacción y Presentación de Textos Técnicos
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6142">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3772">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI6908S</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Formación Integral de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6142">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6142-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2c/2cd384579134a63f6e44f2cff6778e84/perfil/cfdc85f5cb06b9cdcf5943f1c1c61981.jpg" class="photo foto chica" /> Gonzalo Montes A.</h1></li>
+		</ul>
+	</td>
+	<td>22</td>
+	<td>
+		14	</td>
+	<td>Cátedra: Martes 16:15 - 17:45</td>
+</tr>
+<tr id="MI6142-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/53/5336f61d7d8c9b02049ede4043ce7b43/perfil/bca1f3ab194f2884bc44e3652a7d7af3.jpg" class="photo foto chica" /> Hans Göpfert</h1></li>
+		</ul>
+	</td>
+	<td>15</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Viernes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6143" onclick="this.parentNode.toggleClassName('active')">
+	MI6143 Innovación y Emprendimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6143">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3773">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5901,CR264</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso Formación Integral de Especialidad</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6143">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6143-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RE.svg" class="photo foto chica" /> Alfredo E. Serey</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JS.svg" class="photo foto chica" /> J Pedro S</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		17	</td>
+	<td>Cátedra: Jueves 12:00 - 13:30</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6901" onclick="this.parentNode.toggleClassName('active')">
+	MI6901 Práctica Profesional III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6901">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3718">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI5901/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI69A</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/53/5336f61d7d8c9b02049ede4043ce7b43/perfil/bca1f3ab194f2884bc44e3652a7d7af3.jpg" class="photo foto chica" /> Hans Göpfert</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		29	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6908" onclick="this.parentNode.toggleClassName('active')">
+	MI6908 Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6908">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3734">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(EI4205S/EI2090),MI5901S,CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI69E</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6908">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6908-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>100</td>
+	<td>
+		25	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI6909" onclick="this.parentNode.toggleClassName('active')">
+	MI6909 Trabajo de Título
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI6909">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=3732">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>21</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI6908,EI2090,CR324,AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI69F</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 15 UD. EN OTRAS ASIGNATURAS</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI6909">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI6909-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+<tr id="MI6909-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b275d92c53411673b1fcad478acd840f/perfil/1ddd530ae2f90931daf173730254133a.jpg" class="photo foto chica" /> Nelson Morales V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="MI6909-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/53/5336f61d7d8c9b02049ede4043ce7b43/perfil/bca1f3ab194f2884bc44e3652a7d7af3.jpg" class="photo foto chica" /> Hans Göpfert</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="MI6909-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/64/6403725f20f6da6ab1b52e2f0e3b8783/perfil/4df2d04e01cad2c024fbd2444d294fc0.jpg" class="photo foto chica" /> Jacques Wiertz</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI8130" onclick="this.parentNode.toggleClassName('active')">
+	MI8130 Análisis de Datos en Ingeniería de Minas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI8130">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4442">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MA3403/MA3402),AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI8130">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI8130-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>6</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Lunes 12:00 - 13:30, Viernes 12:00 - 13:30<br />Laboratorio: Lunes 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI8131" onclick="this.parentNode.toggleClassName('active')">
+	MI8131 Seminario de Tesis de Doctorado
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI8131">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4549">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI8130</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI8131">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI8131-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3dde03b963fa64ffe153640bbe3fa159/perfil/904b90e7fb33e040d2bee81500a9e44c.jpg" class="photo foto chica" /> Willy Kracht</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b275d92c53411673b1fcad478acd840f/perfil/1ddd530ae2f90931daf173730254133a.jpg" class="photo foto chica" /> Nelson Morales V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/85/85729b3cb643f0d398e2ed60b1e55f30/perfil/12fb7b05e6d42965045d751166e49de9.jpg" class="photo foto chica" /> Javier Vallejos M.</h1></li>
+		</ul>
+	</td>
+	<td>3</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI8132" onclick="this.parentNode.toggleClassName('active')">
+	MI8132 Unidad de Investigación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI8132">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4550">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>12</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI8130</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI8132">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI8132-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>3</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI8133" onclick="this.parentNode.toggleClassName('active')">
+	MI8133 Tópicos Especiales en Mineria
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI8133">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=4551">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI8130/AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI8133">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI8133-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>3</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI52E" onclick="this.parentNode.toggleClassName('active')">
+	MI52E Concentración de Minerales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI52E">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=2258">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI42C/IQ48A</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Solo Magister</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI52E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI52E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3d/3dde03b963fa64ffe153640bbe3fa159/perfil/904b90e7fb33e040d2bee81500a9e44c.jpg" class="photo foto chica" /> Willy Kracht</h1></li>
+		</ul>
+	</td>
+	<td>1</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI69A" onclick="this.parentNode.toggleClassName('active')">
+	MI69A Práctica Profesional III
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI69A">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=2287">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>7</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI59A/AUTOR</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI599/MI6901</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI69A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI69A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/53/5336f61d7d8c9b02049ede4043ce7b43/perfil/bca1f3ab194f2884bc44e3652a7d7af3.jpg" class="photo foto chica" /> Hans Göpfert</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI69E" onclick="this.parentNode.toggleClassName('active')">
+	MI69E Introducción al Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI69E">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=2290">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(EH052/EH09A/EI11BS/EI004/EI20A/EI005/EH050/EI21A),CR288</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI6908</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI69E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI69E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		2	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI69F" onclick="this.parentNode.toggleClassName('active')">
+	MI69F Trabajo de Título
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI69F">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=2502">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>22</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI69E,(EH09A/EI20A/EI29A/EI04AS),CR320</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>MI6909</dd>
+
+	<dt>Comentario</dt>
+	<dd>NO SE PERMITE INSCRIBIR MAS DE 12 UD. EN OTRAS ASIGNATURAS.</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI69F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI69F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/54/54186a43ac4ce4e046d2ea26fbb2e2a3/perfil/7a4e480e6c14564bd9d0754a3b44d6c2.jpg" class="photo foto chica" /> Xavier Emery</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/64/6403725f20f6da6ab1b52e2f0e3b8783/perfil/4df2d04e01cad2c024fbd2444d294fc0.jpg" class="photo foto chica" /> Jacques Wiertz</h1></li>
+		</ul>
+	</td>
+	<td>50</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI73A" onclick="this.parentNode.toggleClassName('active')">
+	MI73A Trabajo Dirigido
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI73A">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI73A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI73A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		5	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI74A" onclick="this.parentNode.toggleClassName('active')">
+	MI74A Caracterización e Identificación de Minerales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI74A">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI74A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI74A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d4/d40a4dc89c5b15fac170fcf2df761002/perfil/4fdedc2174148bcfd3ffd3cfbaa802d4.jpg" class="photo foto chica" /> Eliana Almendras C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0fc7f3822cb5f612b5de9d4372e6558a/perfil/a5117dbd798e21ad64ce931074b8df49.jpg" class="photo foto chica" /> Leandro A. Voisin A.</h1></li>
+		</ul>
+	</td>
+	<td>6</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Lunes 10:15 - 11:45, Martes 10:15 - 11:45<br />Laboratorio: Martes 14:30 - 16:00, Jueves 14:30 - 16:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI74D" onclick="this.parentNode.toggleClassName('active')">
+	MI74D Fundamentos Geomecánicos de Métodos de Explotación por Hundimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI74D">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI74D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI74D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/07/07eccce5e675831320989b7bd4b3a388/perfil/6e16d88a23e3dd416a89a62798eb0f62.jpg" class="photo foto chica" /> Raúl Castro R.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI74E" onclick="this.parentNode.toggleClassName('active')">
+	MI74E Tópicos Avanzados en Preparación Minera Subterránea
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI74E">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI74E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI74E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/07/07eccce5e675831320989b7bd4b3a388/perfil/6e16d88a23e3dd416a89a62798eb0f62.jpg" class="photo foto chica" /> Raúl Castro R.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI74F" onclick="this.parentNode.toggleClassName('active')">
+	MI74F Diseño Experimental y Análisis de Datos Industriales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI74F">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI74F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI74F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/07/07eccce5e675831320989b7bd4b3a388/perfil/6e16d88a23e3dd416a89a62798eb0f62.jpg" class="photo foto chica" /> Raúl Castro R.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI74G" onclick="this.parentNode.toggleClassName('active')">
+	MI74G Tópicos Avanz. de Diseño y Planif. de Minas Expl. por Hundimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI74G">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI74G">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI74G-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/07/07eccce5e675831320989b7bd4b3a388/perfil/6e16d88a23e3dd416a89a62798eb0f62.jpg" class="photo foto chica" /> Raúl Castro R.</h1></li>
+		</ul>
+	</td>
+	<td>2</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI75B" onclick="this.parentNode.toggleClassName('active')">
+	MI75B Fenómenos de Transporte para Procesos Metalúrgicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI75B">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=23766">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI75B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI75B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/16/16ef199295dc6b1f422c5cd7477dcc15/perfil/f4148ed091473f12e69242b6633a08b4.jpg" class="photo foto chica" /> Christian Ihle</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0fc7f3822cb5f612b5de9d4372e6558a/perfil/a5117dbd798e21ad64ce931074b8df49.jpg" class="photo foto chica" /> Leandro A. Voisin A.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		3	</td>
+	<td>Cátedra: Martes 12:00 - 13:30, Jueves 12:00 - 13:30<br />Auxiliar: Lunes 16:15 - 17:45</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI75E" onclick="this.parentNode.toggleClassName('active')">
+	MI75E Tópicos Avanzados en Planificación Minera
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI75E">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI75E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI75E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b2/b275d92c53411673b1fcad478acd840f/perfil/1ddd530ae2f90931daf173730254133a.jpg" class="photo foto chica" /> Nelson Morales V.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI75F" onclick="this.parentNode.toggleClassName('active')">
+	MI75F Geoestadística Multivariable
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI75F">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>(MI68A/MI75D),MI54A</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI75F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI75F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/80/805720a71cac4dc30abf09991cf2f35a/perfil/0b8c3d77875415487f3f3d93e69421f5.jpg" class="photo foto chica" /> Julián M. Ortiz</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI75G" onclick="this.parentNode.toggleClassName('active')">
+	MI75G Proyecto Geoestadístico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI75G">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>MI54A,(MI68A/MI75D)</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI75G">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI75G-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/80/805720a71cac4dc30abf09991cf2f35a/perfil/0b8c3d77875415487f3f3d93e69421f5.jpg" class="photo foto chica" /> Julián M. Ortiz</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI76A" onclick="this.parentNode.toggleClassName('active')">
+	MI76A Físico-Química Metalúrgica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI76A">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI76A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI76A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Tutorial</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI77A" onclick="this.parentNode.toggleClassName('active')">
+	MI77A Electrometalurgia Avanzada
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI77A">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=23770">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI77A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI77A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Horario por Fijar</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/be/be10ef9a4bdad19114008bab3e5cde52/perfil/2e9c849fa3de3f18274ad3e4e2614e71.jpg" class="photo foto chica" /> Luis Cifuentes S.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI79A" onclick="this.parentNode.toggleClassName('active')">
+	MI79A Tesis I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI79A">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Sólo Magíste</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI79A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI79A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Solo Magister</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI79B" onclick="this.parentNode.toggleClassName('active')">
+	MI79B Tesis II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI79B">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Sólo Magíste</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI79B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI79B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Solo Magister</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI79C" onclick="this.parentNode.toggleClassName('active')">
+	MI79C Seminario de Preparación de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI79C">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Sólo Magíster</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI79C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI79C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/85/85729b3cb643f0d398e2ed60b1e55f30/perfil/12fb7b05e6d42965045d751166e49de9.jpg" class="photo foto chica" /> Javier Vallejos M.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="MI79D" onclick="this.parentNode.toggleClassName('active')">
+	MI79D Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cMI79D">
+	<dt>Programa</dt>
+	<dd><a class="opcion file pdf" href="https://ucampus.uchile.cl/m/fcfm_catalogo/programa?bajar=1&id=5879">Documento</a></dd>
+
+	<dt>Créditos</dt>
+	<dd>24</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Solo Magister</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cMI79D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="MI79D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2>Solo Magister</h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/85/85729b3cb643f0d398e2ed60b1e55f30/perfil/12fb7b05e6d42965045d751166e49de9.jpg" class="photo foto chica" /> Javier Vallejos M.</h1></li>
+		</ul>
+	</td>
+	<td>30</td>
+	<td>
+		8	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+	<dt>Sustentabilidad</dt>
+	<dd>Los cursos llevan una marca según si están <span class="sustentable">relacionados con sustentabilidad</span> o <span class="sustentable enfocado">enfocados en sustentabilidad</span>. <a target="_blank" href="http://ingenieria.uchile.cl/oficina-de-ingenieria-para-la-sustentabilidad/que-hacemos/106441/docencia">Más información de esta iniciativa</a>.</dd>
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: 'm79odt3b5apmk4u7mpo6kmq504',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+</body>
+</html>

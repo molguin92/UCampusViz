@@ -1,0 +1,6817 @@
+<!DOCTYPE html>
+<html lang="fcfm.es">
+<head>
+<script type="text/javascript" src="https://ucampus.uchile.cl/upasaporte/up.js?servicio=fcfm&_LB=ucampus81-int&lang=es&_sess=rfat8jjs31e8fb8e4tl5h59me0&recordar=1"></script><script type="text/javascript">!function() { var a = [480,768,992,1382,1920], r = Math.max(screen.width,screen.height); for(i in a) if(r<=a[i]) break; return document.cookie="res="+a[i]+"; path=/; secure"; }();</script><title>Catálogo de Cursos FCFM</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+<link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/style_v32459.css" type="text/css" /><meta name="description" content="Plataforma de Apoyo a la Gestión Curricular" />
+<link rel="copyright license" href="https://ucampus.uchile.cl/m/paginas/about" title="Centro Tecnológico Ucampus, FCFM, U. de Chile." />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon.png" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-152x152.png" sizes="152x152" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-167x167.png" sizes="167x167" />
+<link rel="apple-touch-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/apple-touch-icon-180x180.png" sizes="180x180" />
+<link rel="manifest" href="https://ucampus.uchile.cl/manifest.json" />
+<link rel="mask-icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="https://ucampus.uchile.cl/d/imglocal/favicon/favicon.ico" />
+<meta name="msapplication-config" content="https://ucampus.uchile.cl/d/imglocal/favicon/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/print_v32459.css" media="print" type="text/css" /><link rel="stylesheet" href="https://ucampus.uchile.cl/d/css/fcfm_catalogo_v32459.css" type="text/css" /><script type="text/javascript" src="https://ucampus.uchile.cl/d/js/javascript_v32459.js"></script><meta property="og:type" content="university" />
+<meta property="og:site_name" content="Ucampus Uchile" />
+<meta property="og:title" content="Ucampus Uchile" />
+<meta property="og:url" content="https://ucampus.uchile.cl" />
+<meta property="og:image" content="https://ucampus.uchile.cl/d/images/og.png" />
+</head>
+<body>
+
+<h1 id="header"><a href="https://ucampus.uchile.cl"><span>Ucampus Uchile :: </span></a></h1>
+
+<h2 id="titulo">Ucampus Uchile</h2>
+
+<a id="toggler" href="javascript:toggler()"></a>
+
+<div id="menu">
+
+<ul id="contenedor_opciones">
+<li id="widget_buscador"></li><li id="widget_perfil"></li><li class="contact"><a href="https://ucampus.uchile.cl/m/paginas/contact"><span>Contacto</span></a></li>	<li class="login"><a href="https://ucampus.uchile.cl/">Entrar</a></li>
+</ul>
+
+<script>
+function toggler() {
+	window.jQuery ? $( '#menu, #navigation, #toggler' ).toggleClass( 'active' ) : $$('#menu, #navigation, #toggler').invoke( 'toggleClassName', 'active' );
+	return void(0);
+}
+
+function grupoToggle( id ) {
+	window.jQuery ? $( '#'+id.replace( '.', '\\.' ) ).toggleClass( 'active' ) : $(id).toggleClassName( 'active' );
+	return void(0);
+}
+
+function menuToggle( id, grs ) {
+	var grs = grs ? '.grs' : '';
+	if( window.jQuery ) {
+		$('#modulos '+grs+'.active >ul' ).slideUp( 200, function() {
+			$('#modulos '+grs+'.active' ).not('#'+id).removeClass( 'active' );
+		} );
+		$('#'+id).toggleClass( 'active' );
+		if( $('#'+id).hasClass( 'active' ) ) $('#'+id+' >ul').slideDown(200);
+
+	} else {
+		$$('#modulos '+grs+'.active:not(#'+id+')' ).invoke( 'removeClassName', 'active' );
+		$(id).toggleClassName( 'active' );
+		if( $(id).cumulativeOffset().top < document.viewport.getScrollOffsets().top ) $(id).scrollTo();
+	}
+	if( ! grs ) quickAjax( 'https://ucampus.uchile.cl/?_hook=conf&id='+id, function() {} );
+}
+
+Event.onReady( function() {
+	if( 'ontouchstart' in document ) window.jQuery ? $(document.body).addClass( 'no-touch' ) : $(document.body).addClassName( 'no-touch' );
+
+	// debe ir sino el activo no hace slideUp la primera vez
+	if( window.jQuery ) $('#modulos .active > ul').attr( 'style', 'display: block' );
+
+	if( window.jQuery ) {
+		$('#modulos li.fcfm_catalogo').addClass( 'sel active' ).last().closest( 'div' ).addClass( 'active' );
+	} else {
+		var o = $$('#modulos li.fcfm_catalogo');
+		o.invoke( 'addClassName', 'sel active' );
+		if( o.length ) o[o.length-1].up('div').addClassName( 'active' );
+	}
+
+	// menu responsive modulos ucursos
+	if( window.jQuery ) {
+		var ms = $('ul.modulos');
+		if( ms ) {
+			ms.click( function( e ) {
+				if( ! $(this).hasClass( 'active' ) ) $(this).addClass( 'lock' );
+				$(this).toggleClass( 'active' );
+			} );
+			$('body').click( function() {
+				if( $( 'ul.modulos' ).hasClass( 'lock' ) ) return $( 'ul.modulos' ).delClass( 'lock' );
+				$( 'ul.modulos' ).removeClass( 'active' );
+			} );
+		}
+
+		$('#modulos li.sel.active > .nuevo').delay( 4000 ).fadeOut();
+
+	} else {
+		var ms = $$('ul.modulos');
+		if( ms.length ) {
+			ms = ms[0];
+			ms.on( 'click', function( e ) {
+				if( ! this.hasClassName( 'active' ) ) this.addClassName( 'lock' );
+				this.addClassName( 'active' );
+			} );
+			$$('body')[0].on( 'click', function() {
+				if( $$('ul.modulos')[0].hasClassName( 'lock' ) ) return $$('ul.modulos')[0].removeClassName( 'lock' );
+				$$('ul.modulos')[0].removeClassName( 'active' );
+			} );
+		}
+
+		setTimeout( function() { $$('#modulos li.sel.active > .nuevo').invoke( 'fade' ); }, 4000 );
+	}
+
+} );
+</script>
+
+<div id="modulos">
+
+
+
+
+
+	<div id="catalogos_de_cursos" class="bloque active">
+    <h1>
+		Catálogos de Cursos	</h1>
+	<ul>
+		<li id="artes_catalogo" class=" artes_catalogo">
+			<a href="https://ucampus.uchile.cl/m/artes_catalogo/">Artes</a>
+		</li>
+		<li id="bachillerato_catalogo" class=" bachillerato_catalogo">
+			<a href="https://ucampus.uchile.cl/m/bachillerato_catalogo/">Bachillerato</a>
+		</li>
+		<li id="ciencias_catalogo" class=" ciencias_catalogo">
+			<a href="https://ucampus.uchile.cl/m/ciencias_catalogo/">Ciencias</a>
+		</li>
+		<li id="agronomia_catalogo" class=" agronomia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/agronomia_catalogo/">Ciencias Agronómicas</a>
+		</li>
+		<li id="derecho_catalogo" class=" derecho_catalogo">
+			<a href="https://ucampus.uchile.cl/m/derecho_catalogo/">Derecho</a>
+		</li>
+		<li id="facso_catalogo" class=" facso_catalogo">
+			<a href="https://ucampus.uchile.cl/m/facso_catalogo/">FACSO</a>
+		</li>
+		<li id="fau_catalogo" class=" fau_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fau_catalogo/">FAU</a>
+		</li>
+		<li id="fcfm_catalogo" class="sel fcfm_catalogo">
+			<a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">FCFM</a>
+		</li>
+		<li id="filosofia_catalogo" class=" filosofia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/filosofia_catalogo/">Filosofía</a>
+		</li>
+		<li id="forestal_catalogo" class=" forestal_catalogo">
+			<a href="https://ucampus.uchile.cl/m/forestal_catalogo/">Forestal</a>
+		</li>
+		<li id="icei_catalogo" class=" icei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/icei_catalogo/">ICEI</a>
+		</li>
+		<li id="iei_catalogo" class=" iei_catalogo">
+			<a href="https://ucampus.uchile.cl/m/iei_catalogo/">IEI</a>
+		</li>
+		<li id="inap_catalogo" class=" inap_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inap_catalogo/">INAP</a>
+		</li>
+		<li id="inta_catalogo" class=" inta_catalogo">
+			<a href="https://ucampus.uchile.cl/m/inta_catalogo/">INTA</a>
+		</li>
+		<li id="medicina_catalogo" class=" medicina_catalogo">
+			<a href="https://ucampus.uchile.cl/m/medicina_catalogo/">Medicina</a>
+		</li>
+		<li id="odontologia_catalogo" class=" odontologia_catalogo">
+			<a href="https://ucampus.uchile.cl/m/odontologia_catalogo/">Odontología</a>
+		</li>
+		<li id="rrii_catalogo" class=" rrii_catalogo">
+			<a href="https://ucampus.uchile.cl/m/rrii_catalogo/">Programa Movilidad</a>
+		</li>
+		<li id="faciqyf_catalogo" class=" faciqyf_catalogo">
+			<a href="https://ucampus.uchile.cl/m/faciqyf_catalogo/">QyF</a>
+		</li>
+		<li id="veterinaria_catalogo" class=" veterinaria_catalogo">
+			<a href="https://ucampus.uchile.cl/m/veterinaria_catalogo/">Veterinaria</a>
+		</li>
+	</ul>
+	</div>
+</div>
+</div>
+
+
+<div id="navigation">
+<h1 class="modulo">Catálogo de Cursos FCFM</h1>
+
+<ul id="navbar">
+	<li><a href="https://ucampus.uchile.cl/m/fcfm_catalogo/">Catálogo de Cursos FCFM</a></li>
+	<li>EP - Escuela de Postgrado</li>
+</ul>
+
+
+<div id="mensajes"></div>
+
+
+<div id="body" class="fcfm fcfm_catalogo">
+
+<form class="buscar">
+<select id="semestre" name="semestre" onchange="this.form.submit()"><optgroup label="2019"><option value="20191">2019 Otoño</option></optgroup><optgroup label="2018"><option value="20181">2018 Otoño</option><option value="20182">2018 Primavera</option></optgroup><optgroup label="2017"><option value="20171">2017 Otoño</option><option value="20172">2017 Primavera</option><option value="20173">2017 Verano</option></optgroup><optgroup label="2016"><option value="20161">2016 Otoño</option><option value="20162">2016 Primavera</option></optgroup><optgroup label="2015"><option value="20151">2015 Otoño</option><option value="20152" selected="selected">2015 Primavera</option></optgroup><optgroup label="2014"><option value="20141">2014 Otoño</option><option value="20142">2014 Primavera</option><option value="20143">2014 Verano</option></optgroup><optgroup label="2013"><option value="20131">2013 Otoño</option><option value="20132">2013 Primavera</option></optgroup><optgroup label="2012"><option value="132">2012 Otoño</option><option value="133">2012 Primavera</option><option value="134">2012 Verano</option></optgroup><optgroup label="2011"><option value="128">2011 Otoño</option><option value="129">2011 Primavera</option></optgroup><optgroup label="2010"><option value="124">2010 Otoño</option><option value="125">2010 Primavera</option><option value="126">2010 Verano</option></optgroup><optgroup label="2009"><option value="120">2009 Otoño</option><option value="121">2009 Primavera</option><option value="122">2009 Verano</option></optgroup><optgroup label="2008"><option value="116">2008 Otoño</option><option value="117">2008 Primavera</option><option value="118">2008 Verano</option></optgroup><optgroup label="2007"><option value="112">2007 Otoño</option><option value="113">2007 Primavera</option><option value="114">2007 Verano</option></optgroup><optgroup label="2006"><option value="107">2006 Anual</option><option value="108">2006 Otoño</option><option value="109">2006 Primavera</option><option value="110">2006 Verano</option></optgroup><optgroup label="2005"><option value="103">2005 Anual</option><option value="104">2005 Otoño</option><option value="105">2005 Primavera</option><option value="106">2005 Verano</option></optgroup><optgroup label="2004"><option value="99">2004 Anual</option><option value="100">2004 Otoño</option><option value="101">2004 Primavera</option><option value="102">2004 Verano</option></optgroup><optgroup label="2003"><option value="95">2003 Anual</option><option value="96">2003 Otoño</option><option value="97">2003 Primavera</option><option value="98">2003 Verano</option></optgroup><optgroup label="2002"><option value="91">2002 Anual</option><option value="92">2002 Otoño</option><option value="93">2002 Primavera</option><option value="94">2002 Verano</option></optgroup><optgroup label="2001"><option value="87">2001 Anual</option><option value="88">2001 Otoño</option><option value="89">2001 Primavera</option><option value="90">2001 Verano</option></optgroup><optgroup label="2000"><option value="83">2000 Anual</option><option value="84">2000 Otoño</option><option value="85">2000 Primavera</option><option value="86">2000 Verano</option></optgroup><optgroup label="1999"><option value="79">1999 Anual</option><option value="80">1999 Otoño</option><option value="81">1999 Primavera</option><option value="82">1999 Verano</option></optgroup><optgroup label="1998"><option value="75">1998 Anual</option><option value="76">1998 Otoño</option><option value="77">1998 Primavera</option><option value="78">1998 Verano</option></optgroup><optgroup label="1997"><option value="71">1997 Anual</option><option value="72">1997 Otoño</option><option value="73">1997 Primavera</option><option value="74">1997 Verano</option></optgroup><optgroup label="1996"><option value="67">1996 Anual</option><option value="68">1996 Otoño</option><option value="69">1996 Primavera</option><option value="70">1996 Verano</option></optgroup></select>&nbsp; <select id="depto" name="depto" onchange="this.form.submit()"><option value="3">AS - Departamento de Astronomía</option><option value="5">CC - Departamento de Ciencias de la Computación</option><option value="6">CI - Departamento de Ingeniería Civil</option><option value="306">CM - Departamento de Ciencia de los Materiales</option><option value="7">DR - Área de Deportes, Recreación y Cultura</option><option value="305">ED - Doctorado en Ingeniería Eléctrica</option><option value="8">EH - Área de Estudios Humanísticos</option><option value="9">EI - Área de Idiomas, Escuela de Ingeniería</option><option value="12060002">EI - Área de Ingeniería e Innovación</option><option value="27">EI - Escuela de Ingeniería</option><option value="10">EL - Departamento de Ingeniería Eléctrica</option><option value="303" selected="selected">EP - Escuela de Postgrado</option><option value="12">ES - Escuela de Ingeniería y Ciencias</option><option value="310">FG - Plataforma</option><option value="13">FI - Departamento de Física</option><option value="15">GF - Departamento de Geofísica</option><option value="16">GL - Departamento de Geología</option><option value="19">IN - Departamento de Ingeniería Industrial</option><option value="21">MA - Departamento de Ingeniería Matemática</option><option value="22">ME - Departamento de Ingeniería Mecánica</option><option value="23">MI - Departamento de Ingeniería de Minas</option><option value="24">MT - Doctorado en Ciencia de los Materiales</option><option value="307">QB - Departamento de Ingeniería Química y Biotecnología</option><option value="26">QI - Departamento de Química Básica</option></select></form>
+
+<h1>Cursos
+</h1>
+
+
+
+<div class="ramo">
+<h2 id="CEDIIINES001" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIINES001 Innovación Estratégica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIINES001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIINES001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIINES001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/00/008bdcfe5133c338a025f3216c5146f1/perfil/6efdc36c7f105443f3f8221a88271be7.jpg" class="photo foto chica" /> Jorge Lara B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		21	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDCI01" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDCI01 Diseño Contra Incendios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDCI01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDCI01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDCI01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GR.svg" class="photo foto chica" /> Gabriel Rodriguez J.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MW.svg" class="photo foto chica" /> Mario Wagner M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/84/84c8d14889f02fe599665b0fd3c6f4e8/perfil/f8026b5ab246639a88e6c15c56379cfe.jpg" class="photo foto chica" /> Miguel Bustamante S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ce/ce15db231d9d9cc5d1fdaaa69031cbfc/perfil/c38b119477df66e033e4f63a32c91538.jpg" class="photo foto chica" /> Juan Carlos Elicer C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AR.svg" class="photo foto chica" /> Alejandro Ramirez C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FM.svg" class="photo foto chica" /> Fernando Medina Z.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/PR.svg" class="photo foto chica" /> Pedro Reszka</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/eb/eb2af5701482cf7308db332c99c5de75/perfil/2d01e29380f4dedf67ebee8f73f3110c.jpg" class="photo foto chica" /> Miguel Angel Pérez Arias</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b5/b550ab4fa81d5ca9ad1e6131a4d6fc9f/perfil/a3e2ab64c7ecf24172b21dff3f9cd5d2.jpg" class="photo foto chica" /> Marcial Salaverry R.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		23	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDCCONTO01" onclick="this.parentNode.toggleClassName('active')">
+	CEDCCONTO01 Curso de Ontología
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDCCONTO01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDCCONTO01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDCCONTO01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/35/35cd311c927aa1ecc20272c714b00f64/perfil/ecd20d37297e5101d420a355bd65c665.jpg" class="photo foto chica" /> Claudio Gutiérrez</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		4	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIEMEN01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIEMEN01 Ética en el Mercado, La Empresa y Los Negocios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIEMEN01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIEMEN01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIEMEN01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a4/a4f0e9a832750a06725545911b503bc5/perfil/e159fe9a2e4cf3ad35e35d817c44a817.jpg" class="photo foto chica" /> Teodoro Wigodski S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIFPNE01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIFPNE01 Finanzas Para No Especialistas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIFPNE01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIFPNE01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIFPNE01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/4d/4d66b1e6d9ea7f8069e52e5ad4fa8f85/perfil/92beb33055b489a0d7daee60e54d22b5.jpg" class="photo foto chica" /> Eduardo Contreras V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JM.svg" class="photo foto chica" /> Joan Massons</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		16	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIPEBS01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIPEBS01 Plan Estratégico con Balanced Scorecard
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIPEBS01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIPEBS01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIPEBS01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/00/008bdcfe5133c338a025f3216c5146f1/perfil/6efdc36c7f105443f3f8221a88271be7.jpg" class="photo foto chica" /> Jorge Lara B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		22	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIPEP001" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIPEP001 Preparación y Evaluación de Proyectos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIPEP001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIPEP001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIPEP001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/4d/4d66b1e6d9ea7f8069e52e5ad4fa8f85/perfil/92beb33055b489a0d7daee60e54d22b5.jpg" class="photo foto chica" /> Eduardo Contreras V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CJ.svg" class="photo foto chica" /> Claudio Jiménez C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c4/c4d2affcf91b37ac58e371c9667a810e/perfil/b5d9dffa44363d6724a7cd8f27a48497.jpg" class="photo foto chica" /> Christian Diez F.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		42	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIRAAS01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIRAAS01 Retail General y Táctico
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIRAAS01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIRAAS01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIRAAS01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+<tr id="CEDIIRAAS01-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIRAAS02" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIRAAS02 Retail Analítico
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIRAAS02">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIRAAS02">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIRAAS02-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+<tr id="CEDIIRAAS02-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		3	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIRAAS03" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIRAAS03 Retail Analítico en la Práctica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIRAAS03">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIRAAS03">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIRAAS03-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bb/bb5b99be23cb00f0da0c0d3fbd938767/perfil/fcba86a453169619afc63303f39c5b87.jpg" class="photo foto chica" /> Luis Aburto Lafourcade</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIRAAS04" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIRAAS04 Base de Modelamiento Analítico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIRAAS04">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIRAAS04">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIRAAS04-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bb/bb5b99be23cb00f0da0c0d3fbd938767/perfil/fcba86a453169619afc63303f39c5b87.jpg" class="photo foto chica" /> Luis Aburto Lafourcade</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIRCV201" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIRCV201 Riesgo de Crédito V2
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIRCV201">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIRCV201">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIRCV201-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1d/1d338f9885499bf8c95a107354f3750a/perfil/a805ae94655a88c9c00c069993444c19.jpg" class="photo foto chica" /> J. Miguel Cruz</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/20/20bdfa8cb370f8804c50ffd59141dcd4/perfil/79e8e66046b6d402dd65f3e8dfe1f351.jpg" class="photo foto chica" /> Richard Weber H.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c0/c0f06b21508e8356e9977e26ca8feff2/perfil/bbc068d0ff5087c632c713b6df3140df.jpg" class="photo foto chica" /> Sebastián Orozco D.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		31	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIREAN01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIREAN01 Retail Analytics
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIREAN01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIREAN01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIREAN01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bb/bb5b99be23cb00f0da0c0d3fbd938767/perfil/fcba86a453169619afc63303f39c5b87.jpg" class="photo foto chica" /> Luis Aburto Lafourcade</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEIDIEMDC01" onclick="this.parentNode.toggleClassName('active')">
+	CEIDIEMDC01 Eficiencia Energética en Establecimientos Educacionales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEIDIEMDC01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEIDIEMDC01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEIDIEMDC01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d54cd006ed2f240858b28d62ec95ddf/perfil/f0abe4a4aba2c0d5c376dadabfc7e173.jpg" class="photo foto chica" /> César Osorio E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FH.svg" class="photo foto chica" /> Francisco Hartung</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25749cd09f4e1e33808736d46f9a5ac/perfil/4ed49604dca7e2e0873b8fb094bb9ebf.jpg" class="photo foto chica" /> Diego Escalona K.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		39	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEIDIEMDC02" onclick="this.parentNode.toggleClassName('active')">
+	CEIDIEMDC02 Conociendo las Instalaciones y Carácterísticas Constructivas de mi Establecimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEIDIEMDC02">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEIDIEMDC02">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEIDIEMDC02-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d54cd006ed2f240858b28d62ec95ddf/perfil/f0abe4a4aba2c0d5c376dadabfc7e173.jpg" class="photo foto chica" /> César Osorio E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FH.svg" class="photo foto chica" /> Francisco Hartung</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25749cd09f4e1e33808736d46f9a5ac/perfil/4ed49604dca7e2e0873b8fb094bb9ebf.jpg" class="photo foto chica" /> Diego Escalona K.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		39	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEIDIEMDC03" onclick="this.parentNode.toggleClassName('active')">
+	CEIDIEMDC03 Conociendo tus Consumos de Energía y Agua Potable
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEIDIEMDC03">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEIDIEMDC03">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEIDIEMDC03-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d54cd006ed2f240858b28d62ec95ddf/perfil/f0abe4a4aba2c0d5c376dadabfc7e173.jpg" class="photo foto chica" /> César Osorio E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FH.svg" class="photo foto chica" /> Francisco Hartung</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25749cd09f4e1e33808736d46f9a5ac/perfil/4ed49604dca7e2e0873b8fb094bb9ebf.jpg" class="photo foto chica" /> Diego Escalona K.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		39	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEIDIEMDC04" onclick="this.parentNode.toggleClassName('active')">
+	CEIDIEMDC04 Aprendiendo Sobre Sistemas que Consumen Energía
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEIDIEMDC04">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEIDIEMDC04">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEIDIEMDC04-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d54cd006ed2f240858b28d62ec95ddf/perfil/f0abe4a4aba2c0d5c376dadabfc7e173.jpg" class="photo foto chica" /> César Osorio E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FH.svg" class="photo foto chica" /> Francisco Hartung</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25749cd09f4e1e33808736d46f9a5ac/perfil/4ed49604dca7e2e0873b8fb094bb9ebf.jpg" class="photo foto chica" /> Diego Escalona K.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		39	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEIDIEMDC05" onclick="this.parentNode.toggleClassName('active')">
+	CEIDIEMDC05 Introducción a la Gestión Energética
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEIDIEMDC05">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEIDIEMDC05">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEIDIEMDC05-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d54cd006ed2f240858b28d62ec95ddf/perfil/f0abe4a4aba2c0d5c376dadabfc7e173.jpg" class="photo foto chica" /> César Osorio E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FH.svg" class="photo foto chica" /> Francisco Hartung</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25749cd09f4e1e33808736d46f9a5ac/perfil/4ed49604dca7e2e0873b8fb094bb9ebf.jpg" class="photo foto chica" /> Diego Escalona K.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		39	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEIDIEMDC06" onclick="this.parentNode.toggleClassName('active')">
+	CEIDIEMDC06 Aplicación de la Guía de Autodignóstico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEIDIEMDC06">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEIDIEMDC06">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEIDIEMDC06-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d54cd006ed2f240858b28d62ec95ddf/perfil/f0abe4a4aba2c0d5c376dadabfc7e173.jpg" class="photo foto chica" /> César Osorio E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FH.svg" class="photo foto chica" /> Francisco Hartung</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25749cd09f4e1e33808736d46f9a5ac/perfil/4ed49604dca7e2e0873b8fb094bb9ebf.jpg" class="photo foto chica" /> Diego Escalona K.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		39	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DEPOSTGSO01" onclick="this.parentNode.toggleClassName('active')">
+	DEPOSTGSO01 Fundamentos y Teoría
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDEPOSTGSO01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDEPOSTGSO01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DEPOSTGSO01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/LC.svg" class="photo foto chica" /> Lisette Cuellar</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8b/8b11e0aad876e48f60b9d86b59a1c1df/perfil/9a946b4e6de139de0c508b53b24952e5.jpg" class="photo foto chica" /> Bárbara Rodríguez Droguett</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/df/dfa5380995300004df7d5eee978c7751/perfil/89c6d53e389522fb7e1e4cbf3a1c231f.jpg" class="photo foto chica" /> Claudia Mac-Lean B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		10	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DEPOSTGSO02" onclick="this.parentNode.toggleClassName('active')">
+	DEPOSTGSO02 Medición de la Sustentabilidad
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDEPOSTGSO02">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDEPOSTGSO02">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DEPOSTGSO02-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/LC.svg" class="photo foto chica" /> Lisette Cuellar</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/53/53300bed3577058e69b68995a23cdd94/perfil/e59ac4948f88299ed5201f9742aebf52.jpg" class="photo foto chica" /> Felipe Celery C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DEPOSTGSO03" onclick="this.parentNode.toggleClassName('active')">
+	DEPOSTGSO03 Evaluación Económica y Social
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDEPOSTGSO03">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDEPOSTGSO03">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DEPOSTGSO03-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/4d/4d66b1e6d9ea7f8069e52e5ad4fa8f85/perfil/92beb33055b489a0d7daee60e54d22b5.jpg" class="photo foto chica" /> Eduardo Contreras V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/LC.svg" class="photo foto chica" /> Lisette Cuellar</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CJ.svg" class="photo foto chica" /> Claudio Jiménez C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/64/6403725f20f6da6ab1b52e2f0e3b8783/perfil/4df2d04e01cad2c024fbd2444d294fc0.jpg" class="photo foto chica" /> Jacques Wiertz</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DEPOSTGSO04" onclick="this.parentNode.toggleClassName('active')">
+	DEPOSTGSO04 Comunicación y Marketing
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDEPOSTGSO04">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDEPOSTGSO04">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DEPOSTGSO04-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/LC.svg" class="photo foto chica" /> Lisette Cuellar</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/48/48ac729f8d2f280a79f75a8c54b1cfb4/perfil/6567b0c980223f0873dc2589f1579a99.jpg" class="photo foto chica" /> Eduardo Sanhueza Ruiz</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8b/8b11e0aad876e48f60b9d86b59a1c1df/perfil/9a946b4e6de139de0c508b53b24952e5.jpg" class="photo foto chica" /> Bárbara Rodríguez Droguett</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DEPOSTGSO05" onclick="this.parentNode.toggleClassName('active')">
+	DEPOSTGSO05 Proyecto Final
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDEPOSTGSO05">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDEPOSTGSO05">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DEPOSTGSO05-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/LC.svg" class="photo foto chica" /> Lisette Cuellar</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIINSII1" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIINSII1 Inteligencia de Negocios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIINSII1">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIINSII1">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIINSII1-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bb/bb5b99be23cb00f0da0c0d3fbd938767/perfil/fcba86a453169619afc63303f39c5b87.jpg" class="photo foto chica" /> Luis Aburto Lafourcade</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/14225f647c3df6c8b6477b2cce982fda/perfil/3ab0e678b3739e22bc92b23f8a4bf934.jpg" class="photo foto chica" /> Juan D. Velásquez</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/20/20bdfa8cb370f8804c50ffd59141dcd4/perfil/79e8e66046b6d402dd65f3e8dfe1f351.jpg" class="photo foto chica" /> Richard Weber H.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ba/ba45192b35dddd1b63a09f6051b9258e/perfil/0633934c8858f75a591e6347d9c3d10d.jpg" class="photo foto chica" /> Sebastián Maldonado A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIINVW01" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIINVW01 Inteligencia de Negocios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIINVW01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIINVW01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIINVW01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bb/bb5b99be23cb00f0da0c0d3fbd938767/perfil/fcba86a453169619afc63303f39c5b87.jpg" class="photo foto chica" /> Luis Aburto Lafourcade</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/14225f647c3df6c8b6477b2cce982fda/perfil/3ab0e678b3739e22bc92b23f8a4bf934.jpg" class="photo foto chica" /> Juan D. Velásquez</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/20/20bdfa8cb370f8804c50ffd59141dcd4/perfil/79e8e66046b6d402dd65f3e8dfe1f351.jpg" class="photo foto chica" /> Richard Weber H.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ba/ba45192b35dddd1b63a09f6051b9258e/perfil/0633934c8858f75a591e6347d9c3d10d.jpg" class="photo foto chica" /> Sebastián Maldonado A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a3/a3adb8554b3088fa2b0605ec75e2b28b/perfil/22ee4ea088b7e1b0fc4f1c3301272c16.jpg" class="photo foto chica" /> Abel Numhauser C.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		27	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC01" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC01 El hormigón en el Diseño de Estructuras
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/8336cc40acf4a75a1f7cd9eb95ff0530/perfil/586387d40fd3079cd6ca801e216c4516.jpg" class="photo foto chica" /> Fernando Yañez U.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC02" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC02 Durabilidad del Hormigón
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC02">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC02">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC02-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/83/8336cc40acf4a75a1f7cd9eb95ff0530/perfil/586387d40fd3079cd6ca801e216c4516.jpg" class="photo foto chica" /> Fernando Yañez U.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC03" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC03 Tecnología de Materias Primas del Hormigón de Alto Desempeño
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC03">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC03">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC03-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MG.svg" class="photo foto chica" /> Miguel González T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RC.svg" class="photo foto chica" /> Rodrigo Caballero R.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC04" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC04 Diseño y Producción de Hormigón de Alto Desempeño
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC04">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC04">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC04-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RG.svg" class="photo foto chica" /> Rubén Galaz M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC05" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC05 Construcción con Hormigón de Alto Desempeño
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC05">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC05">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC05-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/IL.svg" class="photo foto chica" /> Ignacio Lamana G.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC06" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC06 Control de Calidad del Hormigón y Controversias en Obra
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC06">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC06">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC06-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/98/980d15d8e01fd9a907121bd15d7351a5/perfil/802dffe158e4b189edb2a0260c909d7d.jpg" class="photo foto chica" /> Miguel Figueroa N.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC07" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC07 Taller de Hormigones de Prueba
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC07">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC07">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC07-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6c/6c86d7de87add472ec01dc4c9b240fab/perfil/d1a819d69e8cac3cbb739d11ad3e875b.jpg" class="photo foto chica" /> Carlos Arcos D.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		19	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC08" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC08 Shotcrete
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC08">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC08">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC08-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c6/c6dab738ee3736b1521a55687e3fe6d9/perfil/0b6f31805219d87dd2fbeb6ee5117930.jpg" class="photo foto chica" /> Orlando Hofer P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC09" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC09 Roller-Compacted Mass Concrete
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC09">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC09">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC09-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c6/c6dab738ee3736b1521a55687e3fe6d9/perfil/0b6f31805219d87dd2fbeb6ee5117930.jpg" class="photo foto chica" /> Orlando Hofer P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC10" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC10 Marine Concrete
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC10">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC10">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC10-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/be/bed3023058dab1ff5dcd83c95789780d/perfil/16dda248672627d166a73ac640e02dce.jpg" class="photo foto chica" /> Federico Delfin A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6e/6ef77f25976180bab7e38ba3b4ffcad8/perfil/da0497717166ebc66778f08a19e3e3fd.jpg" class="photo foto chica" /> Guillermo Cavieres Pizarro</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		19	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC12" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC12 Pavimentos y Losas Contraterreno de Hormigón
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC12">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC12">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC12-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JC.svg" class="photo foto chica" /> Juan Pablo Covarrubias T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MS.svg" class="photo foto chica" /> Mauricio Salgado</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		19	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC13" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC13 Control de Fisuración en Estructuras de Hormigón
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC13">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC13">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC13-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b91ef2b55374e4a11d7c9930ec3465b/perfil/6e8ce06dd83e4ea3df116f1a2f600940.jpg" class="photo foto chica" /> David Silva S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEMDC14" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEMDC14 Técnicas de Reparación del Hormigón en Obra
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEMDC14">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEMDC14">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEMDC14-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/be/bed3023058dab1ff5dcd83c95789780d/perfil/16dda248672627d166a73ac640e02dce.jpg" class="photo foto chica" /> Federico Delfin A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9b/9b91ef2b55374e4a11d7c9930ec3465b/perfil/6e8ce06dd83e4ea3df116f1a2f600940.jpg" class="photo foto chica" /> David Silva S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDCCAE001" onclick="this.parentNode.toggleClassName('active')">
+	CEDCCAE001 Arquitectura Empresarial
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDCCAE001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDCCAE001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDCCAE001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/HS.svg" class="photo foto chica" /> Hsiao-Lan Hsieh</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		31	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIAC001" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIAC001 Administración de Contratos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIAC001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIAC001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIAC001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JD.svg" class="photo foto chica" /> Juan Dyvinetz P.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JC.svg" class="photo foto chica" /> Juan Castellón M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/4d/4d66b1e6d9ea7f8069e52e5ad4fa8f85/perfil/92beb33055b489a0d7daee60e54d22b5.jpg" class="photo foto chica" /> Eduardo Contreras V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c5/c5b7e07015b6b637c5f57371748f6107/perfil/be7f000fee191ae31cf7dc6b2ff497d9.jpg" class="photo foto chica" /> Leonardo Landaeta N.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		16	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIDGP01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIDGP01 Dirección y Gestión de Proyectos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIDGP01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIDGP01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIDGP01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a2/a2650be8478ffa30376e8e8fc42679de/perfil/609e4cf70adece606f3253b50256d77f.jpg" class="photo foto chica" /> Christian Willatt H.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		35	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIIM001" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIIM001 Investigación de Mercado
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIIM001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIIM001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIIM001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c4/c4d2affcf91b37ac58e371c9667a810e/perfil/b5d9dffa44363d6724a7cd8f27a48497.jpg" class="photo foto chica" /> Christian Diez F.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		5	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEFUPSE001" onclick="this.parentNode.toggleClassName('active')">
+	CEFUPSE001 FUPSE Termosolar 2016
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEFUPSE001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEFUPSE001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEFUPSE001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MM.svg" class="photo foto chica" /> Marcelo Matus A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/87/87a0f1f58b5f363d697258a2e3d9a168/perfil/6b8542bcaf9a2a773fac344e8e7f298e.jpg" class="photo foto chica" /> Ernest A. Michael</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5b/5b835b0455fc24d8e680d43c5b3639f1/perfil/d0047a79e0b773df77d76cda8502be09.jpg" class="photo foto chica" /> Patricio Mena M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		69	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CETDA00001" onclick="this.parentNode.toggleClassName('active')">
+	CETDA00001 Taller de Agilidad
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCETDA00001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCETDA00001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CETDA00001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/70/70b88ec33c86ec93d79c436774f36cfe/perfil/6320862ce16b6b8fe62481930d04a507.jpg" class="photo foto chica" /> Jorge Walters</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/38/3887767b4ea8d8497c8176d566ad546f/perfil/3bc53a5a1cad8d334d6f2dd4c924b0b9.jpg" class="photo foto chica" /> Alexandre Bergel</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		20	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDCC00101" onclick="this.parentNode.toggleClassName('active')">
+	DPDCC00101 Seguridad Computacional
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDCC00101">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Curso diploma de postitulo</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDCC00101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDCC00101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1f/1f1f67dc9c3a64bb0b70d44e0d5cdc63/perfil/53325abc2a7230818a75240cad2764cf.jpg" class="photo foto chica" /> Alejandro Hevia</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MZ.svg" class="photo foto chica" /> Marco Zuñiga Y.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/05/05a0801137e6e9e4de3da0b0a383fd92/perfil/8ec797fccd16da49422bff3e06e14ac3.jpg" class="photo foto chica" /> Sergio Miranda M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/f2/f25e41d9aa6208d01e6d7d3649bfd584/perfil/21b2357ce9a86c0a1bb7a14d92fcbdc0.jpg" class="photo foto chica" /> Lorena Donoso Abarca</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e2/e2e12f33f7007b5135cb5a829b097d5b/perfil/990297472e682cf40c577a9ac3080c6b.jpg" class="photo foto chica" /> Benjamín Bustos</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/41/4126e825c48915e5b5d4467a5097a8b9/perfil/7f21bd8288fbd76975e1a32eb90a467b.jpg" class="photo foto chica" /> Cristian Rojas</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/IS.svg" class="photo foto chica" /> Carlos Samaniego Chunga</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDICMA001" onclick="this.parentNode.toggleClassName('active')">
+	DPDICMA001 Manejo de Residuos Sólidos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDICMA001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDICMA001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDICMA001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b7/b71bee411d115581e7fa10957e370110/perfil/4b13df20fb7eafeeea28fc3a807f690e.jpg" class="photo foto chica" /> Jose Arellano V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GV.svg" class="photo foto chica" /> Gonzalo Velásquez C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JR.svg" class="photo foto chica" /> Alfredo Rihm S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIERSE01" onclick="this.parentNode.toggleClassName('active')">
+	DPDIERSE01 Organización Industrial del Sector Eléctrico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIERSE01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIERSE01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIERSE01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/75/7515a5f7d727bb35c3771cceb4c39c4a/perfil/c68b3c2dfb870523e8caf0c740797b4a.jpg" class="photo foto chica" /> L. Francisco Aguirre Leo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42e0fa64452b77f41fd000bc7fb2e72b/perfil/dc03a17a3686bbbfd96ec6a350be28e8.jpg" class="photo foto chica" /> Cristián Hermansen R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JA.svg" class="photo foto chica" /> Juan Araneda</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/56/560772f033d52abd39005dda9c7c3f47/perfil/0bfbe34bba89d45c617b6c5e166e060f.jpg" class="photo foto chica" /> Juan Alberto Bravo C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CM.svg" class="photo foto chica" /> Cristian Marcelo Muñoz</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIERSE02" onclick="this.parentNode.toggleClassName('active')">
+	DPDIERSE02 Marco Jurídico y Reglamentario del Sector Eléctrico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIERSE02">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIERSE02">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIERSE02-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42e0fa64452b77f41fd000bc7fb2e72b/perfil/dc03a17a3686bbbfd96ec6a350be28e8.jpg" class="photo foto chica" /> Cristián Hermansen R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/ES.svg" class="photo foto chica" /> Enrique Sepúlveda R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RJ.svg" class="photo foto chica" /> Ricardo Julian</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JZ.svg" class="photo foto chica" /> José Zañartu R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AV.svg" class="photo foto chica" /> Alejandra And Vallejos Morales</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MZ.svg" class="photo foto chica" /> María José Zegers Quiroga</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIERSE03" onclick="this.parentNode.toggleClassName('active')">
+	DPDIERSE03 Sistemas Eléctricos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIERSE03">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIERSE03">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIERSE03-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42e0fa64452b77f41fd000bc7fb2e72b/perfil/dc03a17a3686bbbfd96ec6a350be28e8.jpg" class="photo foto chica" /> Cristián Hermansen R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7c/7c77cad9dca6e5f1137d06128d99cb94/perfil/43a353bcb1939747394553c0827ab554.jpg" class="photo foto chica" /> Luis Vargas D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/e3/e3f8273fc936b4daf509d327471607b9/perfil/e1c9109f0f472469903ac3d1fc417d77.jpg" class="photo foto chica" /> Rodrigo Palma B.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GO.svg" class="photo foto chica" /> Gabriel Olguin P.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/DZ.svg" class="photo foto chica" /> Danilo Zurita O.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIERSE04" onclick="this.parentNode.toggleClassName('active')">
+	DPDIERSE04 Marco Económico y Operativo Sector Eléctrico
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIERSE04">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIERSE04">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIERSE04-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42e0fa64452b77f41fd000bc7fb2e72b/perfil/dc03a17a3686bbbfd96ec6a350be28e8.jpg" class="photo foto chica" /> Cristián Hermansen R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JI.svg" class="photo foto chica" /> Juan Inostroza L.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/56/560772f033d52abd39005dda9c7c3f47/perfil/0bfbe34bba89d45c617b6c5e166e060f.jpg" class="photo foto chica" /> Juan Alberto Bravo C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AC.svg" class="photo foto chica" /> Alfredo Cárdenas O.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIERSE05" onclick="this.parentNode.toggleClassName('active')">
+	DPDIERSE05 Trabajo Aplicado: Estudio de Casos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIERSE05">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIERSE05">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIERSE05-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/42/42e0fa64452b77f41fd000bc7fb2e72b/perfil/dc03a17a3686bbbfd96ec6a350be28e8.jpg" class="photo foto chica" /> Cristián Hermansen R.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDII00101" onclick="this.parentNode.toggleClassName('active')">
+	DPDII00101 Introducción a la gestión pública
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDII00101">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDII00101">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDII00101-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/61/61fe6dfdc6dae9e0621fad90655a6f3c/perfil/45eb79cb50e7c3af98e3bccac62e0be9.jpg" class="photo foto chica" /> Mario Waissbluth S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/LS.svg" class="photo foto chica" /> Luz M. San Martín V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		37	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDII00102" onclick="this.parentNode.toggleClassName('active')">
+	DPDII00102 Taller de Análisis Organizacional
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDII00102">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDII00102">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDII00102-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JI.svg" class="photo foto chica" /> José Inostroza Lara</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		37	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDII00103" onclick="this.parentNode.toggleClassName('active')">
+	DPDII00103 Liderazgo y negociación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDII00103">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDII00103">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDII00103-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b9/b996d3300a674bc010dd0ed54db257a4/perfil/4485e3bb9e375fd4d68ceeebf20e1e7b.jpg" class="photo foto chica" /> Cristián Binimelis S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		37	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDII00104" onclick="this.parentNode.toggleClassName('active')">
+	DPDII00104 Innovación y tecnologías de información
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDII00104">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDII00104">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDII00104-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/9a/9ad49baa71c4b4cd5a4c20ad282fd495/perfil/de2fdf472380166ce966b8a119361316.jpg" class="photo foto chica" /> Alejandro Barros</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b7/b78ae8e451c1a5bf9a01a5a0820bbd27/perfil/bc054b5632ef8b7129ca30530f6db33a.jpg" class="photo foto chica" /> Iván Braga C.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		37	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDII00105" onclick="this.parentNode.toggleClassName('active')">
+	DPDII00105 Herramientas de Control de Gestión
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDII00105">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDII00105">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDII00105-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/VV.svg" class="photo foto chica" /> Vivien Villagrán Acuña</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		37	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDII00106" onclick="this.parentNode.toggleClassName('active')">
+	DPDII00106 Charlas magistrales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDII00106">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDII00106">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDII00106-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7a/7a3ad3cd6f2d05d7943f7a83e7f375ac/perfil/72fee396275f5845aca58f100cd8eefc.jpg" class="photo foto chica" /> Pablo González S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		36	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA01" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA01 Estrategia y Abastecimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/39/394609e41fe7c03b3cf0ca705e3afdf1/perfil/e780a59177aaf76b2d0c2878ef3372ad.jpg" class="photo foto chica" /> Luis Zaviezo Schwartzman</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA02" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA02 Gestión de Operaciones y de Abastecimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA02">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA02">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA02-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0a/0abf6b8586696a4178cff28964ec1771/perfil/66056f5cba8cd156993a3495c6720fe4.jpg" class="photo foto chica" /> Marcelo Olivares A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA03" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA03 Negociación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA03">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA03">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA03-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JC.svg" class="photo foto chica" /> Juan Enrique Castro</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA04" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA04 Abastecimiento de Servicios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA04">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA04">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA04-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AB.svg" class="photo foto chica" /> Antonio Barreda</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA05" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA05 Logística y Supply Chain
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA05">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA05">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA05-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/EC.svg" class="photo foto chica" /> Eugenio Caldentey M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA06" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA06 Administración de Contratos y Contratistas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA06">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA06">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA06-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MO.svg" class="photo foto chica" /> Marcelo Ocampo</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA07" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA07 TIC y Comercio Electrónico en Abastecimiento
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA07">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA07">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA07-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b7/b78ae8e451c1a5bf9a01a5a0820bbd27/perfil/bc054b5632ef8b7129ca30530f6db33a.jpg" class="photo foto chica" /> Iván Braga C.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA10" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA10 Introducción al Retail
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA10">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA10">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA10-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGEA11" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGEA11 Gestión de Inventarios
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGEA11">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGEA11">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGEA11-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JG.svg" class="photo foto chica" /> Juan Pablo Gimeno V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGR001" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGR001 Estrategia de Retail
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGR001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGR001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGR001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/85/853cd7019680e37934d6ea73e4b5e3c5/perfil/d5e415b738a2750a9f0f1678d0bab5fb.jpg" class="photo foto chica" /> Marcel Goic F.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGR002" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGR002 Gestión de la Tienda
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGR002">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGR002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGR002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/OB.svg" class="photo foto chica" /> Orlando Borgel A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGR003" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGR003 Taller de Gestión de Retail
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGR003">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGR003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGR003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGR004" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGR004 Gestión de la Disponibilidad
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGR004">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGR004">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGR004-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JG.svg" class="photo foto chica" /> Juan Pablo Gimeno V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGR005" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGR005 Gestión de Categorías
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGR005">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGR005">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGR005-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bb/bb5b99be23cb00f0da0c0d3fbd938767/perfil/fcba86a453169619afc63303f39c5b87.jpg" class="photo foto chica" /> Luis Aburto Lafourcade</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIGR006" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIGR006 Control de Gestión de Retail
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIGR006">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIGR006">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIGR006-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JC.svg" class="photo foto chica" /> Juan Enrique Castro</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/27/27a296c679ce5492c28d876154abda28/perfil/bb2b1441728fee4ba11ac3cb515a565e.jpg" class="photo foto chica" /> Claudio Pizarro T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD001" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD001 Inteligencia de Mercado
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/a0/a09f6bd1280e2ab83f50bf8dcff29499/perfil/f9130c47485929cf5c4a8412df5757ba.jpg" class="photo foto chica" /> Ricardo Montoya</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD002" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD002 Simulación y Toma de Decisiones
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD002">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c4/c4d2affcf91b37ac58e371c9667a810e/perfil/b5d9dffa44363d6724a7cd8f27a48497.jpg" class="photo foto chica" /> Christian Diez F.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD003" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD003 Estrategia de Marketing
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD003">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/WY.svg" class="photo foto chica" /> William Young H.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD004" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD004 Desarrollo de Producto
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD004">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD004">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD004-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c4/c4d2affcf91b37ac58e371c9667a810e/perfil/b5d9dffa44363d6724a7cd8f27a48497.jpg" class="photo foto chica" /> Christian Diez F.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD005" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD005 Pricing
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD005">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD005">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD005-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/85/853cd7019680e37934d6ea73e4b5e3c5/perfil/d5e415b738a2750a9f0f1678d0bab5fb.jpg" class="photo foto chica" /> Marcel Goic F.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD006" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD006 Comportamiento del Consumidor
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD006">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD006">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD006-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/WY.svg" class="photo foto chica" /> William Young H.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		32	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD007" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD007 Canales de Distribución
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD007">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD007">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD007-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/EC.svg" class="photo foto chica" /> Eugenio Caldentey M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		31	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD008" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD008 Trade Marketing
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD008">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD008">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD008-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/NR.svg" class="photo foto chica" /> Nicolás Raffo -.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		31	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIIMD009" onclick="this.parentNode.toggleClassName('active')">
+	DPDIIMD009 Comunicación y Promoción
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIIMD009">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIIMD009">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIIMD009-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JE.svg" class="photo foto chica" /> Javier English M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		31	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM001" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM001 Introducción
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fe/fe0d3a37ac383715b341530acf4e0766/perfil/0e2353fe11795de676e01a5bbd135cfe.jpg" class="photo foto chica" /> Salome Martinez S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM002" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM002 Álgebra
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM002">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM002">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM002-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/fe/fe0d3a37ac383715b341530acf4e0766/perfil/0e2353fe11795de676e01a5bbd135cfe.jpg" class="photo foto chica" /> Salome Martinez S.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AR.svg" class="photo foto chica" /> Aldo Ramírez M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/18/18bf68c87513a2d3d5dd2948ed1d765d/perfil/240ced9a5547fa2658a8ab405d29d455.jpg" class="photo foto chica" /> Gabriela E. Zúñiga P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM003" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM003 Datos y Azar
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM003">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM003">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM003-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/EC.svg" class="photo foto chica" /> Eugenio Chandía M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b0/b06158835b0bdd2d03da1ad9559b3bad/perfil/d6d619cb8a1cad62d2df27bd13afcf8c.jpg" class="photo foto chica" /> Flavio Guiñez A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM004" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM004 Geometría
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM004">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM004">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM004-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/EC.svg" class="photo foto chica" /> Eugenio Chandía M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/ET.svg" class="photo foto chica" /> Erica Turino.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM005" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM005 Números
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM005">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM005">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM005-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b0/b06158835b0bdd2d03da1ad9559b3bad/perfil/d6d619cb8a1cad62d2df27bd13afcf8c.jpg" class="photo foto chica" /> Flavio Guiñez A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AL.svg" class="photo foto chica" /> Alejandro López C.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM006" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM006 Estudio de Casos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM006">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM006">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM006-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/97/97109642c9049ee77a9282a2562721d1/perfil/1f4ebe8210d8c7d635ecd69356ec6035.jpg" class="photo foto chica" /> Maria Martinez V.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1e/1eb14acd68b317aa9fe18b4ef0aa51a6/perfil/f8548ee26795ae2723b59789d879e5fb.jpg" class="photo foto chica" /> Valentina González Montory</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/MP.svg" class="photo foto chica" /> M. Bernardita Peñafiel Frias</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/ET.svg" class="photo foto chica" /> Erica Turino.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM007" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM007 Desarrollo y Análisis de Clases
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM007">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM007">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM007-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/97/97109642c9049ee77a9282a2562721d1/perfil/1f4ebe8210d8c7d635ecd69356ec6035.jpg" class="photo foto chica" /> Maria Martinez V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIMEM008" onclick="this.parentNode.toggleClassName('active')">
+	DPDIMEM008 Resolución de Problemas
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIMEM008">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIMEM008">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIMEM008-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/5e/5ecd9143ecb0df35ca7ba9ac92a9c803/perfil/09eb788f5974a053f91b6c926ddcf74d.jpg" class="photo foto chica" /> Patricio Felmer A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPELERNC01" onclick="this.parentNode.toggleClassName('active')">
+	DPELERNC01 Introducción y Conceptos Básicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPELERNC01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPELERNC01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPELERNC01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/ES.svg" class="photo foto chica" /> Enrique Sepúlveda R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7c/7c77cad9dca6e5f1137d06128d99cb94/perfil/43a353bcb1939747394553c0827ab554.jpg" class="photo foto chica" /> Luis Vargas D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AR.svg" class="photo foto chica" /> Anibal Ramos R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0d/0d2174d4759c57a532dcbcaee227290a/perfil/6ebb26049a59645a209b4a57c849ce22.jpg" class="photo foto chica" /> Deninson Fuentes del Campo</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/02/0224b9565fd70003b42489bd9667bbfe/perfil/d7384153349f85e7de65cc8248a6677d.jpg" class="photo foto chica" /> Pablo Andrés Medina Cofre</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JC.svg" class="photo foto chica" /> Joshua Carvacho V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPELERNC02" onclick="this.parentNode.toggleClassName('active')">
+	DPELERNC02 Aspectos Regulatorios y Evaluación de Proyectos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPELERNC02">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPELERNC02">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPELERNC02-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/ES.svg" class="photo foto chica" /> Enrique Sepúlveda R.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7c/7c77cad9dca6e5f1137d06128d99cb94/perfil/43a353bcb1939747394553c0827ab554.jpg" class="photo foto chica" /> Luis Vargas D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8c/8ce6ca7bbd6c6398175933cedaae97d4/perfil/bfc0f674423980750e64531621639136.jpg" class="photo foto chica" /> Valentina Duran</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/eb/ebf1798263c5e3793315fa6b1094baa2/perfil/b73a5bcff2e82fe95a949396c8bbed86.jpg" class="photo foto chica" /> Laura Gallardo K.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/03/035b3826bf413db91486ec18c54c85cf/perfil/a3651e06bef08a6106c4b67920ce89b1.jpg" class="photo foto chica" /> Roberto Rondanelli</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AO.svg" class="photo foto chica" /> Alfredo Olivares S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		26	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPELERNC03" onclick="this.parentNode.toggleClassName('active')">
+	DPELERNC03 Energías Renovables No Convencionales I
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPELERNC03">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPELERNC03">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPELERNC03-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/10/10661dbce6818def5cdd2a07fd9f3815/perfil/d473c69227314b0f2e4a9ffb4c52b669.jpg" class="photo foto chica" /> Roberto Román L.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7c/7c77cad9dca6e5f1137d06128d99cb94/perfil/43a353bcb1939747394553c0827ab554.jpg" class="photo foto chica" /> Luis Vargas D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RG.svg" class="photo foto chica" /> Ricardo González</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		25	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPELERNC04" onclick="this.parentNode.toggleClassName('active')">
+	DPELERNC04 Energías Renovables No Convencionales II
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPELERNC04">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPELERNC04">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPELERNC04-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/47/479b299ed763a7fab0763e94352f5387/perfil/72e6c035aee5df815fccfd20ce6f4177.jpg" class="photo foto chica" /> María Teresa Varnero M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7c/7c77cad9dca6e5f1137d06128d99cb94/perfil/43a353bcb1939747394553c0827ab554.jpg" class="photo foto chica" /> Luis Vargas D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66a652e16692b61a021f27b0bd3f288f/perfil/0a614faffa470ae742249703b6433ff4.jpg" class="photo foto chica" /> Oriana Salazar A.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/6f/6f92052b6c28cdefed96e2a329c5db79/perfil/f49662d0e8b76727c4e5a6664470ab80.jpg" class="photo foto chica" /> Maria Elena Lienqueo C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ea/ea6523c0ff5ce2fae255782750c28ff5/perfil/630e577fbfc1df104f6875e5c2efb7b3.jpg" class="photo foto chica" /> Pablo Sánchez A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		25	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPELERNC05" onclick="this.parentNode.toggleClassName('active')">
+	DPELERNC05 ERNC Emergentes e Integración Inteligente
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPELERNC05">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPELERNC05">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPELERNC05-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7c/7c77cad9dca6e5f1137d06128d99cb94/perfil/43a353bcb1939747394553c0827ab554.jpg" class="photo foto chica" /> Luis Vargas D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/CG.svg" class="photo foto chica" /> César Guzmán M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/02/0224b9565fd70003b42489bd9667bbfe/perfil/d7384153349f85e7de65cc8248a6677d.jpg" class="photo foto chica" /> Pablo Andrés Medina Cofre</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/0f/0f8f18ae46c0718619869a51e4b6389e/perfil/197372e86660afa0337650f2b408ae04.jpg" class="photo foto chica" /> Felipe Díaz Alvarado</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		25	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIDM01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIDM01 Data Mining y Aplicaciones en Riesgo de Crédito
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIDM01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIDM01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIDM01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/20/20bdfa8cb370f8804c50ffd59141dcd4/perfil/79e8e66046b6d402dd65f3e8dfe1f351.jpg" class="photo foto chica" /> Richard Weber H.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c0/c0f06b21508e8356e9977e26ca8feff2/perfil/bbc068d0ff5087c632c713b6df3140df.jpg" class="photo foto chica" /> Sebastián Orozco D.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		24	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEDIIRC01" onclick="this.parentNode.toggleClassName('active')">
+	CEDIIRC01 Riesgo de Crédito
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEDIIRC01">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEDIIRC01">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEDIIRC01-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/1d/1d338f9885499bf8c95a107354f3750a/perfil/a805ae94655a88c9c00c069993444c19.jpg" class="photo foto chica" /> J. Miguel Cruz</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/20/20bdfa8cb370f8804c50ffd59141dcd4/perfil/79e8e66046b6d402dd65f3e8dfe1f351.jpg" class="photo foto chica" /> Richard Weber H.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/c0/c0f06b21508e8356e9977e26ca8feff2/perfil/bbc068d0ff5087c632c713b6df3140df.jpg" class="photo foto chica" /> Sebastián Orozco D.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		54	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0121" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0121 Plan, Dirección y Control Integral
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0121">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0121">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0121-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RN.svg" class="photo foto chica" /> Ricardo Nicolau del Roure G.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		11	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0124" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0124 Planificar y Controlar el Costo del Proyecto
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0124">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0124">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0124-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/LL.svg" class="photo foto chica" /> Leon Lopez A.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		11	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0125" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0125 Planificar, Asegurar y Controlar la Calidad del Proyecto
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0125">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0125">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0125-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/FF.svg" class="photo foto chica" /> Omar Fuentealba</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0126" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0126 Planificar y Controlar el Riesgo del Proyecto
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0126">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0126">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0126-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AF.svg" class="photo foto chica" /> Andrés Fuentes T.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0131" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0131 Liderazgo, RRHH y Etica en Proyectos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0131">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0131">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0131-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/142d5754b707d98610aab5ca39b734d9/perfil/b1322b0ae828796563e6a1d72f260e16.jpg" class="photo foto chica" /> Alejandro Polanco Carrasco</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		11	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0132" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0132 Gestión de Comunicaciones e Interesados
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0132">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0132">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0132-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/2d/2d19ba605f72c573098bf33201cf3989/perfil/386cbf12a4d1c7769794d912307ab070.jpg" class="photo foto chica" /> Juan C. Barros M.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		10	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0152" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0152 Introducción a la Gestión de Reclamos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0152">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0152">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0152-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/JD.svg" class="photo foto chica" /> Juan De la Carrera P.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		11	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0241" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0241 Estudios Sísmicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0241">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0241">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0241-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/14/14922afc24c1fc69152d50f8cecc2e06/perfil/696e88bfc18110bdc78ea09634f889fe.jpg" class="photo foto chica" /> Ruben Boroschek Krauskopf</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0242" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0242 Estudios Geotécnicos
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0242">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0242">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0242-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/b9/b99e8ec1dd38bc36fd96c0ed8358a2a4/perfil/eb00ab562f438957bb00986d246be294.jpg" class="photo foto chica" /> Roberto Gesche S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC0243" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC0243 Estudios Peligros Naturales
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC0243">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC0243">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC0243-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/66/66c98780cccc19e5a1afea0d8a283e3f/perfil/51f492df7775a85e30c3ea57decb1235.jpg" class="photo foto chica" /> Ricardo González V.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPDIC1001" onclick="this.parentNode.toggleClassName('active')">
+	DPDIC1001 Contaminación Atmosférica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPDIC1001">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Diplomas en Medio Ambiente</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPDIC1001">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPDIC1001-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/3f/3f7be6bc97f451b8b1698e6429330646/perfil/cbdcd00d71b76b6deab58b9cfeb3bccb.jpg" class="photo foto chica" /> Roberto Corvalan P.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/45/454571c9f8e38f6005614a05472a8b95/perfil/a9b1e2437823842f6590348728ee0b6f.jpg" class="photo foto chica" /> Ricardo Muñoz M.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/79/7919ef8bf2d5408ac2cd66e519524dd4/perfil/4b0f9461a8d766cd6cbdd6e1afa801f9.jpg" class="photo foto chica" /> Fernando Farías E.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/GA.svg" class="photo foto chica" /> Gerardo Alvarado Zuñiga</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/7d/7d9fe2f97a380eeac4548b2da59b10e5/perfil/945195e333dbba345348736f4b4a8253.jpg" class="photo foto chica" /> Sebastián Tolvett C.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/RS.svg" class="photo foto chica" /> Rainer Schmitz</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="DPIDIEM11" onclick="this.parentNode.toggleClassName('active')">
+	DPIDIEM11 Mass Concrete
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cDPIDIEM11">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cDPIDIEM11">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="DPIDIEM11-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/98/980d15d8e01fd9a907121bd15d7351a5/perfil/802dffe158e4b189edb2a0260c909d7d.jpg" class="photo foto chica" /> Miguel Figueroa N.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="CEFE10" onclick="this.parentNode.toggleClassName('active')">
+	CEFE10 Curso Electivo de Formación Específica
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cCEFE10">
+
+	<dt>Créditos</dt>
+	<dd>6</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Código sólo Escuela Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cCEFE10">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="CEFE10-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP3203" onclick="this.parentNode.toggleClassName('active')">
+	EP3203 Inglés 3
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP3203">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Sólo para alumnos de Postgrado</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP3203">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP3203-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/images/siglas/AC.svg" class="photo foto chica" /> Ana María Carvallo</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		7	</td>
+	<td>Cátedra: Martes 16:45 - 18:15, Jueves 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP4204" onclick="this.parentNode.toggleClassName('active')">
+	EP4204 Inglés 4
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP4204">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+	<dt>Equivalencias</dt>
+	<dd>EI4204</dd>
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP4204">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP4204-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		6	</td>
+	<td>Cátedra: Lunes 18:00 - 20:00, Miércoles 18:00 - 20:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP4205" onclick="this.parentNode.toggleClassName('active')">
+	EP4205 Inglés 5
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP4205">
+
+	<dt>Créditos</dt>
+	<dd>3</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP4205">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP4205-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/68/68f4078f5b265f54f3ac0af724ae0a17/perfil/e84338b079d8a91a24deea93eda38ea0.jpg" class="photo foto chica" /> Paula Ramos S.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		8	</td>
+	<td>Cátedra: Lunes 16:00 - 18:00, Miércoles 16:00 - 18:00</td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80A" onclick="this.parentNode.toggleClassName('active')">
+	EP80A Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80A">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		50	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80B" onclick="this.parentNode.toggleClassName('active')">
+	EP80B Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80B">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		42	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80C" onclick="this.parentNode.toggleClassName('active')">
+	EP80C Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80C">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80D" onclick="this.parentNode.toggleClassName('active')">
+	EP80D Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80D">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		9	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80E" onclick="this.parentNode.toggleClassName('active')">
+	EP80E Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80E">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80F" onclick="this.parentNode.toggleClassName('active')">
+	EP80F Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80F">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80G" onclick="this.parentNode.toggleClassName('active')">
+	EP80G Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80G">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80G">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80G-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP80H" onclick="this.parentNode.toggleClassName('active')">
+	EP80H Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP80H">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP80H">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP80H-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91A" onclick="this.parentNode.toggleClassName('active')">
+	EP91A Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91A">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>REQUIERE EXAMEN DE CALIFICACION APROBADO</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91A">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91A-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		22	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91B" onclick="this.parentNode.toggleClassName('active')">
+	EP91B Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91B">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91B">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91B-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		17	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91C" onclick="this.parentNode.toggleClassName('active')">
+	EP91C Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91C">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91C">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91C-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		18	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91D" onclick="this.parentNode.toggleClassName('active')">
+	EP91D Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91D">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91D">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91D-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		10	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91E" onclick="this.parentNode.toggleClassName('active')">
+	EP91E Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91E">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91E">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91E-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		14	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91F" onclick="this.parentNode.toggleClassName('active')">
+	EP91F Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91F">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91F">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91F-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91G" onclick="this.parentNode.toggleClassName('active')">
+	EP91G Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91G">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91G">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91G-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		7	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP91H" onclick="this.parentNode.toggleClassName('active')">
+	EP91H Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP91H">
+
+	<dt>Créditos</dt>
+	<dd>30</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP91H">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP91H-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP610" onclick="this.parentNode.toggleClassName('active')">
+	EP610 Preparación Taller de Tesis Magíster TI
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP610">
+
+	<dt>Créditos</dt>
+	<dd>0</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP610">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP610-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/01/01d3cf7f4459c14eded38cea5c3cceb4/perfil/c40837e3feb0322fd6ff879a9616a6aa.jpg" class="photo foto chica" /> Sergio F. Ochoa D.</h1></li>
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/bf/bf684af775d841d9e51de20d36090b53/perfil/ed138a5a954d3632c90beaa061a4bac0.jpg" class="photo foto chica" /> Daniel Perovich</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		30	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP700" onclick="this.parentNode.toggleClassName('active')">
+	EP700 Taller de Tesis
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP700">
+
+	<dt>Créditos</dt>
+	<dd>1</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+	<dt>Comentario</dt>
+	<dd>Sólo para Magíster en Transporte</dd>
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP700">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP700-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP900" onclick="this.parentNode.toggleClassName('active')">
+	EP900 Preparación Examen de Calificación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP900">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP900">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP900-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		12	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="EP901" onclick="this.parentNode.toggleClassName('active')">
+	EP901 Preparación Examen de Calificación
+
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cEP901">
+
+	<dt>Créditos</dt>
+	<dd>15</dd>
+
+	<dt>Requisitos</dt>
+	<dd>No tiene</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cEP901">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="EP901-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		14	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FD705" onclick="this.parentNode.toggleClassName('active')">
+	FD705 Trabajo de Investigación
+
+	<em class="opcion nowrap">4 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFD705">
+
+	<dt>Créditos</dt>
+	<dd>8</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFD705">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FD705-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="FD705-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/ee/eeecc54a2180339992561c7c18370baf/perfil/5b61bb054bdc775b1b42e0f309f1090d.jpg" class="photo foto chica" /> Williams R. Calderón Muñoz</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="FD705-3">
+	<td>
+		<h1>Sección 3</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/16/16ef199295dc6b1f422c5cd7477dcc15/perfil/f4148ed091473f12e69242b6633a08b4.jpg" class="photo foto chica" /> Christian Ihle</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+<tr id="FD705-4">
+	<td>
+		<h1>Sección 4</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/8f/8fad434b024b14668605e4f8e755ba98/perfil/1e9425ef125598603e026c37a73361c7.jpg" class="photo foto chica" /> Cristóbal Bertoglio B.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+<div class="ramo">
+<h2 id="FD707" onclick="this.parentNode.toggleClassName('active')">
+	FD707 Seminario de Investigación II
+
+	<em class="opcion nowrap">2 cursos</em>
+</h2>
+
+<div class="accordion">
+<dl class="leyenda cFD707">
+
+	<dt>Créditos</dt>
+	<dd>12</dd>
+
+	<dt>Requisitos</dt>
+	<dd>AUTOR</dd>
+
+
+</dl>
+
+<div class="table-responsive"><table class="cursos cFD707">
+<thead>
+<tr>
+	<th class="string" style="width: 30%; min-width: 8em;">Curso</th>
+	<th class="string" style="width: 20%; min-width: 15em;">Profesores</th>
+	<th class="number">Cupo</th>
+	<th class="number">Ocupados</th>
+	<th class="string" style="width: 30%; min-width: 8em;">Horario</th>
+</tr>
+</thead>
+<tbody>
+<tr id="FD707-1">
+	<td>
+		<h1>Sección 1</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/d2/d2df5b43164b6cbc5e9953333a283a2f/perfil/9177d65899f1b0617bda0a21809a849d.jpg" class="photo foto chica" /> Yarko Niño C.</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		1	</td>
+	<td></td>
+</tr>
+<tr id="FD707-2">
+	<td>
+		<h1>Sección 2</h1>
+		<h2></h2>
+	</td>
+	<td>
+		<ul class="list-unstyled">
+			<li><h1><img src="https://ucampus.uchile.cl/d/r/usuario/16/16ef199295dc6b1f422c5cd7477dcc15/perfil/f4148ed091473f12e69242b6633a08b4.jpg" class="photo foto chica" /> Christian Ihle</h1></li>
+		</ul>
+	</td>
+	<td>0</td>
+	<td>
+		2	</td>
+	<td></td>
+</tr>
+</table></div>
+</div>
+</div>
+
+
+
+
+<dl class="leyenda large">
+
+	<dt>Requisitos y Equivalencias</dt>
+	<dd>Los cursos se agrupan con paréntesis y se asocian con comas y slashes. El operador ',' (coma) equivale a un 'y' lógico, el operador '/' (slash) equivale a un 'o' lógico, no exclusivo.<br /> Una 'S' al final del código de un ramo quiere decir que es un requisito simultáneo.</dd>
+
+</dl>
+
+	</div></div>
+
+
+
+<div id="footer">
+<ul>
+	<li class="langs"><ul>
+		<li class="sel"><a href="?_hook=lang&lang=es">Español</a></li>
+		<li><a href="?_hook=lang&lang=en">English</a></li>
+	</ul></li>
+	<li class="guia_telefonica"><a href="https://ucampus.uchile.cl/m/guia_telefonica/">Guía Telefónica</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/terms">Políticas de Uso</a></li>
+	<li><a href="https://ucampus.uchile.cl/m/paginas/privacy">Privacidad</a></li>
+	<li><a href="https://www.ucampus.cl" target="_blank">Ucampus</a> &copy;</li>
+</ul>
+</div>
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-24774643-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<script type="text/javascript">
+Event.onReady( function() {
+	ucmsg.init( { server: 'https://ucampus.uchile.cl:54322' }, {
+		id: 'rfat8jjs31e8fb8e4tl5h59me0',
+		user: '',
+		alias: 'Robot Ucampus Uchile',
+		movil: 0	} );
+} );
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"04697e2d00","applicationID":"195320401","transactionName":"bgdTMURRCkcDBhAMWFdNZBdfHxZRFRcNEVIXElkV","queueTime":0,"applicationTime":543,"atts":"QkBQRwxLGUk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
