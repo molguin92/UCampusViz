@@ -1,6 +1,7 @@
 from pathlib import Path
 from bs4 import BeautifulSoup
 from html.parser import HTMLParser
+import re
 
 import requests
 
@@ -57,9 +58,18 @@ def fetch_html():
                     output.write(resp.text)
 
 
+def course_str_to_list(course_list):
+    # split up into list
+    lst = re.sub('[^0-9a-zA-Z]+', ' ', course_list).strip().split()
+    # remove AUTOR, 'No tiene'
+    return list(filter(
+        lambda x: x != 'AUTOR' and x != 'No' and x != 'tiene',
+        lst))
+
+
 if __name__ == '__main__':
     # fetch_html()
-    with open('./catalog/2013/1/3.html', 'r') as html_file:
+    with open('./catalog/2017/2/5.html', 'r') as html_file:
         soup = BeautifulSoup(html_file, 'html5lib')
         ramos = soup.find_all(
             lambda tag: tag.has_attr('class') and 'ramo' in tag['class']
@@ -71,9 +81,9 @@ if __name__ == '__main__':
             r_name = next(ramo.h2.stripped_strings)
 
             dl = ramo.find('dl')
-            uds = None
-            reqs = None
-            eqs = None
+            uds = 0
+            reqs = []
+            eqs = []
 
             dts = dl.find_all('dt')
             dds = dl.find_all('dd')
@@ -86,9 +96,9 @@ if __name__ == '__main__':
                 elif dt.string == 'Equivalencias':
                     eqs = dd.string
 
-            if reqs.upper() == 'NO TIENE' or reqs.upper() == 'AUTOR':
-                reqs = None
-
-
+            if reqs:
+                reqs = course_str_to_list(reqs)
+            if eqs:
+                eqs = course_str_to_list(eqs)
 
             print(r_id, r_name, uds, reqs, eqs)
