@@ -1,5 +1,5 @@
 d3.select("body").append("svg");
-data = d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.json', function (error, data) {
+d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.json', function (data) {
     console.log(data); // this is your data
     nodes = data.nodes;
     links = data.links;
