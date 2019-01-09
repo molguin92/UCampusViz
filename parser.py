@@ -1,4 +1,6 @@
 from pathlib import Path
+from bs4 import BeautifulSoup
+from html.parser import HTMLParser
 
 import requests
 
@@ -32,9 +34,18 @@ DEPTS = {
 }
 
 
+class CourseParser(HTMLParser):
+    def error(self, message):
+        pass
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() == 'div' and dict(attrs).get('class', None) == 'ramo':
+            print('ramo :)')
+
+
 def fetch_html():
     for dept_id, dept_name in DEPTS.items():
-        for year in range(2011, 2019):
+        for year in range(2013, 2019):
             for sem in (1, 2):
                 params = {'semestre': year * 10 + sem, 'depto': dept_id}
                 resp = requests.get(BASE_URL, params=params)
@@ -45,5 +56,39 @@ def fetch_html():
                 with open(f'{outdir}/{dept_id}.html', 'w') as output:
                     output.write(resp.text)
 
+
 if __name__ == '__main__':
-    fetch_html()
+    # fetch_html()
+    with open('./catalog/2013/1/3.html', 'r') as html_file:
+        soup = BeautifulSoup(html_file, 'html5lib')
+        ramos = soup.find_all(
+            lambda tag: tag.has_attr('class') and 'ramo' in tag['class']
+        )
+
+        # print(ramos)
+        for ramo in ramos:
+            r_id = ramo.h2['id']
+            r_name = next(ramo.h2.stripped_strings)
+
+            dl = ramo.find('dl')
+            uds = None
+            reqs = None
+            eqs = None
+
+            dts = dl.find_all('dt')
+            dds = dl.find_all('dd')
+
+            for dt, dd in zip(dts, dds):
+                if dt.string == 'Créditos':
+                    uds = int(dd.string)
+                elif dt.string == 'Requisitos':
+                    reqs = dd.string
+                elif dt.string == 'Equivalencias':
+                    eqs = dd.string
+
+            if reqs.upper() == 'NO TIENE' or reqs.upper() == 'AUTOR':
+                reqs = None
+
+
+
+            print(r_id, r_name, uds, reqs, eqs)
