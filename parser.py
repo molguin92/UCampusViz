@@ -1,12 +1,18 @@
+import json
 from pathlib import Path
+from typing import List
+
+import networkx as nx
 from bs4 import BeautifulSoup
 from html.parser import HTMLParser
 import re
+from models import Course
 
 import requests
 
-OUTPUT_DIR = './catalog'
+CATALOG_DIR = './catalog'
 BASE_URL = 'https://ucampus.uchile.cl/m/fcfm_catalogo/'
+YEAR_RANGE = range(2013, 2019)
 DEPTS = {
     12060003: 'AA - Área para el Aprendizaje de la Ingeniería y Ciencias A2IC',
     3       : 'AS - Departamento de Astronomía',
@@ -46,12 +52,12 @@ class CourseParser(HTMLParser):
 
 def fetch_html():
     for dept_id, dept_name in DEPTS.items():
-        for year in range(2013, 2019):
+        for year in YEAR_RANGE:
             for sem in (1, 2):
                 params = {'semestre': year * 10 + sem, 'depto': dept_id}
                 resp = requests.get(BASE_URL, params=params)
 
-                outdir = f'{OUTPUT_DIR}/{year}/{sem}'
+                outdir = f'{CATALOG_DIR}/{year}/{sem}'
                 Path(outdir).mkdir(parents=True, exist_ok=True)
 
                 with open(f'{outdir}/{dept_id}.html', 'w') as output:
@@ -67,9 +73,13 @@ def course_str_to_list(course_list):
         lst))
 
 
-if __name__ == '__main__':
-    # fetch_html()
-    with open('./catalog/2017/2/5.html', 'r') as html_file:
+def parse_courses(year: int, semester: int, dept: int) -> List[Course]:
+    if year not in YEAR_RANGE or semester not in (1, 2):
+        raise RuntimeError('Year or semester out of range!\n'
+                           f'Year {year}, Semester {semester}')
+
+    courses = []
+    with open(f'{CATALOG_DIR}/{year}/{semester}/{dept}.html', 'r') as html_file:
         soup = BeautifulSoup(html_file, 'html5lib')
         ramos = soup.find_all(
             lambda tag: tag.has_attr('class') and 'ramo' in tag['class']
@@ -101,4 +111,27 @@ if __name__ == '__main__':
             if eqs:
                 eqs = course_str_to_list(eqs)
 
-            print(r_id, r_name, uds, reqs, eqs)
+            courses.append(Course(r_id, r_name, uds, reqs, eqs))
+
+    return courses
+
+
+if __name__ == '__main__':
+    courses = {}
+    for year in YEAR_RANGE:
+        for sem in (1, 2):
+            for dept in DEPTS.keys():
+                for c in parse_courses(year, sem, dept):
+                    courses[c.id] = c
+
+    G = nx.DiGraph()
+    G.add_nodes_from(courses.keys())
+
+    for c_id, course in courses.items():
+        G.nodes[c_id]['label'] = c_id
+        for req in course.depends:
+            G.add_edge(req, c_id)
+
+# %%
+    with open('./graph.json', 'w') as out_f:
+        out_f.write(json.dumps(nx.node_link_data(G)))
