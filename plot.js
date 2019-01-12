@@ -52,19 +52,27 @@ svg.append('defs').append('marker')
     .style('stroke', 'none');
 
 const linkforce = d3.forceLink()
-    .id(function (link) {
-        return link.id;
+    .id(function (endpoint) {
+        return endpoint.id;
     })
-    .strength(.8);
+    .distance(function (link) {
+        return calculate_radius(link.target) + calculate_radius(link.source) + 200;
+    });
+    //.strength(.5);
 
 const collision = d3.forceCollide()
-    .radius(calculate_radius);
+    .radius((d) => calculate_radius(d) + 4)
+    .strength(1);
+
+const manybody = d3.forceManyBody()
+    .strength(-40)
+    .distanceMax(500);
 
 const simulation = d3.forceSimulation()
     .velocityDecay(.7)
     .force('collision', collision)
     .force('link', linkforce)
-    .force('charge', d3.forceManyBody().strength(-40))
+    .force('charge', manybody)
     .force('center', d3.forceCenter(width / 2, height / 2));
 
 const container = svg.append('g');
@@ -104,13 +112,16 @@ let colormapping = {};
 d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.json')
     .then(function (data) {
 
-        data_nodes = data.nodes.filter(function (d) {
-            return d.id.substring(0, 2) === 'CC';
-        });
+        //data_nodes = data.nodes.filter(function (d) {
+        //    return d.id.substring(0, 2) === 'CC';
+        //});
 
-        data_links = data.links.filter(function (d) {
-            return d.source.substring(0, 2) === 'CC' & d.target.substring(0, 2) === 'CC';
-        });
+        //data_links = data.links.filter(function (d) {
+        //    return d.source.substring(0, 2) === 'CC' & d.target.substring(0, 2) === 'CC';
+        //});
+
+        const data_nodes = data.nodes;
+        const data_links = data.links;
 
         const links = container.append('g')
             .selectAll('path')
