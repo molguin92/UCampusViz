@@ -4,11 +4,15 @@ const width = 0.95 * window.innerWidth,
 const offset_top = (window.innerHeight - height) / 2,
     offset_side = (window.innerWidth - width) / 2;
 
-const zoom = d3.zoom().on('zoom', function () {
-});
+function calculate_radius(c) {
+    return c.dep_factor + 5;
+}
 
 const svg = d3.select('body')
     .append('svg')
+    .call(d3.zoom().on("zoom", function () {
+        svg.attr("transform", d3.event.transform)
+    }))
     .attr('width', width)
     .attr('height', height)
     .append("g")
@@ -18,34 +22,32 @@ svg.append('defs').append('marker')
     .attrs({
         'id': 'arrowhead',
         'viewBox': '-0 -5 10 10',
-        'refX': 20,
+        'refX': 5,
         'refY': 0,
         'orient': 'auto',
-        'markerWidth': 7,
-        'markerHeight': 7,
+        'markerWidth': 4,
+        'markerHeight': 4,
         'xoverflow': 'visible'
     })
     .append('svg:path')
     .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
-    .attr('fill', '#999')
+    .attr('fill', '#000')
     .style('stroke', 'none');
-
-const rect = svg.append("rect")
-    .attr("width", width * 5)
-    .attr("height", height * 5)
-    .style("fill", "none")
-    .style("pointer-events", "all");
 
 const linkforce = d3.forceLink()
     .id(function (link) {
         return link.id;
     })
-    .strength(1);
+    .strength(.8);
+
+const collision = d3.forceCollide()
+    .radius(calculate_radius);
 
 const simulation = d3.forceSimulation()
-    .velocityDecay(.9)
+    .velocityDecay(.7)
     .force('link', linkforce)
-    .force('charge', d3.forceManyBody().strength(-5))
+    .force('collision', collision)
+    .force('charge', d3.forceManyBody().strength(-40))
     .force('center', d3.forceCenter(width / 2, height / 2));
 
 const container = svg.append("g");
@@ -94,9 +96,9 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
         });
 
         const links = container.append('g')
-            .selectAll('line')
+            .selectAll('path')
             .data(data_links)
-            .enter().append('line')
+            .enter().append('path')
             .attr("class", "link")
             .attr('source', function (d) {
                 return d.source;
@@ -106,7 +108,10 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
             })
             .attr('stroke-width', 1)
             .attr('stroke', '#E5E5E5')
-            .attr('marker-end', 'url(#arrowhead)');
+            .attr('marker-end', 'url(#arrowhead)')
+            .style('fill', 'none')
+            .style('stroke', '#000')
+            .style('stroke-width', '.7px');
 
         const nodes = container.append("g")
             .attr("class", "dot")
@@ -119,9 +124,7 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
             .attr('dept', function (d) {
                 return d.dept;
             })
-            .attr("r", function (d) {
-                return d.dep_factor + 5;
-            })
+            .attr("r", calculate_radius)
             .attr("cx", function (d) {
                 return d.x;
             })
@@ -137,7 +140,7 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
                 return colormapping[d.dept];
             });
 
-        simulation.nodes(data.nodes).on('tick', () => {
+        simulation.nodes(data_nodes).on('tick', () => {
                 nodes
                     .attr('cx',
                         node => node.x
@@ -152,12 +155,28 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
                         node => node.y
                     );
 
-                links.attr('x1', link => link.source.x)
-                    .attr('y1', link => link.source.y)
-                    .attr('x2', link => link.target.x)
-                    .attr('y2', link => link.target.y);
+                //links.attrs({
+                //    'x1': link => link.source.x,
+                //    'y1': link => link.source.y,
+                //    'x2': link => link.target.x,
+                //    'y2': link => link.target.y
+                //});
 
-                simulation.force("link").links(data.links);
+                links.attr("d", function (d) {
+                    const dx = d.target.x - d.source.x,
+                        dy = d.target.y - d.source.y,
+                        dr = Math.sqrt(dx * dx + dy * dy);
+
+                    const offsetX = (dx * (calculate_radius(d.target) + 1)) / dr,
+                        offsetY = (dy * (calculate_radius(d.target) + 1)) / dr;
+
+                    return "M" +
+                        d.source.x + "," + d.source.y +
+                        ' ' + (d.target.x - offsetX) + "," + (d.target.y - offsetY);
+                    //' ' + d.target.x + "," + d.target.y;
+                });
+
+                simulation.force("link").links(data_links);
             }
         );
     });
