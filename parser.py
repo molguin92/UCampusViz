@@ -130,6 +130,9 @@ if __name__ == '__main__':
     G.add_nodes_from(courses.keys())
 
     for c_id, course in courses.items():
+        if not course.dept:
+            continue
+
         G.nodes[c_id]['label'] = c_id
         G.nodes[c_id]['dept'] = course.dept
         G.nodes[c_id]['credits'] = course.credits

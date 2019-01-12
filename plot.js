@@ -85,11 +85,25 @@ let colormapping = {};
 d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.json')
     .then(function (data) {
 
+        data_nodes = data.nodes.filter(function (d) {
+            return d.id.substring(0, 2) === 'CC';
+        });
+
+        data_links = data.links.filter(function (d) {
+            return d.source.substring(0, 2) === 'CC' & d.target.substring(0, 2) === 'CC';
+        });
+
         const links = container.append('g')
             .selectAll('line')
-            .data(data.links)
+            .data(data_links)
             .enter().append('line')
             .attr("class", "link")
+            .attr('source', function (d) {
+                return d.source;
+            })
+            .attr('target', function (d) {
+                return d.target;
+            })
             .attr('stroke-width', 1)
             .attr('stroke', '#E5E5E5')
             .attr('marker-end', 'url(#arrowhead)');
@@ -97,7 +111,7 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
         const nodes = container.append("g")
             .attr("class", "dot")
             .selectAll("circle")
-            .data(data.nodes)
+            .data(data_nodes)
             .enter().append("circle")
             .attr('id', function (d) {
                 return d.id;
@@ -106,7 +120,7 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
                 return d.dept;
             })
             .attr("r", function (d) {
-                return parseInt(d.dep_factor) + 5;
+                return d.dep_factor + 5;
             })
             .attr("cx", function (d) {
                 return d.x;
