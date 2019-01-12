@@ -132,8 +132,11 @@ if __name__ == '__main__':
     for c_id, course in courses.items():
         G.nodes[c_id]['label'] = c_id
         G.nodes[c_id]['dept'] = course.dept
+        G.nodes[c_id]['credits'] = course.credits
+        G.nodes[c_id]['dep_factor'] = G.nodes[c_id].get('dep_factor', 0)
         for req in course.depends:
             G.add_edge(req, c_id)
+            G.nodes[req]['dep_factor'] = G.nodes[req].get('dep_factor', 0) + 1
 
     # %%
     with open('./graph.json', 'w') as out_f:

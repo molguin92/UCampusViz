@@ -105,7 +105,9 @@ d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.
             .attr('dept', function (d) {
                 return d.dept;
             })
-            .attr("r", 5)
+            .attr("r", function (d) {
+                return parseInt(d.dep_factor) + 5;
+            })
             .attr("cx", function (d) {
                 return d.x;
             })
