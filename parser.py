@@ -1,14 +1,12 @@
 import json
+import re
+from html.parser import HTMLParser
 from pathlib import Path
-from typing import List
+from typing import List, NamedTuple
 
 import networkx as nx
-from bs4 import BeautifulSoup
-from html.parser import HTMLParser
-import re
-from models import Course
-
 import requests
+from bs4 import BeautifulSoup
 
 CATALOG_DIR = './catalog'
 BASE_URL = 'https://ucampus.uchile.cl/m/fcfm_catalogo/'
@@ -40,6 +38,15 @@ DEPTS = {
     24      : ('MT', 'Doctorado en Ciencia de los Materiales'),
     307     : ('QB', 'Departamento de Ingeniería Química y Biotecnología')
 }
+
+
+class Course(NamedTuple):
+    id: str
+    name: str
+    credits: int
+    dept: str
+    reqs: List[str]
+    eqs: List[str]
 
 
 class CourseParser(HTMLParser):
@@ -119,6 +126,7 @@ def parse_courses(year: int, semester: int, dept: int, dept_id: str) \
 
 
 if __name__ == '__main__':
+
     courses = {}
     for year in YEAR_RANGE:
         for sem in (1, 2):
@@ -131,10 +139,12 @@ if __name__ == '__main__':
 
     for c_id, course in courses.items():
         G.nodes[c_id]['label'] = c_id
-        G.nodes[c_id]['dept'] = course.dept
-        G.nodes[c_id]['credits'] = course.credits
         G.nodes[c_id]['dep_factor'] = G.nodes[c_id].get('dep_factor', 0)
-        for req in course.depends:
+
+        for attr, value in course._asdict().items():
+            G.nodes[c_id][attr] = value
+
+        for req in course.reqs:
             if req in G.nodes:
                 G.add_edge(req, c_id)
                 G.nodes[req]['dep_factor'] = \
