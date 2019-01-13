@@ -151,5 +151,8 @@ if __name__ == '__main__':
                     G.nodes[req].get('dep_factor', 0) + 1
 
     # %%
-    with open('./graph.json', 'w') as out_f:
-        out_f.write(json.dumps(nx.node_link_data(G)))
+    with open('./graph.json', 'wb') as out_f:
+        out_f.write(
+            json.dumps(
+                nx.node_link_data(G),
+                ensure_ascii=False).encode('utf-8'))
