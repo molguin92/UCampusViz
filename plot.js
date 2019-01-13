@@ -4,6 +4,9 @@ const width = 0.95 * window.innerWidth,
 const offset_top = (window.innerHeight - height) / 2,
     offset_side = (window.innerWidth - width) / 2;
 
+const draw_button = d3.select('#btn_draw');
+const clear_button = d3.select('#btn_clear');
+
 function calculate_radius(c) {
     return c.dep_factor + 5;
 }
@@ -32,6 +35,8 @@ const svg = d3.select('body')
     }))
     .attr('width', width)
     .attr('height', height)
+    .style('display', 'block')
+    .style('margin', 'auto')
     .append('g')
     .attr('transform', 'translate(' + offset_top + ',' + offset_side + ')');
 
@@ -58,7 +63,7 @@ const linkforce = d3.forceLink()
     .distance(function (link) {
         return calculate_radius(link.target) + calculate_radius(link.source) + 200;
     });
-    //.strength(.5);
+//.strength(.5);
 
 const collision = d3.forceCollide()
     .radius((d) => calculate_radius(d) + 4)
@@ -107,98 +112,106 @@ const colors = ['#cca15d',
     '#e28c7b',
     '#975c2a'];
 
+// state variables
 let colormapping = {};
+let data = null;
+
+function clear_container() {
+    container.selectAll('*').remove();
+    simulation.nodes([]).on('tick', () => null);
+    simulation.force('links').links([]);
+}
+
+function show_graph() {
+    if (data == null)
+        return;
+
+    const data_nodes = data.nodes;
+    const data_links = data.links;
+
+    const links = container.append('g')
+        .selectAll('path')
+        .data(data_links)
+        .enter().append('path')
+        .attr('class', 'link')
+        .attr('source', function (d) {
+            return d.source;
+        })
+        .attr('target', function (d) {
+            return d.target;
+        })
+        .attr('stroke-width', 1)
+        .attr('stroke', '#E5E5E5')
+        .attr('marker-end', 'url(#arrowhead)')
+        .style('fill', 'none')
+        .style('stroke', '#000')
+        .style('stroke-width', '.7px');
+
+    const nodes = container.append('g')
+        .attr('class', 'dot')
+        .selectAll('circle')
+        .data(data_nodes)
+        .enter().append('circle')
+        .attr('id', function (d) {
+            return d.id;
+        })
+        .attr('dept', function (d) {
+            return d.dept;
+        })
+        .attr('r', calculate_radius)
+        .attr('cx', function (d) {
+            return d.x;
+        })
+        .attr('cy', function (d) {
+            return d.y;
+        })
+        .attr('fill', function (d, i) {
+            if (!(d.dept in colormapping)) {
+                let idx = Object.keys(colormapping).length;
+                colormapping[d.dept] = colors[idx];
+            }
+
+            return colormapping[d.dept];
+        })
+        .call(drag);
+
+    simulation.nodes(data_nodes).on('tick', () => {
+            nodes
+                .attr('cx',
+                    node => node.x
+                )
+                .attr('cy',
+                    node => node.y
+                )
+                .attr('x',
+                    node => node.x
+                )
+                .attr('y',
+                    node => node.y
+                );
+
+            links.attr('d', function (d) {
+                const dx = d.target.x - d.source.x,
+                    dy = d.target.y - d.source.y,
+                    dr = Math.sqrt(dx * dx + dy * dy);
+
+                const offsetX = (dx * (calculate_radius(d.target) + 1)) / dr,
+                    offsetY = (dy * (calculate_radius(d.target) + 1)) / dr;
+
+                return 'M' +
+                    d.source.x + ',' + d.source.y +
+                    ' ' + (d.target.x - offsetX) + ',' + (d.target.y - offsetY);
+                //' ' + d.target.x + ',' + d.target.y;
+            });
+
+            simulation.force('link').links(data_links);
+        }
+    );
+}
 
 d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.json')
-    .then(function (data) {
-
-        //data_nodes = data.nodes.filter(function (d) {
-        //    return d.id.substring(0, 2) === 'CC';
-        //});
-
-        //data_links = data.links.filter(function (d) {
-        //    return d.source.substring(0, 2) === 'CC' & d.target.substring(0, 2) === 'CC';
-        //});
-
-        const data_nodes = data.nodes;
-        const data_links = data.links;
-
-        const links = container.append('g')
-            .selectAll('path')
-            .data(data_links)
-            .enter().append('path')
-            .attr('class', 'link')
-            .attr('source', function (d) {
-                return d.source;
-            })
-            .attr('target', function (d) {
-                return d.target;
-            })
-            .attr('stroke-width', 1)
-            .attr('stroke', '#E5E5E5')
-            .attr('marker-end', 'url(#arrowhead)')
-            .style('fill', 'none')
-            .style('stroke', '#000')
-            .style('stroke-width', '.7px');
-
-        const nodes = container.append('g')
-            .attr('class', 'dot')
-            .selectAll('circle')
-            .data(data_nodes)
-            .enter().append('circle')
-            .attr('id', function (d) {
-                return d.id;
-            })
-            .attr('dept', function (d) {
-                return d.dept;
-            })
-            .attr('r', calculate_radius)
-            .attr('cx', function (d) {
-                return d.x;
-            })
-            .attr('cy', function (d) {
-                return d.y;
-            })
-            .attr('fill', function (d, i) {
-                if (!(d.dept in colormapping)) {
-                    let idx = Object.keys(colormapping).length;
-                    colormapping[d.dept] = colors[idx];
-                }
-
-                return colormapping[d.dept];
-            })
-            .call(drag);
-
-        simulation.nodes(data_nodes).on('tick', () => {
-                nodes
-                    .attr('cx',
-                        node => node.x
-                    )
-                    .attr('cy',
-                        node => node.y
-                    )
-                    .attr('x',
-                        node => node.x
-                    )
-                    .attr('y',
-                        node => node.y
-                    );
-
-                links.attr('d', function (d) {
-                    const dx = d.target.x - d.source.x,
-                        dy = d.target.y - d.source.y,
-                        dr = Math.sqrt(dx * dx + dy * dy);
-
-                    const offsetX = (dx * (calculate_radius(d.target) + 1)) / dr,
-                        offsetY = (dy * (calculate_radius(d.target) + 1)) / dr;
-
-                    return 'M' +
-                        d.source.x + ',' + d.source.y +
-                        ' ' + (d.target.x - offsetX) + ',' + (d.target.y - offsetY);
-                    //' ' + d.target.x + ',' + d.target.y;
-                });
-
-                simulation.force('link').links(data_links);
-            }
-        );
+    .then(function (d) {
+        data = d;
+        draw_button.attr('disabled', null);
+        clear_button.attr('disabled', null);
     });
