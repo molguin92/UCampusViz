@@ -4,9 +4,6 @@ const width = 0.95 * window.innerWidth,
 const offset_top = (window.innerHeight - height) / 2,
     offset_side = (window.innerWidth - width) / 2;
 
-const draw_button = d3.select('#btn_draw');
-const clear_button = d3.select('#btn_clear');
-
 function calculate_radius(c) {
     return c.dep_factor + 5;
 }
@@ -61,17 +58,32 @@ const linkforce = d3.forceLink()
         return endpoint.id;
     })
     .distance(function (link) {
-        return calculate_radius(link.target) + calculate_radius(link.source) + 200;
+        let dist = 100;
+        if (link.source.dept === link.target.dept)
+            dist = 25;
+
+        return calculate_radius(link.target) + calculate_radius(link.source) + dist;
     });
-//.strength(.5);
+
+let default_force = linkforce.strength();
+
+// set linkforce strength
+linkforce.strength(function (link) {
+    let force_factor = 0.5;
+    if (link.source.dept === link.target.dept)
+        force_factor = 3;
+    return default_force(link) * force_factor;
+});
 
 const collision = d3.forceCollide()
     .radius((d) => calculate_radius(d) + 4)
     .strength(1);
 
 const manybody = d3.forceManyBody()
-    .strength(-40)
-    .distanceMax(500);
+    .strength(function (node) {
+        return -1 * calculate_radius(node) - 40;
+    })
+    .distanceMax(1000);
 
 const simulation = d3.forceSimulation()
     .velocityDecay(.7)
@@ -79,6 +91,9 @@ const simulation = d3.forceSimulation()
     .force('link', linkforce)
     .force('charge', manybody)
     .force('center', d3.forceCenter(width / 2, height / 2));
+
+const default_alpha_decay = simulation.alphaDecay();
+simulation.alphaDecay(default_alpha_decay / 3);
 
 const container = svg.append('g');
 const colors = ['#cca15d',
@@ -112,23 +127,9 @@ const colors = ['#cca15d',
     '#e28c7b',
     '#975c2a'];
 
-// state variables
 let colormapping = {};
-let data = null;
 
-function clear_container() {
-    container.selectAll('*').remove();
-    simulation.nodes([]).on('tick', () => null);
-    simulation.force('links').links([]);
-}
-
-function show_graph() {
-    if (data == null)
-        return;
-
-    const data_nodes = data.nodes;
-    const data_links = data.links;
-
+function show_graph(data_nodes, data_links) {
     const links = container.append('g')
         .selectAll('path')
         .data(data_links)
@@ -165,7 +166,7 @@ function show_graph() {
         .attr('cy', function (d) {
             return d.y;
         })
-        .attr('fill', function (d, i) {
+        .attr('fill', function (d) {
             if (!(d.dept in colormapping)) {
                 let idx = Object.keys(colormapping).length;
                 colormapping[d.dept] = colors[idx];
@@ -174,6 +175,8 @@ function show_graph() {
             return colormapping[d.dept];
         })
         .call(drag);
+    //.on('mouseover', tooltip.show)
+    //.on('mouseout', tooltip.hide);
 
     simulation.nodes(data_nodes).on('tick', () => {
             nodes
@@ -210,8 +213,4 @@ function show_graph() {
 }
 
 d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.json')
-    .then(function (d) {
-        data = d;
-        draw_button.attr('disabled', null);
-        clear_button.attr('disabled', null);
-    });
+    .then((d) => show_graph(d.nodes, d.links));
