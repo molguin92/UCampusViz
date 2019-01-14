@@ -9,8 +9,8 @@ Construído con:
 - HTML + D3JS (página web y visualización)
 
 ## Copyright
-© Manuel Olguín 2019 --
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) 
 
-Licensed under a BSD 3-Clause "New" or "Revised" License
+© Manuel Olguín 2019
 
-See LICENSE.md for details.
+See [LICENSE](LICENSE) for more details.
