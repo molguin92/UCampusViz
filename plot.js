@@ -96,7 +96,8 @@ const default_alpha_decay = simulation.alphaDecay();
 simulation.alphaDecay(default_alpha_decay / 3);
 
 const container = svg.append('g');
-const colors = ["#d76d31",
+const colors = [
+    "#d76d31",
     "#536bd8",
     "#5ab74e",
     "#8d4ec3",
@@ -120,7 +121,8 @@ const colors = ["#d76d31",
     "#d38fcc",
     "#a54a57",
     "#e379a1",
-    "#a83b74"];
+    "#a83b74"
+];
 
 let colormapping = {};
 
@@ -169,7 +171,8 @@ function show_graph(data_nodes, data_links) {
 
             return colormapping[d.dept];
         })
-        .call(drag);
+        .call(drag)
+        .on('click', d => d.tooltip = !d.tooltip);
 
     const labels = container.selectAll(null)
         .data(data_nodes.filter(d => d.dep_factor >= 20))
@@ -180,6 +183,21 @@ function show_graph(data_nodes, data_links) {
         .attr('font-size', 15)
         .style('text-anchor', 'middle');
 
+    const tooltip_rects = container.selectAll(null)
+        .data(data_nodes)
+        .enter()
+        .append('rect')
+        // .text(d => d.name)
+        // .attr('color', 'black')
+        // .attr('font-size', 15)
+        .attr('width', 10)
+        .attr('height', 10)
+        .style('fill', '#000')
+        // .style('text-anchor', 'middle')
+        .style('display', 'none');
+
+
+
     simulation.nodes(data_nodes).on('tick', () => {
             nodes.attr('cx', node => node.x)
                 .attr('cy', node => node.y)
@@ -188,6 +206,13 @@ function show_graph(data_nodes, data_links) {
 
             labels.attr('x', node => node.x)
                 .attr('y', node => node.y + 5); // center text a bit better
+
+            tooltip_rects.attr('x', node => node.x)
+                .attr('y', node => node.y + 5)
+                .style('display', function (node) {
+                    if (node.tooltip) return null;
+                    else return 'none';
+                }); // center text a bit better
 
             links.attr('d', function (d) {
                 const dx = d.target.x - d.source.x,
