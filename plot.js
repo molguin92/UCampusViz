@@ -145,11 +145,13 @@ function show_graph(data_nodes, data_links) {
         .style('stroke', '#000')
         .style('stroke-width', '.7px');
 
-    const nodes = container.append('g')
+    const node_anchors = container.append('g')
         .attr('class', 'dot')
         .selectAll('circle')
         .data(data_nodes)
-        .enter().append('circle')
+        .enter().append('g');
+
+    const nodes = node_anchors.append('circle')
         .attr('id', function (d) {
             return d.id;
         })
@@ -174,38 +176,53 @@ function show_graph(data_nodes, data_links) {
         .call(drag)
         .on('click', d => d.tooltip = !d.tooltip);
 
-    const labels = container.selectAll(null)
-        .data(data_nodes.filter(d => d.dep_factor >= 20))
-        .enter()
-        .append('text')
-        .text(d => d.id)
-        .attr('color', 'black')
-        .attr('font-size', 15)
-        .style('text-anchor', 'middle');
+    const node_labels = node_anchors
+        .each(function (d) {
+            if (d.dep_factor < 20) return;
+
+            d3.select(this)
+                .append('text')
+                .text(d.id)
+                .attr('x', 0)
+                .attr('y', 0)
+                .attr('color', 'black')
+                .attr('font-size', 15)
+                .style('text-anchor', 'middle');
+        })
 
     const tooltip_rects = container.selectAll(null)
         .data(data_nodes)
         .enter()
         .append('rect')
-        // .text(d => d.name)
-        // .attr('color', 'black')
-        // .attr('font-size', 15)
-        .attr('width', 10)
-        .attr('height', 10)
         .style('fill', '#000')
-        // .style('text-anchor', 'middle')
-        .style('display', 'none');
+        .style('display', 'none')
+        .each(function (d) {
+            // add text to rectangle, set dimensions
+            const text = d3.select(this)
+                .append('text')
+                .text(d.name)
+                .attr('color', 'white')
+                .attr('font-size', 15);
 
-
+            d3.select(this)
+                .attr('width', 50)
+                .attr('height', 50);
+        });
 
     simulation.nodes(data_nodes).on('tick', () => {
-            nodes.attr('cx', node => node.x)
-                .attr('cy', node => node.y)
-                .attr('x', node => node.x)
-                .attr('y', node => node.y);
 
-            labels.attr('x', node => node.x)
-                .attr('y', node => node.y + 5); // center text a bit better
+            node_anchors
+                .each(function (node) {
+                    d3.select(this).selectAll('circle')
+                        .attr('cx', node.x)
+                        .attr('cy', node.y)
+                        .attr('x', node.x)
+                        .attr('y', node.y)
+
+                    d3.select(this).selectAll('text')
+                        .attr('x', node.x)
+                        .attr('y', node.y + 5);
+                });
 
             tooltip_rects.attr('x', node => node.x)
                 .attr('y', node => node.y + 5)
