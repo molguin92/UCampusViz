@@ -11,8 +11,6 @@ Construído con:
 ## Copyright
 © Manuel Olguín 2019 --
 
-Licensed under a Creative Commons BY-NC-SA License
+Licensed under a BSD 3-Clause "New" or "Revised" License
 
-See LICENSE for details.
-
-[![License: CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+See LICENSE.md for details.
