@@ -96,36 +96,31 @@ const default_alpha_decay = simulation.alphaDecay();
 simulation.alphaDecay(default_alpha_decay / 3);
 
 const container = svg.append('g');
-const colors = ['#cca15d',
-    '#5c74e1',
-    '#adb92f',
-    '#b259d0',
-    '#64c04c',
-    '#c74caa',
-    '#4c8b29',
-    '#7d5ac0',
-    '#d9a02c',
-    '#637fc3',
-    '#cc4e27',
-    '#48b1da',
-    '#d73e4a',
-    '#5ebd7b',
-    '#da3e7f',
-    '#55c8b0',
-    '#9b4467',
-    '#a4b657',
-    '#8f5898',
-    '#887e22',
-    '#c993dd',
-    '#3c7e48',
-    '#de7faa',
-    '#389781',
-    '#dd8140',
-    '#616727',
-    '#bb555a',
-    '#99a260',
-    '#e28c7b',
-    '#975c2a'];
+const colors = ["#d76d31",
+    "#536bd8",
+    "#5ab74e",
+    "#8d4ec3",
+    "#a3b24b",
+    "#af389e",
+    "#4fb694",
+    "#de4ea6",
+    "#577a37",
+    "#d873de",
+    "#d1a033",
+    "#a37bdd",
+    "#92632b",
+    "#8397dd",
+    "#ca4035",
+    "#46aed7",
+    "#dd3c6d",
+    "#5263a5",
+    "#d59f65",
+    "#935892",
+    "#e07f76",
+    "#d38fcc",
+    "#a54a57",
+    "#e379a1",
+    "#a83b74"];
 
 let colormapping = {};
 
@@ -175,23 +170,24 @@ function show_graph(data_nodes, data_links) {
             return colormapping[d.dept];
         })
         .call(drag);
-    //.on('mouseover', tooltip.show)
-    //.on('mouseout', tooltip.hide);
+
+    const labels = container.selectAll(null)
+        .data(data_nodes.filter(d => d.dep_factor >= 20))
+        .enter()
+        .append('text')
+        .text(d => d.id)
+        .attr('color', 'black')
+        .attr('font-size', 15)
+        .style('text-anchor', 'middle');
 
     simulation.nodes(data_nodes).on('tick', () => {
-            nodes
-                .attr('cx',
-                    node => node.x
-                )
-                .attr('cy',
-                    node => node.y
-                )
-                .attr('x',
-                    node => node.x
-                )
-                .attr('y',
-                    node => node.y
-                );
+            nodes.attr('cx', node => node.x)
+                .attr('cy', node => node.y)
+                .attr('x', node => node.x)
+                .attr('y', node => node.y);
+
+            labels.attr('x', node => node.x)
+                .attr('y', node => node.y + 5); // center text a bit better
 
             links.attr('d', function (d) {
                 const dx = d.target.x - d.source.x,
@@ -213,4 +209,4 @@ function show_graph(data_nodes, data_links) {
 }
 
 d3.json('https://raw.githubusercontent.com/molguin92/UCampusParser/master/graph.json')
-    .then((d) => show_graph(d.nodes, d.links));
+    .then(d => show_graph(d.nodes, d.links));
