@@ -147,7 +147,7 @@ function show_graph(data_nodes, data_links) {
 
     const node_anchors = container.append('g')
         .attr('class', 'dot')
-        .selectAll('circle')
+        .selectAll(null)
         .data(data_nodes)
         .enter().append('g');
 
@@ -174,7 +174,11 @@ function show_graph(data_nodes, data_links) {
             return colormapping[d.dept];
         })
         .call(drag)
-        .on('click', d => d.tooltip = !d.tooltip);
+        .on('click', function (d) {
+
+
+
+        });
 
     const node_labels = node_anchors
         .each(function (d) {
@@ -188,48 +192,21 @@ function show_graph(data_nodes, data_links) {
                 .attr('color', 'black')
                 .attr('font-size', 15)
                 .style('text-anchor', 'middle');
-        })
-
-    const tooltip_rects = container.selectAll(null)
-        .data(data_nodes)
-        .enter()
-        .append('rect')
-        .style('fill', '#000')
-        .style('display', 'none')
-        .each(function (d) {
-            // add text to rectangle, set dimensions
-            const text = d3.select(this)
-                .append('text')
-                .text(d.name)
-                .attr('color', 'white')
-                .attr('font-size', 15);
-
-            d3.select(this)
-                .attr('width', 50)
-                .attr('height', 50);
         });
 
     simulation.nodes(data_nodes).on('tick', () => {
-
             node_anchors
                 .each(function (node) {
                     d3.select(this).selectAll('circle')
                         .attr('cx', node.x)
                         .attr('cy', node.y)
                         .attr('x', node.x)
-                        .attr('y', node.y)
+                        .attr('y', node.y);
 
                     d3.select(this).selectAll('text')
                         .attr('x', node.x)
                         .attr('y', node.y + 5);
                 });
-
-            tooltip_rects.attr('x', node => node.x)
-                .attr('y', node => node.y + 5)
-                .style('display', function (node) {
-                    if (node.tooltip) return null;
-                    else return 'none';
-                }); // center text a bit better
 
             links.attr('d', function (d) {
                 const dx = d.target.x - d.source.x,
